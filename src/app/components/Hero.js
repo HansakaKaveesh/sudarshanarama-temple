@@ -19,6 +19,7 @@ export default function Hero() {
         <Image
           src="/hero.jpg"
           alt="Temple Background"
+          
           fill
           sizes="100vw"
           className="object-cover"

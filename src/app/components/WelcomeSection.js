@@ -21,7 +21,7 @@ export default function WelcomeSection() {
           {/* Image Section */}
           <div className="relative rounded-2xl overflow-hidden shadow-lg">
             <Image
-              src="/buddha-statue.jpg"
+              src="/hero.jpg"
               alt="Buddha Statue"
               width={600}
               height={400}

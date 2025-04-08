@@ -3,26 +3,24 @@ import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { motion, AnimatePresence } from 'framer-motion';
-import { FiMenu, FiX, FiHome, FiInfo, FiCalendar, FiImage, FiMail } from 'react-icons/fi';
+import { FiMenu, FiX, FiHome, FiInfo, FiCalendar, FiImage, FiMail, FiBook } from 'react-icons/fi';
 import { GiLotus } from 'react-icons/gi';
 
 export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const pathname = usePathname();
 
-  // Navigation items with icons
   const navigation = [
     { name: 'Home', path: '/', icon: FiHome },
     { name: 'About', path: '/about', icon: FiInfo },
     { name: 'Events', path: '/events', icon: FiCalendar },
     { name: 'Gallery', path: '/gallery', icon: FiImage },
+    { name: 'Dhamma School', path: '/dhamma-school', icon: FiBook },
     { name: 'Contact', path: '/contact', icon: FiMail },
   ];
 
-  // Close menu on route change
   useEffect(() => setIsMenuOpen(false), [pathname]);
 
-  // Close menu on escape key press
   useEffect(() => {
     const handleEscape = (e) => e.key === 'Escape' && setIsMenuOpen(false);
     document.addEventListener('keydown', handleEscape);
@@ -31,88 +29,115 @@ export default function Navbar() {
 
   return (
     <nav 
-      id="navbar"
-      className="sticky top-0 z-50 bg-yellow-100/95 backdrop-blur-sm shadow-md border-b border-yellow-200"
+      className="sticky top-0 z-50 bg-amber-50/95 backdrop-blur-sm shadow-sm border-b border-amber-50"
       aria-label="Main navigation"
     >
-      <div className="container mx-auto px-4 py-3">
+      <div className="container mx-auto px-4 py-2.5">
         <div className="flex justify-between items-center">
           <Link 
             href="/" 
-            className="flex items-center space-x-2 hover:opacity-80 transition-opacity group"
+            className="flex items-center space-x-2 hover:opacity-80 transition-opacity"
           >
-            <GiLotus className="w-8 h-8 text-yellow-700 group-hover:text-yellow-800 transition-colors" />
-            <h1 className="text-xl font-bold text-yellow-900">Buddhist Temple</h1>
+            <motion.div
+              whileHover={{ rotate: 12, scale: 1.05 }}
+              transition={{ type: 'spring', stiffness: 400 }}
+            >
+              <GiLotus className="w-8 h-8 text-amber-700" />
+            </motion.div>
+            <h1 className="text-xl font-semibold bg-gradient-to-r from-amber-700 to-amber-600 bg-clip-text text-transparent">
+            Sri Sudarshanarama Purana Maha Viharaya
+            </h1>
           </Link>
 
           {/* Desktop Navigation */}
-          <ul className="hidden md:flex gap-2 text-yellow-900 font-medium">
+          <ul className="hidden md:flex gap-1">
             {navigation.map((item) => {
               const isActive = pathname === item.path;
               const Icon = item.icon;
               return (
-                <li key={item.name}>
+                <motion.li 
+                  key={item.name}
+                  whileHover={{ y: -1 }}
+                  whileTap={{ scale: 0.98 }}
+                  className="relative"
+                >
                   <Link
                     href={item.path}
-                    className={`px-4 py-2 rounded-lg transition-all duration-200 flex items-center gap-2 ${
+                    className={`px-3 py-1.5 flex items-center gap-1.5 text-sm transition-colors ${
                       isActive 
-                        ? 'bg-yellow-200 text-yellow-900' 
-                        : 'hover:bg-yellow-50 hover:text-yellow-800'
+                        ? 'text-amber-900 font-medium'
+                        : 'text-amber-600 hover:text-amber-800'
                     }`}
                     aria-current={isActive ? 'page' : undefined}
                   >
-                    <Icon className="w-5 h-5" />
+                    <Icon className="w-4 h-4" />
                     {item.name}
+                    {isActive && (
+                      <motion.div 
+                        className="absolute bottom-0 left-0 w-full h-[1.5px] bg-amber-500"
+                        layoutId="activeIndicator"
+                        transition={{ type: 'spring', bounce: 0.1, duration: 0.4 }}
+                      />
+                    )}
                   </Link>
-                </li>
+                </motion.li>
               );
             })}
           </ul>
 
           {/* Mobile Menu Button */}
-          <button
-            className="md:hidden p-2 rounded-lg hover:bg-yellow-200 focus:outline-none focus:ring-2 focus:ring-yellow-500 transition-colors"
+          <motion.button
+            whileHover={{ scale: 1.03 }}
+            whileTap={{ scale: 0.97 }}
+            className="md:hidden p-1.5 rounded-md hover:bg-amber-100 focus:outline-none transition-colors"
             onClick={() => setIsMenuOpen(!isMenuOpen)}
             aria-label="Toggle navigation"
             aria-expanded={isMenuOpen}
           >
             {isMenuOpen ? (
-              <FiX className="w-6 h-6" />
+              <FiX className="w-6 h-6 text-amber-700" />
             ) : (
-              <FiMenu className="w-6 h-6" />
+              <FiMenu className="w-6 h-6 text-amber-700" />
             )}
-          </button>
+          </motion.button>
         </div>
 
         {/* Mobile Navigation */}
         <AnimatePresence>
           {isMenuOpen && (
             <motion.div
-              initial={{ opacity: 0, y: -20 }}
+              initial={{ opacity: 0, y: -10 }}
               animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: -20 }}
-              transition={{ duration: 0.2 }}
-              className="md:hidden mt-4"
+              exit={{ opacity: 0, y: -10 }}
+              transition={{ duration: 0.15 }}
+              className="md:hidden mt-2 border-t border-amber-100"
             >
-              <ul className="flex flex-col space-y-2">
+              <ul className="flex flex-col space-y-1 pt-2">
                 {navigation.map((item) => {
                   const isActive = pathname === item.path;
                   const Icon = item.icon;
                   return (
-                    <li key={item.name}>
+                    <motion.li 
+                      key={item.name}
+                      whileHover={{ x: 3 }}
+                      transition={{ type: 'spring', stiffness: 400 }}
+                    >
                       <Link
                         href={item.path}
-                        className={`block px-4 py-3 rounded-lg transition-colors flex items-center gap-3 ${
+                        className={`px-3 py-2 flex items-center gap-2 text-base ${
                           isActive
-                            ? 'bg-yellow-200 text-yellow-900'
-                            : 'hover:bg-yellow-100 text-yellow-800'
-                        }`}
+                            ? 'text-amber-900 font-medium bg-amber-50'
+                            : 'text-amber-600 hover:bg-amber-50'
+                        } rounded-md transition-colors`}
                         aria-current={isActive ? 'page' : undefined}
                       >
                         <Icon className="w-5 h-5" />
                         {item.name}
+                        {isActive && (
+                          <div className="ml-auto w-1.5 h-1.5 bg-amber-500 rounded-full" />
+                        )}
                       </Link>
-                    </li>
+                    </motion.li>
                   );
                 })}
               </ul>
