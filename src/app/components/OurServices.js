@@ -1,4 +1,4 @@
-import { FaPrayingHands, FaLeaf, FaSun, FaHeart, FaArrowRight } from "react-icons/fa";
+import { FaPrayingHands, FaLeaf, FaSun, FaHeart, FaBook,FaChild,FaHandsHelping,FaBookOpen,FaMountain,FaHandHoldingHeart,FaMusic,FaCalendarDay,FaArrowRight } from "react-icons/fa";
 
 export default function OurServices() {
   const services = [
@@ -9,10 +9,22 @@ export default function OurServices() {
       link: "/meditation"
     },
     {
+      icon: <FaBook className="text-3xl text-yellow-800" />,
+      title: "Dhamma School",
+      description: "Sunday school program for children to learn Buddhist principles and moral values",
+      link: "/dhamma-school"
+    },
+    {
       icon: <FaLeaf className="text-3xl text-yellow-800" />,
       title: "Dhamma Talks",
       description: "Weekly discourses on Buddhist teachings and practical life applications",
       link: "/dhamma-talks"
+    },
+    {
+      icon: <FaChild className="text-3xl text-yellow-800" />,
+      title: "Youth Programs",
+      description: "Engaging activities and discussions for young adults to connect with Dhamma",
+      link: "/youth-programs"
     },
     {
       icon: <FaSun className="text-3xl text-yellow-800" />,
@@ -21,11 +33,24 @@ export default function OurServices() {
       link: "/poya-programs"
     },
     {
+      icon: <FaHandsHelping className="text-3xl text-yellow-800" />,
+      title: "Counseling Services",
+      description: "Spiritual guidance and counseling based on Buddhist psychology",
+      link: "/counseling"
+    },
+    {
       icon: <FaHeart className="text-3xl text-yellow-800" />,
       title: "Dana & Charity",
       description: "Opportunities for generous giving and compassionate service projects",
       link: "/dana"
     },
+    {
+      icon: <FaBookOpen className="text-3xl text-yellow-800" />,
+      title: "Library Access",
+      description: "Extensive collection of Buddhist literature and digital resources",
+      link: "/library"
+    },
+    
   ];
 
   return (

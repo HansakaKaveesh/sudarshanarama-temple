@@ -8,6 +8,7 @@ import { GiLotus } from 'react-icons/gi';
 
 export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
   const pathname = usePathname();
 
   const navigation = [
@@ -19,6 +20,14 @@ export default function Navbar() {
     { name: 'Contact', path: '/contact', icon: FiMail },
   ];
 
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 50);
+    };
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
   useEffect(() => setIsMenuOpen(false), [pathname]);
 
   useEffect(() => {
@@ -29,10 +38,14 @@ export default function Navbar() {
 
   return (
     <nav 
-      className="sticky top-0 z-50 bg-amber-50/95 backdrop-blur-sm shadow-sm border-b border-amber-50"
+      className={`fixed top-6 left-4 right-4 mx-auto rounded-xl z-50 overflow-hidden transition-all duration-300 ${
+        isScrolled 
+          ? 'bg-yellow-200/90 shadow-xl scale-100 opacity-100' 
+          : 'bg-yellow-100/80 shadow-md scale-95 opacity-90'
+      }`}
       aria-label="Main navigation"
     >
-      <div className="container mx-auto px-4 py-2.5">
+      <div className={`container mx-auto px-4 ${isScrolled ? 'py-3' : 'py-4'} transition-all duration-300`}>
         <div className="flex justify-between items-center">
           <Link 
             href="/" 
@@ -42,11 +55,18 @@ export default function Navbar() {
               whileHover={{ rotate: 12, scale: 1.05 }}
               transition={{ type: 'spring', stiffness: 400 }}
             >
-              <GiLotus className="w-8 h-8 text-amber-700" />
+              <GiLotus className={`w-8 h-8 text-gray-900 ${isScrolled ? 'scale-90' : 'scale-100'} transition-transform duration-300`} />
             </motion.div>
-            <h1 className="text-xl font-semibold bg-gradient-to-r from-amber-700 to-amber-600 bg-clip-text text-transparent">
-            Sri Sudarshanarama Purana Maha Viharaya
-            </h1>
+            <h1
+  className={`font-semibold text-gray-900 transition-all duration-300
+    ${isScrolled 
+      ? 'text-base sm:text-lg md:text-xl' 
+      : 'text-lg sm:text-xl md:text-2xl'}
+  `}
+>
+  Sri Sudarshanarama Purana Maha Viharaya
+</h1>
+
           </Link>
 
           {/* Desktop Navigation */}
@@ -65,8 +85,8 @@ export default function Navbar() {
                     href={item.path}
                     className={`px-3 py-1.5 flex items-center gap-1.5 text-sm transition-colors ${
                       isActive 
-                        ? 'text-amber-900 font-medium'
-                        : 'text-amber-600 hover:text-amber-800'
+                        ? 'text-gray-900 font-medium'
+                        : 'text-gray-600 hover:text-gray-800'
                     }`}
                     aria-current={isActive ? 'page' : undefined}
                   >
@@ -74,7 +94,7 @@ export default function Navbar() {
                     {item.name}
                     {isActive && (
                       <motion.div 
-                        className="absolute bottom-0 left-0 w-full h-[1.5px] bg-amber-500"
+                        className="absolute bottom-0 left-0 w-full h-[1.5px] bg-gray-800"
                         layoutId="activeIndicator"
                         transition={{ type: 'spring', bounce: 0.1, duration: 0.4 }}
                       />
@@ -89,15 +109,15 @@ export default function Navbar() {
           <motion.button
             whileHover={{ scale: 1.03 }}
             whileTap={{ scale: 0.97 }}
-            className="md:hidden p-1.5 rounded-md hover:bg-amber-100 focus:outline-none transition-colors"
+            className="md:hidden p-1.5 rounded-md hover:bg-gray-100 focus:outline-none transition-colors"
             onClick={() => setIsMenuOpen(!isMenuOpen)}
             aria-label="Toggle navigation"
             aria-expanded={isMenuOpen}
           >
             {isMenuOpen ? (
-              <FiX className="w-6 h-6 text-amber-700" />
+              <FiX className="w-6 h-6 text-gray-900" />
             ) : (
-              <FiMenu className="w-6 h-6 text-amber-700" />
+              <FiMenu className="w-6 h-6 text-gray-900" />
             )}
           </motion.button>
         </div>
@@ -110,7 +130,7 @@ export default function Navbar() {
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -10 }}
               transition={{ duration: 0.15 }}
-              className="md:hidden mt-2 border-t border-amber-100"
+              className="md:hidden mt-2 border-t border-gray-100"
             >
               <ul className="flex flex-col space-y-1 pt-2">
                 {navigation.map((item) => {
@@ -126,15 +146,15 @@ export default function Navbar() {
                         href={item.path}
                         className={`px-3 py-2 flex items-center gap-2 text-base ${
                           isActive
-                            ? 'text-amber-900 font-medium bg-amber-50'
-                            : 'text-amber-600 hover:bg-amber-50'
+                            ? 'text-gray-900 font-medium bg-gray-50'
+                            : 'text-gray-600 hover:bg-gray-50'
                         } rounded-md transition-colors`}
                         aria-current={isActive ? 'page' : undefined}
                       >
                         <Icon className="w-5 h-5" />
                         {item.name}
                         {isActive && (
-                          <div className="ml-auto w-1.5 h-1.5 bg-amber-500 rounded-full" />
+                          <div className="ml-auto w-1.5 h-1.5 bg-gray-800 rounded-full" />
                         )}
                       </Link>
                     </motion.li>

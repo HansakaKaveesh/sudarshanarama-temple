@@ -1,115 +1,167 @@
-import { FaFacebookF, FaYoutube, FaMapMarkerAlt, FaPhoneAlt, FaEnvelope, FaInstagram, FaLinkedin } from 'react-icons/fa';
+import {
+  FaFacebookF,
+  FaYoutube,
+  FaMapMarkerAlt,
+  FaPhoneAlt,
+  FaEnvelope,
+  FaInstagram,
+  FaLinkedin,
+  FaTwitter,
+  FaPrayingHands,
+} from 'react-icons/fa';
 
 export default function Footer() {
+  const socialLinks = [
+    [FaFacebookF, 'https://facebook.com', 'Facebook'],
+    [FaYoutube, 'https://youtube.com', 'YouTube'],
+    [FaInstagram, 'https://instagram.com', 'Instagram'],
+    [FaTwitter, 'https://twitter.com', 'Twitter'],
+    [FaLinkedin, 'https://linkedin.com', 'LinkedIn'],
+  ];
+
+  const quickLinks = [
+    ['/events', 'Upcoming Events'],
+    ['/dhamma-school', 'Dhamma School'],
+    ['/meditation', 'Meditation Programs'],
+    ['/donations', 'Make a Donation'],
+    ['/contact', 'Contact Us'],
+    ['/history', 'Temple History'],
+  ];
+
+  const contactInfo = [
+    [FaMapMarkerAlt, '123 Dharma Road, Colombo 05<br/>Sri Lanka'],
+    [FaPhoneAlt, '+94 112 345 678'],
+    [FaEnvelope, 'contact@sudarshanarama.lk'],
+  ];
+
   return (
-    <footer 
-      className="relative border-t-4 border-yellow-200 shadow-lg overflow-hidden"
+    <footer
+      className="relative border-t-4 border-amber-300 shadow-xl overflow-hidden text-amber-50"
       style={{
         backgroundImage: "url('/footer.jpg')",
         backgroundSize: 'cover',
-        backgroundPosition: 'center',
-        backgroundRepeat: 'no-repeat'
+        backgroundPosition: 'center top 30%',
+        backgroundRepeat: 'no-repeat',
       }}
     >
-      {/* Gradient Overlay */}
-      <div className="absolute inset-0 bg-gradient-to-t from-yellow-900/60 to-yellow-800/30" aria-hidden="true"></div>
-      
-      <div className="relative container mx-auto px-4 py-12">
-        <div className="grid md:grid-cols-4 gap-8 mb-12">
-          {/* Temple Information */}
-          <div className="text-yellow-50 md:col-span-2">
-            <h3 className="text-2xl font-serif font-bold mb-4 text-yellow-100 drop-shadow-md">
-              Sri Sudarshanarama Purana Maha Viharaya
-            </h3>
-            <p className="text-sm mb-4 leading-relaxed text-yellow-50/90 max-w-xl">
-              Nestled in the heart of Colombo, our temple has been a beacon of Buddhist teachings 
-              and community harmony since 1958. Join us in preserving ancient wisdom while 
-              embracing modern spiritual needs.
+      {/* Enhanced Gradient Overlay */}
+      <div className="absolute inset-0 bg-gradient-to-t from-amber-900/95 to-amber-800/40" aria-hidden="true" />
+
+      <div className="relative container mx-auto px-4 py-16">
+        <div className="grid grid-cols-1 lg:grid-cols-5 gap-12 mb-16">
+          {/* Temple Info */}
+          <div className="lg:col-span-2">
+            <div className="flex items-center mb-6">
+              <FaPrayingHands className="w-12 h-12 text-amber-300 mr-4" />
+              <h3 className="text-2xl xl:text-3xl font-serif font-bold text-amber-100 drop-shadow-lg">
+                Sri Sudarshanarama Purana Maha Viharaya
+              </h3>
+            </div>
+            <p className="text-base mb-6 leading-relaxed text-amber-50/95 max-w-2xl">
+              Established in 1958, our temple serves as a spiritual sanctuary in Colombo, preserving Theravada Buddhist 
+              traditions while fostering a modern, inclusive community. We offer daily meditation sessions, Dhamma 
+              discussions, and cultural programs for all ages.
             </p>
-            <div className="flex items-center space-x-2">
-              <span className="bg-yellow-100/20 px-3 py-1 rounded-full text-xs font-medium text-yellow-100 backdrop-blur-sm border border-yellow-100/30">
-                🕉️ Open Daily: 5 AM - 8 PM
-              </span>
+            <div className="flex flex-wrap gap-3">
+              {['☸️ Free Meditation Classes', '📅 Weekly Dhamma Talks', '👨👩👧👦 Family Programs'].map((text) => (
+                <span
+                  key={text}
+                  className="bg-amber-100/15 px-4 py-2 rounded-full text-sm font-medium text-amber-100 backdrop-blur-sm border border-amber-100/25 hover:bg-amber-100/25 transition-colors cursor-default"
+                >
+                  {text}
+                </span>
+              ))}
             </div>
           </div>
 
-          {/* Quick Links */}
-          <div className="text-yellow-50">
-            <h4 className="text-lg font-semibold mb-4 text-yellow-100 drop-shadow-md">Quick Links</h4>
-            <ul className="space-y-3 text-sm">
-              {[
-                ['/events', 'Upcoming Events'],
-                ['/dhamma-school', 'Dhamma School'],
-                ['/donations', 'Make a Donation'],
-                ['/contact', 'Volunteer Opportunities']
-              ].map(([href, text]) => (
-                <li key={href}>
-                  <a href={href} className="group hover:text-yellow-200 transition-colors flex items-center">
-                    <span className="mr-2 transition-transform group-hover:translate-x-1">➔</span>
-                    {text}
-                  </a>
-                </li>
+          {/* Quick Links Grid */}
+          <div className="lg:col-span-1">
+            <h4 className="text-xl font-semibold mb-6 text-amber-100 drop-shadow-md">Explore</h4>
+            <div className="grid grid-cols-2 gap-4">
+              {quickLinks.map(([href, text]) => (
+                <a
+                  key={href}
+                  href={href}
+                  className="group flex items-center p-3 -m-3 rounded-lg hover:bg-amber-100/10 transition-colors"
+                >
+                  <span className="w-2 h-2 mr-3 bg-amber-300 rounded-full transition-transform group-hover:scale-150" />
+                  <span className="text-sm font-medium">{text}</span>
+                </a>
               ))}
-            </ul>
+            </div>
           </div>
 
           {/* Contact & Social */}
-          <div className="text-yellow-50">
-            <h4 className="text-lg font-semibold mb-4 text-yellow-100 drop-shadow-md">Connect With Us</h4>
-            <ul className="space-y-3 text-sm mb-6">
-              {[
-                [FaMapMarkerAlt, '123 Dharma Road, Colombo 05<br/>Sri Lanka'],
-                [FaPhoneAlt, '+94 112 345 678'],
-                [FaEnvelope, 'contact@sudarshanarama.lk']
-              ].map(([Icon, text], index) => (
-                <li 
-                  key={index}
-                  className="flex items-center hover:text-yellow-200 transition-colors group"
-                >
-                  <Icon className="w-5 h-5 mr-3 text-yellow-200 transition-transform group-hover:scale-110" />
-                  <span dangerouslySetInnerHTML={{ __html: text }} />
-                </li>
-              ))}
-            </ul>
+          <div className="lg:col-span-2">
+            <h4 className="text-xl font-semibold mb-6 text-amber-100 drop-shadow-md">Connect</h4>
+            <div className="grid gap-6 md:grid-cols-2">
+              <address className="not-italic space-y-5">
+                {contactInfo.map(([Icon, text], index) => (
+                  <div
+                    key={index}
+                    className="flex items-start group transition-colors hover:text-amber-200"
+                  >
+                    <Icon className="w-6 h-6 mt-1 mr-4 text-amber-300 group-hover:animate-pulse" />
+                    {index === 1 ? (
+                      <a href={`tel:${text}`} className="hover:underline underline-offset-4">{text}</a>
+                    ) : index === 2 ? (
+                      <a href={`mailto:${text}`} className="hover:underline underline-offset-4">{text}</a>
+                    ) : (
+                      <span dangerouslySetInnerHTML={{ __html: text }} />
+                    )}
+                  </div>
+                ))}
+              </address>
 
-            <div className="flex space-x-3 mt-4">
-              {[
-                [FaFacebookF, 'https://facebook.com'],
-                [FaYoutube, 'https://youtube.com'],
-                [FaInstagram, 'https://instagram.com']
-              ].map(([Icon, href], index) => (
-                <a 
-                  key={index}
-                  href={href}
-                  target="_blank" 
-                  rel="noopener noreferrer"
-                  className="p-2 bg-yellow-100/20 rounded-full hover:bg-yellow-100/30 transition-all duration-300 hover:scale-110 shadow-sm hover:shadow-yellow-100/20"
-                  aria-label={`Follow us on ${Icon.displayName}`}
-                >
-                  <Icon className="w-6 h-6 text-yellow-100" />
-                </a>
-              ))}
+              <div>
+                <h5 className="text-sm font-semibold mb-4 text-amber-200">Follow Our Journey</h5>
+                <div className="flex flex-wrap gap-3">
+                  {socialLinks.map(([Icon, href, name], index) => (
+                    <a
+                      key={index}
+                      href={href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="p-3 bg-amber-100/15 rounded-xl hover:bg-amber-100/25 transition-all duration-300 hover:scale-105 shadow-sm hover:shadow-amber-100/30 group"
+                      aria-label={`Follow us on ${name}`}
+                    >
+                      <Icon className="w-6 h-6 text-amber-100 group-hover:text-amber-300 transition-colors" />
+                    </a>
+                  ))}
+                </div>
+              </div>
             </div>
           </div>
         </div>
 
         {/* Copyright Section */}
-        <div className="border-t border-yellow-100/20 pt-8">
-          <div className="flex flex-col md:flex-row items-center justify-between text-yellow-100">
-            <div className="text-center md:text-left mb-4 md:mb-0 text-sm">
-              &copy; {new Date().getFullYear()} Sri Sudarshanarama Purana Maha Viharaya. 
-              All rights reserved. | <a href="/privacy" className="hover:text-yellow-200 underline-offset-4 hover:underline">Privacy Policy</a>
+        <div className="border-t border-amber-100/25 pt-8">
+          <div className="flex flex-col md:flex-row items-center justify-between gap-4 text-amber-100/90">
+            <div className="text-center md:text-left text-sm">
+              &copy; {new Date().getFullYear()} Sri Sudarshanarama Purana Maha Viharaya. All rights reserved.
+              <div className="mt-1 space-x-4">
+                {['Privacy Policy', 'Terms of Service', 'Accessibility'].map((text) => (
+                  <a
+                    key={text}
+                    href={`/${text.toLowerCase().replace(/ /g, '-')}`}
+                    className="hover:text-amber-300 transition-colors underline-offset-4 hover:underline"
+                  >
+                    {text}
+                  </a>
+                ))}
+              </div>
             </div>
             <div className="text-xs flex items-center">
-              Crafted with <span className="text-yellow-200 mx-1">❤️</span> by
-              <a 
-                href="https://www.linkedin.com/in/hansaka-wijesinghe-285748142/" 
-                target="_blank" 
+              Developed 
+              by
+              <a
+                href="https://www.linkedin.com/in/hansaka-wijesinghe-285748142/"
+                target="_blank"
                 rel="noopener noreferrer"
-                className="ml-1 hover:text-yellow-200 font-medium transition-colors flex items-center"
+                className="ml-1 hover:text-amber-300 font-medium transition-colors flex items-center group"
               >
                 Hansaka Wijesinghe
-                <FaLinkedin className="ml-2 w-4 h-4 text-yellow-100 hover:text-yellow-200" />
+                <FaLinkedin className="ml-2 w-4 h-4 text-amber-100 group-hover:text-amber-300 transition-colors" />
               </a>
             </div>
           </div>

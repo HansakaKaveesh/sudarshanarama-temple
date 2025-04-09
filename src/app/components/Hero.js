@@ -1,81 +1,160 @@
 "use client";
-import { motion } from 'framer-motion';
-import { FiChevronDown, FiArrowRight } from 'react-icons/fi';
+import { motion, useTransform, useScroll } from 'framer-motion';
+import { FiChevronDown, FiArrowRight, FiMapPin, FiCalendar } from 'react-icons/fi';
+import { GiLotus, GiStoneBlock } from 'react-icons/gi';
 import Image from 'next/image';
 
 export default function Hero() {
+  const { scrollYProgress } = useScroll();
+  const y1 = useTransform(scrollYProgress, [0, 1], [0, 150]);
+  const y2 = useTransform(scrollYProgress, [0, 1], [0, 300]);
+
+  const floatingLotuses = [
+    { id: 1, top: '15%', left: '5%', size: 'text-6xl', delay: 0.2 },
+    { id: 2, top: '70%', left: '85%', size: 'text-5xl', delay: 0.5 },
+    { id: 3, top: '40%', left: '20%', size: 'text-7xl', delay: 0.8 },
+  ];
+
   return (
     <section className="relative h-screen flex items-center justify-center overflow-hidden">
-      {/* Gradient overlay */}
-      <div className="absolute inset-0 bg-gradient-to-t from-stone-900/80 via-stone-900/50 to-transparent z-10" />
-      
-      {/* Optimized background image with zoom effect */}
-      <motion.div
-        initial={{ scale: 1.1 }}
-        animate={{ scale: 1 }}
-        transition={{ duration: 1.2, ease: 'easeOut' }}
-        className="absolute inset-0"
-      >
+      {/* Parallax background layers */}
+      <motion.div className="absolute inset-0 z-0" style={{ y: y1 }}>
         <Image
           src="/hero.jpg"
-          alt="Temple Background"
-          
+          alt="Serene temple courtyard with ancient stone statues and lush greenery"
           fill
-          sizes="100vw"
+          sizes="(max-width: 768px) 100vw, 80vw"
           className="object-cover"
           priority
+          quality={90}
         />
       </motion.div>
+      
+      <motion.div className="absolute inset-0 z-1" style={{ y: y2 }}>
+        <div className="absolute inset-0 bg-gradient-to-t from-stone-900/90 via-stone-900/40 to-transparent" />
+      </motion.div>
 
-      {/* Content */}
-      <div className="relative z-20 text-center px-4">
+      {/* Floating decorative elements */}
+      {floatingLotuses.map((lotus) => (
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.4, duration: 0.8 }}
+          key={lotus.id}
+          className={`absolute ${lotus.size} text-amber-200/30 z-20`}
+          style={{ top: lotus.top, left: lotus.left }}
+          initial={{ y: -20, rotate: -15 }}
+          animate={{ y: 20, rotate: 15 }}
+          transition={{
+            duration: 4,
+            delay: lotus.delay,
+            repeat: Infinity,
+            repeatType: 'reverse',
+            ease: 'easeInOut'
+          }}
+        >
+          <GiLotus />
+        </motion.div>
+      ))}
+
+      {/* Ancient stone pattern overlay */}
+      <div className="absolute inset-0 z-10 opacity-20 mix-blend-soft-light">
+        <GiStoneBlock className="w-full h-full text-stone-800" />
+      </div>
+
+      {/* Content container */}
+      <div className="relative z-30 text-center px-4 w-full">
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ staggerChildren: 0.2, delayChildren: 0.3 }}
           className="max-w-4xl mx-auto"
         >
-          <motion.h1
-            initial={{ letterSpacing: '2px' }}
-            animate={{ letterSpacing: '0px' }}
-            transition={{ duration: 1.5 }}
-            className="text-4xl md:text-6xl font-bold mb-6 text-yellow-100 drop-shadow-lg"
+          {/* Location badge */}
+          <motion.div
+            initial={{ opacity: 0, y: 10 }}
+            animate={{ opacity: 1, y: 0 }}
+            className="mb-8 flex items-center justify-center gap-2 text-yellow-100/80"
           >
-            Sri Sudarshanarama Purana Maha Viharaya
+            <FiMapPin className="w-5 h-5" />
+            <span className="font-medium tracking-wide">Kalapaluwawa, Sri Lanka</span>
+          </motion.div>
+
+          {/* Main heading with gradient text */}
+          <motion.h1
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            className="text-4xl md:text-6xl font-bold mb-6 px-4"
+          >
+            <span className="block mb-2 bg-gradient-to-r from-amber-200 to-amber-400 bg-clip-text text-transparent">
+              Sri Sudarshanarama
+            </span>
+            <span className="block text-3xl md:text-5xl font-medium text-amber-100/95 mt-4">
+              Purana Maha Viharaya
+            </span>
           </motion.h1>
-          
+
+          {/* Subtext with decorative border */}
           <motion.p
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
-            transition={{ delay: 1, duration: 1 }}
-            className="text-lg md:text-xl text-yellow-50/95 mb-8 max-w-2xl mx-auto leading-relaxed"
+            transition={{ delay: 0.6 }}
+            className="text-lg md:text-xl text-amber-50/95 mb-8 max-w-2xl mx-auto leading-relaxed font-serif relative py-4"
           >
-            Discover Serenity Through Ancient Wisdom and Mindful Practice
+            <span className="absolute top-0 left-1/2 -translate-x-1/2 w-32 h-px bg-amber-200/30" />
+            "Embracing the Dhamma since 1721"
+            <span className="absolute bottom-0 left-1/2 -translate-x-1/2 w-32 h-px bg-amber-200/30" />
           </motion.p>
 
+          {/* CTA Button with shine effect */}
+          <motion.div
+            initial={{ scale: 0.95 }}
+            animate={{ scale: 1 }}
+            transition={{ type: 'spring', stiffness: 200 }}
+          >
+            <motion.button 
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              className="group relative bg-amber-300/90 hover:bg-amber-200 text-stone-900 px-8 py-4 rounded-full font-semibold transition-all duration-300 shadow-lg hover:shadow-amber-300/20 flex items-center gap-2 mx-auto overflow-hidden"
+            >
+              <span className="relative z-10">Explore Our Heritage</span>
+              <FiArrowRight className="w-5 h-5 transition-transform group-hover:translate-x-1 relative z-10" />
+              <div className="absolute inset-0 opacity-0 group-hover:opacity-30 transition-opacity duration-300">
+                <div className="absolute -inset-8 bg-gradient-to-r from-transparent via-amber-100/50 to-transparent animate-shine" />
+              </div>
+            </motion.button>
+          </motion.div>
+
+          {/* Event notification */}
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
-            transition={{ delay: 1.2, duration: 0.8 }}
+            transition={{ delay: 1.5 }}
+            className="mt-6 inline-flex items-center gap-3 px-6 py-3 rounded-full border border-amber-200/30 bg-gradient-to-r from-amber-400/10 to-amber-200/5 backdrop-blur-sm"
           >
-            <button className="group bg-yellow-100/90 hover:bg-yellow-50 text-stone-900 px-8 py-3 rounded-full font-semibold transition-all duration-300 hover:scale-105 shadow-lg hover:shadow-yellow-100/20 flex items-center gap-2 mx-auto">
-              Explore Teachings
-              <FiArrowRight className="w-5 h-5 transition-transform group-hover:translate-x-1" />
-            </button>
+            <FiCalendar className="w-5 h-5 text-amber-200/80" />
+            <span className="text-amber-200/90 text-sm font-medium">
+              Join us for Vesak Celebrations May 23-25
+            </span>
           </motion.div>
         </motion.div>
       </div>
 
       {/* Animated scroll indicator */}
       <motion.div
-        className="absolute bottom-8 left-1/2 -translate-x-1/2 z-20"
+        className="absolute bottom-8 left-1/2 -translate-x-1/2 z-20 flex flex-col items-center gap-2"
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
-        transition={{ delay: 1.5, duration: 0.8 }}
+        transition={{ delay: 1.8, duration: 0.8 }}
       >
-        <div className="animate-bounce w-10 h-10 flex items-center justify-center rounded-full bg-yellow-100/20 backdrop-blur-sm border border-yellow-100/30">
+        <motion.div 
+          className="w-10 h-10 flex items-center justify-center rounded-full bg-yellow-100/20 backdrop-blur-sm border border-yellow-100/30"
+          animate={{ y: [0, 15, 0] }}
+          transition={{ duration: 2, repeat: Infinity }}
+        >
           <FiChevronDown className="w-6 h-6 text-yellow-100" />
-        </div>
+        </motion.div>
+        <span className="text-sm text-amber-100/80 font-medium tracking-wide">
+          Scroll to Explore
+        </span>
       </motion.div>
     </section>
   );
