@@ -58,13 +58,13 @@ export default function Navbar() {
               <GiLotus className={`w-8 h-8 text-gray-900 ${isScrolled ? 'scale-90' : 'scale-100'} transition-transform duration-300`} />
             </motion.div>
             <h1
-  className={`font-semibold text-gray-900 transition-all duration-300
+  className={`font-semibold font-sinhala text-gray-900 transition-all duration-300
     ${isScrolled 
       ? 'text-base sm:text-lg md:text-xl' 
       : 'text-lg sm:text-xl md:text-2xl'}
   `}
 >
-  Sri Sudarshanarama Purana Maha Viharaya
+ශ්‍රී සුදර්ශනාරාම පුරාණ මහා විහාරය - කලපලුවාව
 </h1>
 
           </Link>

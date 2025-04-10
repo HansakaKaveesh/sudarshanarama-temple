@@ -82,27 +82,29 @@ export default function Hero() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
-            className="text-4xl md:text-6xl font-bold mb-6 px-4"
-          >
-            <span className="block mb-2 bg-gradient-to-r from-amber-200 to-amber-400 bg-clip-text text-transparent">
-              Sri Sudarshanarama
-            </span>
-            <span className="block text-3xl md:text-5xl font-medium text-amber-100/95 mt-4">
-              Purana Maha Viharaya
-            </span>
+            className="text-4xl md:text-6xl font-bold mb-6 px-4 font-sinhala"
+>
+          <span className="block font-medium text-amber-200 mt-2">
+            ශ්‍රී සුදර්ශනාරාම පුරාණ මහා විහාරය
+          </span>
+          <span className="block text-3xl md:text-5xl font-medium text-amber-100/95 mt-2">
+          කලපලුවාව
+          </span>
           </motion.h1>
 
+
           {/* Subtext with decorative border */}
-          <motion.p
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 0.6 }}
-            className="text-lg md:text-xl text-amber-50/95 mb-8 max-w-2xl mx-auto leading-relaxed font-serif relative py-4"
-          >
-            <span className="absolute top-0 left-1/2 -translate-x-1/2 w-32 h-px bg-amber-200/30" />
-            "Embracing the Dhamma since 1721"
-            <span className="absolute bottom-0 left-1/2 -translate-x-1/2 w-32 h-px bg-amber-200/30" />
-          </motion.p>
+<motion.p
+  initial={{ opacity: 0 }}
+  animate={{ opacity: 1 }}
+  transition={{ delay: 0.6 }}
+  className="text-lg md:text-xl text-amber-50/95 mb-8 max-w-2xl mx-auto leading-relaxed font-serif relative py-4"
+>
+  <span className="absolute top-0 left-1/2 -translate-x-1/2 w-32 h-px bg-amber-200/30" />
+  "ධම්මය සමඟ ඒකාබද්ධව 1721 සිට"
+  <span className="absolute bottom-0 left-1/2 -translate-x-1/2 w-32 h-px bg-amber-200/30" />
+</motion.p>
+
 
           {/* CTA Button with shine effect */}
           <motion.div
