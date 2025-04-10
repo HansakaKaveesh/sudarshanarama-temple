@@ -38,10 +38,10 @@ export default function Navbar() {
 
   return (
     <nav 
-      className={`fixed top-6 left-4 right-4 mx-auto rounded-xl z-50 overflow-hidden transition-all duration-300 ${
+      className={`fixed top-4 left-4 right-4 mx-auto rounded-xl z-50 overflow-hidden transition-all duration-300 ${
         isScrolled 
           ? 'bg-yellow-200/90 shadow-xl scale-100 opacity-100' 
-          : 'bg-yellow-100/80 shadow-md scale-95 opacity-90'
+          : 'bg-yellow-100/80 shadow-md scale-100 opacity-100'
       }`}
       aria-label="Main navigation"
     >
@@ -60,8 +60,8 @@ export default function Navbar() {
             <h1
   className={`font-semibold font-sinhala text-gray-900 transition-all duration-300
     ${isScrolled 
-      ? 'text-base sm:text-lg md:text-xl' 
-      : 'text-lg sm:text-xl md:text-2xl'}
+      ? 'text-lg sm:text-lg md:text-2xl' 
+      : 'text-lg sm:text-lg md:text-2xl'}
   `}
 >
 ශ්‍රී සුදර්ශනාරාම පුරාණ මහා විහාරය - කලපලුවාව
