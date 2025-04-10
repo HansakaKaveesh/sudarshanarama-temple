@@ -101,7 +101,7 @@ export default function Hero() {
   className="text-lg md:text-xl text-amber-50/95 mb-8 max-w-2xl mx-auto leading-relaxed font-serif relative py-4"
 >
   <span className="absolute top-0 left-1/2 -translate-x-1/2 w-32 h-px bg-amber-200/30" />
-  "ධම්මය සමඟ ඒකාබද්ධව 1721 සිට"
+  ධම්මය සමඟ ඒකාබද්ධව 1721 සිට
   <span className="absolute bottom-0 left-1/2 -translate-x-1/2 w-32 h-px bg-amber-200/30" />
 </motion.p>
 
