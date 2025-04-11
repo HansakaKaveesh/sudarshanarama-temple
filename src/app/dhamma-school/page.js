@@ -86,7 +86,7 @@ export default function DhammaSchool() {
                   </h2>
                   <div className="max-w-3xl mx-auto">
                     <p className="text-lg text-gray-800 leading-relaxed mb-8">
-                      Our temple is a sanctuary of peace and mindfulness, nurturing spiritual growth through the Buddha's timeless wisdom. We offer guidance, meditation, and Dhamma education for all ages in a compassionate environment.
+                    Our temple is a sanctuary of peace and mindfulness, nurturing spiritual growth through the Buddha&rsquo;s timeless wisdom. We offer guidance, meditation, and Dhamma education for all ages in a compassionate environment.
                     </p>
                     <div className="h-1 w-24 bg-amber-600 mx-auto rounded-full"/>
                   </div>
@@ -101,7 +101,7 @@ export default function DhammaSchool() {
                     },
                     { 
                       title: "Our Vision", 
-                      content: "A spiritually awakened community living in harmony with Buddha's teachings",
+                      content: "A spiritually awakened community living in harmony with Buddhas teachings",
                       icon: "☸️"
                     },
                     { 
@@ -131,7 +131,7 @@ export default function DhammaSchool() {
                       <h3 className="text-3xl font-bold text-yellow-900 mb-6">Our Heritage</h3>
                       <p className="text-gray-800 leading-relaxed">
                         Established in 1975, Sri Sumangala Dhamma School has blossomed into a beacon of Buddhist education. 
-                        Through decades of dedicated service, we've nurtured generations in the Noble Eightfold Path, 
+                        Through decades of dedicated service, we&rsquo;ve nurtured generations in the Noble Eightfold Path, 
                         guided by venerable monks and devoted teachers committed to preserving our rich spiritual legacy.
                       </p>
                     </div>
@@ -139,11 +139,11 @@ export default function DhammaSchool() {
             
                   <div className="bg-yellow-100 rounded-3xl p-8 md:p-12 relative overflow-hidden">
                     <div className="absolute bottom-0 right-0 opacity-10 text-9xl">🙏</div>
-                    <h3 className="text-3xl font-bold text-yellow-900 mb-6">Principal's Guidance</h3>
+                    <h3 className="text-3xl font-bold text-yellow-900 mb-6">Principal&rsquo;s Guidance</h3>
                     <blockquote className="text-gray-800 text-lg italic leading-relaxed mb-6">
-                      True Dhamma education is not merely in books, but in cultivating kind hearts and wise minds. 
-                      Together with our dedicated teachers and supportive community, we strive to raise a generation 
-                      rooted in Buddhist values.
+                    &ldquo;True Dhamma education is not merely in books, but in cultivating kind hearts and wise minds.
+  Together with our dedicated teachers and supportive community, we strive to raise a generation
+  rooted in Buddhist values.&rdquo;
                     </blockquote>
                     <div className="flex items-center gap-4">
                       <div className="w-16 h-16 rounded-full bg-amber-600 flex items-center justify-center text-white text-2xl">A</div>
