@@ -505,7 +505,7 @@ export default function DhammaSchool() {
   <section className="max-w-6xl mx-auto px-4 py-20" id="contact">
   <div className="text-center mb-16">
     <h2 className="text-4xl font-bold text-amber-700 mb-4">Get in Touch</h2>
-    <p className="text-gray-600 max-w-2xl mx-auto">Connect with us for spiritual guidance, event inquiries, or volunteer opportunities. We're here to help!</p>
+    <p className="text-gray-600 max-w-2xl mx-auto">Connect with us for spiritual guidance, event inquiries, or volunteer opportunities. We&rsquo;re here to help!</p>
   </div>
 
   <div className="bg-white shadow-xl rounded-2xl overflow-hidden grid grid-cols-1 lg:grid-cols-3 gap-0">
