@@ -74,7 +74,7 @@ export default function DhammaSchool() {
   <div className="flex flex-col lg:flex-row gap-8 items-center">
     <div className="lg:w-1/2 space-y-6">
       <p className="text-lg leading-relaxed text-gray-700 italic border-l-4 border-amber-600 pl-4">
-        "Education is the light that illuminates the path to enlightenment"
+        Education is the light that illuminates the path to enlightenment
       </p>
       <p className="text-lg leading-relaxed text-gray-800">
         Founded in 1975 by Ven. Dr. Walpola Piyananda Thero, Sri Sumangala Dhamma School has blossomed from a small meditation group to a premier institution nurturing over 50,000 students in Buddhist philosophy. Our journey reflects the timeless wisdom of the Dhamma adapting to modern education.
