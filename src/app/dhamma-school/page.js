@@ -1,5 +1,6 @@
 'use client'
 import { useState } from 'react'
+import Papers from './components/pastpaper'
 
 export default function DhammaSchool() {
   const [selectedCategory, setSelectedCategory] = useState('school')
@@ -10,9 +11,10 @@ export default function DhammaSchool() {
     { id: 'facilities', label: 'Facilities' },
     { id: 'staff', label: 'Teaching Staff' },
     { id: 'prefects', label: 'Prefects' },
-    { id: 'programs', label: 'Programs & Activities' },
+    { id: 'pastpapers', label: 'Pastpapers' },
     { id: 'gallery', label: 'Gallery' },
     { id: 'contact', label: 'Contact Us' },
+    
   ]
 
   return (
@@ -71,7 +73,7 @@ export default function DhammaSchool() {
               <section className="relative  py-16 px-4 sm:px-8 lg:px-16">
               <div className="max-w-7xl mx-auto">
                 {/* Decorative Dharma Wheel */}
-                <div className="absolute top-0 left-1/2 -translate-x-1/2 opacity-10">
+                <div className="absolute top-0 left-1/2 -translate-x-1/2 opacity-10 mt-4">
                   <svg className="w-48 h-48" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M50 100C77.6142 100 100 77.6142 100 50C100 22.3858 77.6142 0 50 0C22.3858 0 0 22.3858 0 50C0 77.6142 22.3858 100 50 100Z" fill="#FBBF24"/>
                     <path d="M50 85.7143C69.3395 85.7143 85.7143 69.3395 85.7143 50C85.7143 30.6605 69.3395 14.2857 50 14.2857C30.6605 14.2857 14.2857 30.6605 14.2857 50C14.2857 69.3395 30.6605 85.7143 50 85.7143Z" fill="white"/>
@@ -80,17 +82,26 @@ export default function DhammaSchool() {
                 </div>
             
                 <header className="relative z-10 text-center mb-16">
-                  <h2 className="text-4xl sm:text-5xl font-bold text-yellow-900 mb-6 font-sinhala">
-                    <span className="block english-font">Sri Sumangala Dhamma School</span>
-                    ශ්‍රි සුමංගල දහම් පාසැල
-                  </h2>
-                  <div className="max-w-3xl mx-auto">
-                    <p className="text-lg text-gray-800 leading-relaxed mb-8">
-                    Our temple is a sanctuary of peace and mindfulness, nurturing spiritual growth through the Buddha&rsquo;s timeless wisdom. We offer guidance, meditation, and Dhamma education for all ages in a compassionate environment.
-                    </p>
-                    <div className="h-1 w-24 bg-amber-600 mx-auto rounded-full"/>
-                  </div>
-                </header>
+  {/* Logo */}
+  <img
+    src="/logodp.png" // Replace with your actual logo path
+    alt="Dhamma School Logo"
+    className="w-20 h-20 sm:w-24 sm:h-24 mx-auto mb-4 object-contain"
+  />
+
+  <h2 className="text-4xl sm:text-5xl font-bold text-yellow-900 mb-6 font-sinhala">
+    <span className="block english-font">Sri Sumangala Dhamma School</span>
+    ශ්‍රි සුමංගල දහම් පාසැල
+  </h2>
+
+  <div className="max-w-3xl mx-auto">
+    <p className="text-lg text-gray-800 leading-relaxed mb-8">
+      Our temple is a sanctuary of peace and mindfulness, nurturing spiritual growth through the Buddha&rsquo;s timeless wisdom. We offer guidance, meditation, and Dhamma education for all ages in a compassionate environment.
+    </p>
+    <div className="h-1 w-24 bg-amber-600 mx-auto rounded-full" />
+  </div>
+</header>
+
             
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-20">
                   {[
@@ -312,101 +323,14 @@ export default function DhammaSchool() {
           </section>
         )}
 
-        {selectedCategory === 'programs' && (
-          <section className="max-w-4xl mx-auto px-4 py-12">
-          <h2 className="text-3xl font-bold mb-8 text-amber-700 text-center">Annual Programs</h2>
-          <div className="space-y-8">
-            {/* Program 1 */}
-            <div className="group flex flex-col md:flex-row items-stretch bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300 overflow-hidden">
-              <div className="md:w-1/3 relative overflow-hidden">
-                <img 
-                  src="/path-to-bhakti-gee-image.jpg" 
-                  alt="Bhakti Gee Performance" 
-                  className="w-full h-48 md:h-full object-cover transform group-hover:scale-105 transition-transform duration-300"
-                  loading="lazy"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-amber-800/30 to-transparent"></div>
-              </div>
-              <div className="p-6 md:w-2/3 border-l-4 border-amber-500">
-                <div className="flex items-center gap-2 mb-3">
-                  <span className="bg-amber-100 text-amber-700 px-3 py-1 rounded-full text-sm font-medium">Oct 15-20</span>
-                  <span className="text-gray-500 text-sm">• Annual Event</span>
-                </div>
-                <h3 className="text-2xl font-bold text-gray-800 mb-2">Bhakti Gee Competition</h3>
-                <p className="text-gray-600 mb-4">Experience the divine harmony of devotional songs performed by talented artists from across the region. This annual October event features both traditional bhajans and contemporary spiritual compositions.</p>
-                <div className="flex items-center gap-4">
-                  <button className="text-amber-700 hover:text-amber-800 font-medium flex items-center">
-                    View Schedule
-                    <svg className="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5l7 7-7 7"/>
-                    </svg>
-                  </button>
-                  <span className="text-gray-500 text-sm">Free Entry</span>
-                </div>
-              </div>
-            </div>
+        {selectedCategory === 'pastpapers' && (
+          
+         <div>
+         
+         <Papers />
+       
+        </div>
         
-            {/* Program 2 */}
-            <div className="group flex flex-col md:flex-row items-stretch bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300 overflow-hidden">
-              <div className="md:w-1/3 relative overflow-hidden">
-                <img 
-                  src="/path-to-art-exhibition-image.jpg" 
-                  alt="Spiritual Art Exhibition" 
-                  className="w-full h-48 md:h-full object-cover transform group-hover:scale-105 transition-transform duration-300"
-                  loading="lazy"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-purple-800/30 to-transparent"></div>
-              </div>
-              <div className="p-6 md:w-2/3 border-l-4 border-purple-500">
-                <div className="flex items-center gap-2 mb-3">
-                  <span className="bg-purple-100 text-purple-700 px-3 py-1 rounded-full text-sm font-medium">Mar 20-25</span>
-                  <span className="text-gray-500 text-sm">• Art & Culture</span>
-                </div>
-                <h3 className="text-2xl font-bold text-gray-800 mb-2">Spiritual Art Exhibition</h3>
-                <p className="text-gray-600 mb-4">Explore sacred art forms through centuries-old traditions and modern interpretations. Features live demonstrations, artist talks, and interactive workshops.</p>
-                <div className="flex items-center gap-4">
-                  <button className="text-purple-700 hover:text-purple-800 font-medium flex items-center">
-                    View Gallery
-                    <svg className="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5l7 7-7 7"/>
-                    </svg>
-                  </button>
-                  <span className="text-gray-500 text-sm">50+ Artists</span>
-                </div>
-              </div>
-            </div>
-        
-            {/* Program 3 */}
-            <div className="group flex flex-col md:flex-row items-stretch bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300 overflow-hidden">
-              <div className="md:w-1/3 relative overflow-hidden">
-                <img 
-                  src="/path-to-workshop-image.jpg" 
-                  alt="Scripture Workshop" 
-                  className="w-full h-48 md:h-full object-cover transform group-hover:scale-105 transition-transform duration-300"
-                  loading="lazy"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-emerald-800/30 to-transparent"></div>
-              </div>
-              <div className="p-6 md:w-2/3 border-l-4 border-emerald-500">
-                <div className="flex items-center gap-2 mb-3">
-                  <span className="bg-emerald-100 text-emerald-700 px-3 py-1 rounded-full text-sm font-medium">Jul 8-12</span>
-                  <span className="text-gray-500 text-sm">• Educational</span>
-                </div>
-                <h3 className="text-2xl font-bold text-gray-800 mb-2">Scripture Workshop Series</h3>
-                <p className="text-gray-600 mb-4">Deep dive into ancient texts with renowned scholars. Daily sessions include guided readings, group discussions, and practical applications for modern life.</p>
-                <div className="flex items-center gap-4">
-                  <button className="text-emerald-700 hover:text-emerald-800 font-medium flex items-center">
-                    Register Now
-                    <svg className="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5l7 7-7 7"/>
-                    </svg>
-                  </button>
-                  <span className="text-gray-500 text-sm">Limited Seats</span>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
         )}
 
         {selectedCategory === 'staff' && (
