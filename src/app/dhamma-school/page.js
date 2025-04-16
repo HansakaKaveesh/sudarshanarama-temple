@@ -1,6 +1,7 @@
 'use client'
 import { useState } from 'react'
 import Papers from './components/pastpaper'
+import Admission from './components/admission'
 
 export default function DhammaSchool() {
   const [selectedCategory, setSelectedCategory] = useState('school')
@@ -14,6 +15,7 @@ export default function DhammaSchool() {
     { id: 'pastpapers', label: 'Pastpapers' },
     { id: 'gallery', label: 'Gallery' },
     { id: 'contact', label: 'Contact Us' },
+    { id: 'admission', label: 'New admission' },
     
   ]
 
@@ -43,7 +45,7 @@ export default function DhammaSchool() {
 {/* Navigation */}
 <nav className="sticky top-0 bg-white/90 backdrop-blur-md shadow-md z-40 w-full">
   <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3 overflow-x-auto scrollbar-hide scroll-smooth">
-    <div className="flex items-center justify-start space-x-4 w-max min-w-full">
+    <div className="flex items-center justify-start space-x-2 w-max min-w-full">
       {categories.map((category) => (
         <button
           key={category.id}
@@ -103,88 +105,109 @@ export default function DhammaSchool() {
 </header>
 
             
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-20">
-                  {[
-                    { 
-                      title: "Our Mission", 
-                      content: "Guide individuals on the path of Dhamma through peace, compassion, and mindful living",
-                      icon: "🌸"
-                    },
-                    { 
-                      title: "Our Vision", 
-                      content: "A spiritually awakened community living in harmony with Buddhas teachings",
-                      icon: "☸️"
-                    },
-                    { 
-                      title: "Our Values", 
-                      content: "Compassion, mindfulness, generosity, discipline, and wisdom in all practices",
-                      icon: "🧘"
-                    }
-                  ].map((card, index) => (
-                    <div key={index} className="group relative bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 border-l-4 border-amber-500">
-                      <div className="absolute top-4 right-4 text-3xl opacity-30">{card.icon}</div>
-                      <h3 className="text-2xl font-bold text-yellow-900 mb-4">{card.title}</h3>
-                      <p className="text-gray-700 leading-relaxed">{card.content}</p>
-                    </div>
-                  ))}
-                </div>
+<div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-20">
+  {[
+    { 
+      title: "Our Mission", 
+      content: "Guide individuals on the path of Dhamma through peace, compassion, and mindful living",
+      icon: "🌸"
+    },
+    { 
+      title: "Our Vision", 
+      content: "A spiritually awakened community living in harmony with Buddha's teachings",
+      icon: "☸️"
+    },
+    { 
+      title: "Our Values", 
+      content: "Compassion, mindfulness, generosity, discipline, and wisdom in all practices",
+      icon: "🧘"
+    }
+  ].map((card, index) => (
+    <div 
+      key={index} 
+      className="group relative bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-500 ease-out overflow-hidden 
+                 transform-gpu hover:-translate-y-2 hover:scale-[1.02]
+                 before:content-[''] before:absolute before:top-0 before:left-0 before:w-1 before:h-0 
+                 before:bg-gradient-to-b before:from-amber-400 before:to-amber-600 
+                 before:transition-all before:duration-700 before:group-hover:h-full"
+    >
+      <div className="absolute inset-0 bg-gradient-to-br from-white/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+      
+      <div className="absolute top-4 right-4 text-3xl opacity-30 group-hover:opacity-100 
+                     transition-all duration-500 group-hover:rotate-12 group-hover:scale-125">
+        {card.icon}
+      </div>
+      
+      <div className="relative space-y-4">
+        <h3 className="text-2xl font-bold text-amber-900 mb-4 transition-colors 
+                      duration-300 group-hover:text-amber-700">
+          {card.title}
+        </h3>
+        <p className="text-gray-700 leading-relaxed transition-colors duration-300 
+                     group-hover:text-gray-800 group-hover:pl-2">
+          {card.content}
+        </p>
+      </div>
+    </div>
+  ))}
+</div>
             
-                <div className="space-y-16">
-                  <div className="grid md:grid-cols-2 gap-12 items-center">
-                    <div className="relative overflow-hidden rounded-3xl shadow-xl">
-                      <img 
-                        src="https://scontent.fcmb1-2.fna.fbcdn.net/v/t39.30808-6/462767541_2700196043474419_2820044370736457035_n.jpg?_nc_cat=109&ccb=1-7&_nc_sid=cf85f3&_nc_eui2=AeHh2Lupwv2XRdERkitt-bCmAgdfpJ3RMMICB1-kndEwwhpwemXBoAg8x2bx6PuxH05MmMVOzdqKJ5OX4EyquiOm&_nc_ohc=8UJ9dE88CVkQ7kNvwGlvnDw&_nc_oc=AdmDsM3KxkiVd8xZ5kX2bEA0xQJ8id52sjTiopRMWF2XIBGOqrQKDms8Vn2QmABVoWM&_nc_zt=23&_nc_ht=scontent.fcmb1-2.fna&_nc_gid=Sb1bRvOyAiqjdajhf_jmrg&oh=00_AfHrQ1F0nCO22mG1_atIi9sjCGCbqBeZAesHlFKJ6SFVJQ&oe=67FEA9AF" 
-                        alt="Dhamma School History" 
-                        className="w-full h-64 object-cover transform transition duration-500 hover:scale-105"
-                      />
-                    </div>
-                    <div>
-                      <h3 className="text-3xl font-bold text-yellow-900 mb-6">Our Heritage</h3>
-                      <p className="text-gray-800 leading-relaxed">
-                        Established in 1975, Sri Sumangala Dhamma School has blossomed into a beacon of Buddhist education. 
-                        Through decades of dedicated service, we&rsquo;ve nurtured generations in the Noble Eightfold Path, 
-                        guided by venerable monks and devoted teachers committed to preserving our rich spiritual legacy.
-                      </p>
-                    </div>
-                  </div>
-            
-                  <div className="bg-yellow-100 rounded-3xl p-8 md:p-12 relative overflow-hidden">
-                    <div className="absolute bottom-0 right-0 opacity-10 text-9xl">🙏</div>
-                    <h3 className="text-3xl font-bold text-yellow-900 mb-6">Principal&rsquo;s Guidance</h3>
-                    <blockquote className="text-gray-800 text-lg italic leading-relaxed mb-6">
-                    &ldquo;True Dhamma education is not merely in books, but in cultivating kind hearts and wise minds.
-  Together with our dedicated teachers and supportive community, we strive to raise a generation
-  rooted in Buddhist values.&rdquo;
-                    </blockquote>
-                    <div className="flex items-center gap-4">
-                      <div className="w-16 h-16 rounded-full bg-amber-600 flex items-center justify-center text-white text-2xl">A</div>
-                      <div>
-                        <p className="font-bold text-yellow-900">Venerable Uluvitike Anuruddha Thera</p>
-                        <p className="text-gray-600">Chief Incumbent & Principal</p>
-                      </div>
-                    </div>
-                  </div>
-            
-                  <div className="grid md:grid-cols-2 gap-12 items-center">
-                    <div>
-                      <h3 className="text-3xl font-bold text-yellow-900 mb-6">Community Roots</h3>
-                      <ul className="space-y-4 text-gray-800">
-                        {['Temple maintenance projects', 'Dana collections', 'Vesak lantern workshops', 
-                          'Sil programs', 'Dhamma discussion circles'].map((item, index) => (
-                          <li key={index} className="flex items-center gap-3">
-                            <div className="w-8 h-8 bg-amber-100 rounded-full flex items-center justify-center">✓</div>
-                            {item}
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
-                    <div className="grid grid-cols-2 gap-4">
-                      <img src="https://scontent.fcmb1-2.fna.fbcdn.net/v/t1.6435-9/39248884_980174078809966_1059204802812051456_n.jpg?_nc_cat=106&ccb=1-7&_nc_sid=cf85f3&_nc_eui2=AeETyQ4UM2Wvm98WN_jTrmyBHUvO_C6fQFgdS878Lp9AWKRwe7gbxi5Ixy4VxaiHtwt4uCeCr_XWcOZsPyodNVvT&_nc_ohc=QJwegRQKck0Q7kNvwHQvqqr&_nc_oc=Adl2a0uR0-ocNFs6GW8I3v5r4eGsIfYS-D02oGZWicKfuHgEisezMVhDIaW_7FFIDso&_nc_zt=23&_nc_ht=scontent.fcmb1-2.fna&_nc_gid=pUi10ZwkNNVcaVy3dFYBig&oh=00_AfGWSK1W2JcpwCUv8gosp7_5W98Ax1BJqhfnBBV9B_a6zQ&oe=68203BA7" alt="Community Service" className="rounded-2xl h-48 object-cover" />
-                      <img src="https://scontent.fcmb1-2.fna.fbcdn.net/v/t39.30808-6/463432514_2707441659416524_2027133231080509496_n.jpg?_nc_cat=108&ccb=1-7&_nc_sid=cf85f3&_nc_eui2=AeG0566s38aPUt7rESeARY_8vUjphaFQ7Wm9SOmFoVDtaYSLrfoLDXfPFqELEYurj8H_P6JT9vXnJvBuAl9sTPNK&_nc_ohc=0jRDjwSeIeMQ7kNvwGJkk7w&_nc_oc=AdnW9Tas1K7I8Xnlry1kIbnIi1dgVYB5pU20seV31_z_6h7diughxxUKlpaUb3IqI_0&_nc_zt=23&_nc_ht=scontent.fcmb1-2.fna&_nc_gid=SSGtCWzs03VMuWVIdr4Wag&oh=00_AfH917W7uvfBWOl04HXsWmWHH-YLwoAkviEjnKiPPSCjQw&oe=67FEB80A" alt="Dhamma Class" className="rounded-2xl h-48 object-cover mt-8" />
-                      <img src="https://scontent.fcmb1-2.fna.fbcdn.net/v/t39.30808-6/486319669_2844823199011702_7910226328139359809_n.jpg?_nc_cat=111&ccb=1-7&_nc_sid=f727a1&_nc_eui2=AeGZwnPeWPaj6tV8jxky4X0aoppHbQZ0yUmimkdtBnTJSW6AmMqexW0RDiwOu8LG_d6pzkH21XxKMfSWpCpHN0z1&_nc_ohc=uio8ScBzU5EQ7kNvwGlAz5c&_nc_oc=AdlI3eHVRPaccoX1dna2aJEaup-j1ydgbph96k-JYTlGkD1BwGfq1j-NX5RMvw9iOcw&_nc_zt=23&_nc_ht=scontent.fcmb1-2.fna&_nc_gid=BehfWcK_0fLNpPxzyy_OfA&oh=00_AfEQYwezly8v4iJOZoZKVfmHpducCDw4Alzcv_z9X71JQA&oe=67FE9F42" alt="Vesak Celebration" className="rounded-2xl h-48 object-cover" />
-                    </div>
-                  </div>
-                </div>
+<div className="space-y-16">
+  <div className="grid md:grid-cols-2 gap-12 items-center">
+    <div className="relative overflow-hidden rounded-3xl shadow-xl transition-transform duration-500 hover:scale-105">
+      <img 
+        src="https://scontent.fcmb1-2.fna.fbcdn.net/v/t39.30808-6/462767541_2700196043474419_2820044370736457035_n.jpg?_nc_cat=109&ccb=1-7&_nc_sid=cf85f3&_nc_eui2=AeHh2Lupwv2XRdERkitt-bCmAgdfpJ3RMMICB1-kndEwwhpwemXBoAg8x2bx6PuxH05MmMVOzdqKJ5OX4EyquiOm&_nc_ohc=8UJ9dE88CVkQ7kNvwGlvnDw&_nc_oc=AdmDsM3KxkiVd8xZ5kX2bEA0xQJ8id52sjTiopRMWF2XIBGOqrQKDms8Vn2QmABVoWM&_nc_zt=23&_nc_ht=scontent.fcmb1-2.fna&_nc_gid=Sb1bRvOyAiqjdajhf_jmrg&oh=00_AfHrQ1F0nCO22mG1_atIi9sjCGCbqBeZAesHlFKJ6SFVJQ&oe=67FEA9AF" 
+        alt="Dhamma School History" 
+        className="w-full h-64 object-cover transition-transform duration-500 hover:scale-105"
+      />
+    </div>
+    <div>
+      <h3 className="text-3xl font-bold text-yellow-900 mb-6">Our Heritage</h3>
+      <p className="text-gray-800 leading-relaxed">
+        Established in 1975, Sri Sumangala Dhamma School has blossomed into a beacon of Buddhist education. 
+        Through decades of dedicated service, we’ve nurtured generations in the Noble Eightfold Path, 
+        guided by venerable monks and devoted teachers committed to preserving our rich spiritual legacy.
+      </p>
+    </div>
+  </div>
+
+  <div className="bg-yellow-100 rounded-3xl p-8 md:p-12 relative overflow-hidden shadow-lg">
+    <div className="absolute bottom-0 right-0 opacity-10 text-9xl">🙏</div>
+    <h3 className="text-3xl font-bold text-yellow-900 mb-6">Principal’s Guidance</h3>
+    <blockquote className="text-gray-800 text-lg italic leading-relaxed mb-6 border-l-4 border-amber-600 pl-4">
+      &ldquo;True Dhamma education is not merely in books, but in cultivating kind hearts and wise minds.
+      Together with our dedicated teachers and supportive community, we strive to raise a generation
+      rooted in Buddhist values.&rdquo;
+    </blockquote>
+    <div className="flex items-center gap-4">
+      <div className="w-16 h-16 rounded-full bg-amber-600 flex items-center justify-center text-white text-2xl">A</div>
+      <div>
+        <p className="font-bold text-yellow-900">Venerable Uluvitike Anuruddha Thera</p>
+        <p className="text-gray-600">Chief Incumbent & Principal</p>
+      </div>
+    </div>
+  </div>
+
+  <div className="grid md:grid-cols-2 gap-12 items-center">
+    <div>
+      <h3 className="text-3xl font-bold text-yellow-900 mb-6">Community Roots</h3>
+      <ul className="space-y-4 text-gray-800">
+        {['Temple maintenance projects', 'Dana collections', 'Vesak lantern workshops', 
+          'Sil programs', 'Dhamma discussion circles'].map((item, index) => (
+          <li key ={index} className="flex items-center gap-3 transition-transform duration-300 hover:scale-105">
+            <div className="w-8 h-8 bg-amber-100 rounded-full flex items-center justify-center">✓</div>
+            {item}
+          </li>
+        ))}
+      </ul>
+    </div>
+    <div className="grid grid-cols-2 gap-4">
+      <img src="https://scontent.fcmb1-2.fna.fbcdn.net/v/t1.6435-9/39248884_980174078809966_1059204802812051456_n.jpg?_nc_cat=106&ccb=1-7&_nc_sid=cf85f3&_nc_eui2=AeETyQ4UM2Wvm98WN_jTrmyBHUvO_C6fQFgdS878Lp9AWKRwe7gbxi5Ixy4VxaiHtwt4uCeCr_XWcOZsPyodNVvT&_nc_ohc=QJwegRQKck0Q7kNvwHQvqqr&_nc_oc=Adl2a0uR0-ocNFs6GW8I3v5r4eGsIfYS-D02oGZWicKfuHgEisezMVhDIaW_7FFIDso&_nc_zt=23&_nc_ht=scontent.fcmb1-2.fna&_nc_gid=pUi10ZwkNNVcaVy3dFYBig&oh=00_AfGWSK1W2JcpwCUv8gosp7_5W98Ax1BJqhfnBBV9B_a6zQ&oe=68203BA7" alt="Community Service" className="rounded-2xl h-48 object-cover transition-transform duration-500 hover:scale-105" />
+      <img src="https://scontent.fcmb1-2.fna.fbcdn.net/v/t39.30808-6/463432514_2707441659416524_2027133231080509496_n.jpg?_nc_cat=108&ccb=1-7&_nc_sid=cf85f3&_nc_eui2=AeG0566s38aPUt7rESeARY_8vUjphaFQ7Wm9SOmFoVDtaYSLrfoLDXfPFqELEYurj8H_P6JT9vXnJvBuAl9sTPNK&_nc_ohc=0jRDjwSeIeMQ7kNvwGJkk7w&_nc_oc=AdnW9Tas1K7I8Xnlry1kIbnIi1dgVYB5pU20seV31_z_6h7diughxxUKlpaUb3IqI_0&_nc_zt=23&_nc_ht=scontent.fcmb1-2.fna&_nc_gid=SSGtCWzs03VMuWVIdr4Wag&oh=00_AfH917W7uvfBWOl04HXsWmWHH-YLwoAkviEjnKiPPSCjQw&oe=67FEB80A" alt="Dhamma Class" className="rounded-2xl h-48 object-cover transition-transform duration-500 hover:scale-105 mt-8" />
+      <img src="https://scontent.fcmb1-2.fna.fbcdn.net/v/t39.30808-6/486319669_2844823199011702_7910226328139359809_n.jpg?_nc_cat=111&ccb=1-7&_nc_sid=f727a1&_nc_eui2=AeGZwnPeWPaj6tV8jxky4X0aoppHbQZ0yUmimkdtBnTJSW6AmMqexW0RDiwOu8LG_d6pzkH21XxKMfSWpCpHN0z1&_nc_ohc=uio8ScBzU5EQ7kNvwGlAz5c&_nc_oc=AdlI3eHVRPaccoX1dna2aJEaup-j1ydgbph96k-JYTlGkD1BwGfq1j-NX5RMvw9iOcw&_nc_zt=23&_nc_ht=scontent.fcmb1-2.fna&_nc_gid=BehfWcK_0fLNpPxzyy_OfA&oh=00_AfEQYwezly8v4iJOZoZKVfmHpducCDw4Alzcv_z9X71JQA&oe=67FE9F42" alt="Vesak Celebration" className="rounded-2xl h-48 object-cover transition-transform duration-500 hover:scale- 105" />
+    </div>
+  </div>
+</div>
               </div>
             </section>
             
@@ -357,13 +380,27 @@ export default function DhammaSchool() {
         )}
 
 {selectedCategory === 'gallery' && (
+  
   <section className="max-w-6xl mx-auto px-4 py-12">
+  <div className="relative w-full mb-12" style={{ paddingTop: '56.25%' }}>
+  <iframe
+    className="absolute top-0 left-0 w-full h-full"
+    src="https://www.youtube.com/embed/z8NqTpwsSCg?autoplay=1&mute=1&controls=0&rel=0&loop=1&playlist=z8NqTpwsSCg"
+    title="Advertisement"
+    frameBorder="0"
+    allow="autoplay; encrypted-media"
+    allowFullScreen
+  ></iframe>
+</div>
+
+
+  {/* Facebook Albums Section */}
   <h2 className="text-3xl font-bold mb-10 text-blue-700 text-center">Facebook Albums</h2>
   <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
     {/* Album 1 */}
     <div className="bg-white rounded-lg shadow-md overflow-hidden group">
       <img
-        src="https://scontent.fcmb1-2.fna.fbcdn.net/v/t39.30808-6/486550736_2844822805678408_7850764153772363523_n.jpg?_nc_cat=110&ccb=1-7&_nc_sid=f727a1&_nc_eui2=AeHBvy_NnkjSjHx5lcI7KMD7l7PKfW1BjmSXs8p9bUGOZBB6Y53xr23ksdbZh9ldJN5VL6mYFtPGLgZaHOYtvqY6&_nc_ohc=ujarzVqy9gIQ7kNvwHNlA1X&_nc_oc=AdksoGyfLNULL8_p0aOIO9nWyLrXHL75_WQN0ylUEGuy1OwcPtwQ6dGoJtzDHAGfArQ&_nc_zt=23&_nc_ht=scontent.fcmb1-2.fna&_nc_gid=-C-UeISfKJR0TtZxc_QaQg&oh=00_AfHuP0rsvlrMilpjFQuitwt004cnfEWGDues7kuhMXGmRw&oe=67FE8F92"
+        src="https://scontent.fcmb1-2.fna.fbcdn.net/v/t39.30808-6/486550736_2844822805678408_7850764153772363523_n.jpg?...&oe=67FE8F92"
         alt="Album 1"
         className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"
       />
@@ -383,7 +420,7 @@ export default function DhammaSchool() {
     {/* Album 2 */}
     <div className="bg-white rounded-lg shadow-md overflow-hidden group">
       <img
-        src="https://scontent.fcmb1-2.fna.fbcdn.net/v/t1.6435-9/79856150_1330893550404682_3370722382946762752_n.jpg?_nc_cat=103&ccb=1-7&_nc_sid=cf85f3&_nc_eui2=AeFAVxlEYnXUilmFQ78rHVsHUtTfUB1mxqhS1N9QHWbGqEeD4qGVH7JPnB1QMUc2z_57VUzpEV0VsVHSPY6yyj58&_nc_ohc=jSM-SK1T1LcQ7kNvwEh3f5g&_nc_oc=AdnxTVgRwcyYjBDUPHXxamiar9V1eCAurIMN3Vb3eYj1LSIspJDUjrj6GlJhpr97uRU&_nc_zt=23&_nc_ht=scontent.fcmb1-2.fna&_nc_gid=HztLPecFhcwqfW33qTIPZQ&oh=00_AfG1suppwXfqFkYkn5rSBjVjWzPpFtNZNTupeWcFQrrrPQ&oe=68201FCB"
+        src="https://www.facebook.com/share/14qPbuZpbn/"
         alt="Album 2"
         className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"
       />
@@ -403,7 +440,7 @@ export default function DhammaSchool() {
     {/* Album 3 */}
     <div className="bg-white rounded-lg shadow-md overflow-hidden group">
       <img
-        src="https://scontent.fcmb1-2.fna.fbcdn.net/v/t1.6435-9/59645142_1144530759040963_7237648655497297920_n.jpg?_nc_cat=111&ccb=1-7&_nc_sid=cf85f3&_nc_eui2=AeH0lRfBerSrLleDzuXpW7Pbzst9hbPYtEvOy32Fs9i0S3fZIOs5kSYnDubvYDMgMEWV1ft0PwZVd3lGh8kA1mFK&_nc_ohc=s4vAwrgsS4cQ7kNvwGHBMZv&_nc_oc=Adk10YAAXba6Ot6v5lXlcTmT1sCmZpfs0CRQXgDpXvVXVPr9_3VtMV2gD-WHgcgYhEg&_nc_zt=23&_nc_ht=scontent.fcmb1-2.fna&_nc_gid=yDj73PQhzDhuziJt6vf55w&oh=00_AfHIsyhv5oe5W-ASZFFoH0czURS7jRbqPb91B4F-gnag6Q&oe=682017CF"
+        src="https://scontent.fcmb1-2.fna.fbcdn.net/v/t1.6435-9/59645142_1144530759040963_7237648655497297920_n.jpg?...&oe=682017CF"
         alt="Album 3"
         className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"
       />
@@ -419,10 +456,63 @@ export default function DhammaSchool() {
         </a>
       </div>
     </div>
+  </div>
 
-    {/* You can add 3 more albums the same way */}
+  {/* YouTube Highlights Section */}
+  <h2 className="text-3xl font-bold mt-20 mb-10 text-red-600 text-center">YouTube Highlights</h2>
+  <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+    {/* Video 1 */}
+    <div className="bg-white rounded-lg shadow-md overflow-hidden group hover:shadow-lg transition-all duration-300">
+      <div className="relative aspect-video overflow-hidden">
+        <iframe
+          className="w-full h-full object-cover transform transition-transform duration-300 group-hover:scale-105"
+          src="https://www.youtube.com/embed/aVkOXuR4RoA?si=3ncaCIYQUrtW3nkx"
+          title="YouTube video player"
+          frameBorder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowFullScreen
+        ></iframe>
+      </div>
+      <div className="p-4">
+        <h3 className="text-lg font-semibold text-gray-800 mb-2">Dhamma School Annual Concert</h3>
+        <a
+          href="https://www.youtube.com/watch?v=aVkOXuR4RoA"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="inline-block text-red-600 hover:text-red-800 font-medium"
+        >
+          Watch on YouTube →
+        </a>
+      </div>
+    </div>
+
+    {/* Video 2 */}
+    <div className="bg-white rounded-lg shadow-md overflow-hidden group hover:shadow-lg transition-all duration-300">
+      <div className="relative aspect-video overflow-hidden">
+        <iframe
+          className="w-full h-full object-cover transform transition-transform duration-300 group-hover:scale-105"
+          src="https://www.youtube.com/embed/z8NqTpwsSCg?si=y2BYSpkZyeQwfsFm"
+          title="YouTube video player"
+          frameBorder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowFullScreen
+        ></iframe>
+      </div>
+      <div className="p-4">
+        <h3 className="text-lg font-semibold text-gray-800 mb-2">Bhakti Gee Competition Highlights</h3>
+        <a
+          href="https://youtu.be/VIDEO_ID_2"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="inline-block text-red-600 hover:text-red-800 font-medium"
+        >
+          Watch on YouTube →
+        </a>
+      </div>
+    </div>
   </div>
 </section>
+
 )}
 
 {selectedCategory === 'contact' && (
@@ -558,6 +648,11 @@ export default function DhammaSchool() {
 </section>
 )}
 
+{selectedCategory === 'admission' && (
+  <div>
+    <Admission />
+  </div>
+)}
 
       </div>
     </div>
