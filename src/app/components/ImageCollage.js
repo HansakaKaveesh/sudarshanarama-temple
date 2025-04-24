@@ -1,5 +1,6 @@
 "use client";
 import { useState } from 'react';
+import Link from 'next/link';
 import Image from 'next/image';
 import { motion, AnimatePresence } from 'framer-motion';
 import { FiArrowUpRight, FiX } from 'react-icons/fi';
@@ -135,19 +136,21 @@ export default function ImageCollage() {
 
         {/* View More Button */}
         <motion.div 
-          className="text-center mt-12"
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={{ once: true }}
-        >
-          <motion.button 
+            className="text-center mt-12"
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true }}
+            >
+        <Link href="/gallery">
+        <motion.button 
             whileHover={{ y: -2 }}
             className="px-8 py-3 bg-amber-900 text-amber-50 rounded-full hover:bg-amber-800 transition-colors duration-300 shadow-lg hover:shadow-amber-900/30 flex items-center gap-2 mx-auto"
-          >
-            View Full Gallery
-            <FiArrowUpRight className="w-5 h-5" />
-          </motion.button>
-        </motion.div>
+    >
+      View Full Gallery
+      <FiArrowUpRight className="w-5 h-5" />
+    </motion.button>
+  </Link>
+</motion.div>
       </div>
 
       {/* Lightbox Modal */}

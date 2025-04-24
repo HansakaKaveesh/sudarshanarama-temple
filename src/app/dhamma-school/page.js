@@ -3,6 +3,7 @@ import { useState } from 'react'
 import Papers from './components/pastpaper'
 import Admission from './components/admission'
 
+
 export default function DhammaSchool() {
   const [selectedCategory, setSelectedCategory] = useState('school')
 

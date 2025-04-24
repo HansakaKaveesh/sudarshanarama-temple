@@ -16,7 +16,7 @@ const services = [
     {
       icon: <FaBook className="text-3xl text-yellow-800" />,
       title: "Dhamma School",
-      description: "Sunday school program for children to learn Buddhist principles and moral values",
+      description: "Thousands of eager young minds are nourished and cultured under the expertise of vajirarama dhamma school.",
       link: "/dhamma-school"
     },
     {
@@ -34,7 +34,7 @@ const services = [
     {
       icon: <FaSun className="text-3xl text-yellow-800" />,
       title: "Poya Programs",
-      description: "Full moon day observances with special rituals and community activities",
+      description: "Monthly Poya programs of our temple is a successful event planned carefully to ensure maximum gain of peacefulness to your mind",
       link: "/poya-programs"
     },
     {
@@ -79,21 +79,21 @@ const ServiceSection = () => {
   const isInView = useInView(ref, { once: true, margin: "-100px" });
 
   return (
-    <section className="py-20 bg-gradient-to-b from-yellow-50 to-yellow-100">
+    <section className="py-24 bg-gradient-to-b from-yellow-50 to-yellow-100">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.6 }}
-          className="text-center mb-16"
+          transition={{ duration: 0.8 }}
+          className="text-center mb-20"
         >
-          <h2 className="text-4xl font-serif font-bold text-yellow-900 mb-4">
+          <h2 className="text-5xl font-serif font-extrabold text-yellow-900 mb-4 tracking-wide">
             OUR SERVICES
           </h2>
-          <div className="w-20 h-1 bg-yellow-700 mx-auto mb-6 rounded-full" />
-          <p className="text-lg text-yellow-800 max-w-2xl mx-auto">
+          <div className="w-24 h-1 bg-yellow-700 mx-auto mb-6 rounded-full" />
+          <p className="text-lg text-yellow-800 max-w-2xl mx-auto leading-relaxed">
             Discover transformative practices and community programs rooted in 
-            ancient Buddhist wisdom
+            timeless Buddhist teachings and spiritual guidance.
           </p>
         </motion.div>
 
@@ -101,42 +101,43 @@ const ServiceSection = () => {
           ref={ref}
           variants={containerVariants}
           initial="hidden"
-          animate={isInView ? "visible" : ""}
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8"
+          animate={isInView ? 'visible' : 'hidden'}
+          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-10"
         >
           {services.map((service, index) => (
             <motion.div
               key={index}
               variants={itemVariants}
-              transition={{ type: "spring", stiffness: 100 }}
-              className="group relative bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-2"
+              transition={{ type: 'spring', stiffness: 120, damping: 14 }}
+              className="group relative bg-white rounded-3xl p-8 shadow-lg hover:shadow-2xl transition-transform duration-300 hover:-translate-y-2"
             >
-              <div className="absolute inset-0 bg-yellow-50 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-              <div className="relative">
-                <div className="mb-6">
-                  <div className="w-16 h-16 bg-yellow-100 rounded-2xl flex items-center justify-center mb-4">
-                    {service.icon}
-                  </div>
-                  <h3 className="text-xl font-semibold text-yellow-900 mb-3">
-                    {service.title}
-                  </h3>
-                  <p className="text-yellow-700 leading-relaxed mb-5">
-                    {service.description}
-                  </p>
+              <div className="absolute inset-0 bg-yellow-100 rounded-3xl opacity-0 group-hover:opacity-20 transition-opacity duration-300" />
+              <div className="relative z-10">
+                <div className="flex items-center justify-center w-16 h-16 bg-yellow-200 rounded-full mb-5 mx-auto">
+                  {service.icon}
                 </div>
-                <a
-                  href={service.link}
-                  className="inline-flex items-center text-yellow-800 hover:text-yellow-700 font-medium transition-colors"
-                >
-                  Learn More
-                  <FaArrowRight className="ml-2 text-sm" />
-                </a>
+                <h3 className="text-xl font-bold text-yellow-900 text-center mb-3">
+                  {service.title}
+                </h3>
+                <p className="text-yellow-700 text-center mb-6 leading-relaxed">
+                  {service.description}
+                </p>
+                <div className="text-center">
+                  <a
+                    href={service.link}
+                    className="inline-flex items-center text-yellow-800 hover:text-yellow-700 font-medium transition-colors"
+                  >
+                    Learn More
+                    <FaArrowRight className="ml-2 text-sm" />
+                  </a>
+                </div>
               </div>
             </motion.div>
           ))}
         </motion.div>
       </div>
     </section>
+
   );
 };
 
