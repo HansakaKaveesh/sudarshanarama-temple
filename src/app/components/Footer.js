@@ -58,9 +58,8 @@ export default function Footer() {
               </h3>
             </div>
             <p className="text-base mb-6 leading-relaxed text-amber-50/95 max-w-2xl">
-              Established in 1958, our temple serves as a spiritual sanctuary in Colombo, preserving Theravada Buddhist 
-              traditions while fostering a modern, inclusive community. We offer daily meditation sessions, Dhamma 
-              discussions, and cultural programs for all ages.
+            1855 දී පිහිටුවන ලද අපගේ විහාරස්ථානය කොළඹ ආධ්‍යාත්මික අභයභූමියක් ලෙස ථෙරවාදී බෞද්ධ සම්ප්‍රදායන් ආරක්ෂා කරමින් නවීන, 
+            ඇතුළත් ප්‍රජාවක් පෝෂණය කරයි. අපි සෑම වයස් කාණ්ඩයක් සඳහාම දිනපතා භාවනා සැසි, ධර්ම සාකච්ඡා සහ සංස්කෘතික වැඩසටහන් පිරිනමන්නෙමු.
             </p>
             <div className="flex flex-wrap gap-3">
               {['☸️ Free Meditation Classes', '📅 Weekly Dhamma Talks', '👨👩👧👦 Family Programs'].map((text) => (

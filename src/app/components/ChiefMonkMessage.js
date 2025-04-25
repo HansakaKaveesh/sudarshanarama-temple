@@ -17,7 +17,7 @@ export default function ChiefMonkMessage() {
           transition={{ duration: 0.4 }}
         >
           <h2 className="text-3xl md:text-4xl font-bold text-amber-900 mb-6 font-serif">
-            A Message from the Chief Monk
+          විහාරාධිපති ස්වාමීන් වහන්සේගේ පණිවිඩය
           </h2>
 
           <div className="flex justify-center mb-6">
@@ -36,15 +36,12 @@ export default function ChiefMonkMessage() {
           <blockquote className="relative text-lg text-amber-800 leading-relaxed mb-6 px-4">
             <div className="absolute top-0 left-0 text-4xl text-amber-300">“</div>
             <div className="absolute bottom-0 right-0 text-4xl text-amber-300">”</div>
-            May all beings be happy and free from suffering. Let us walk the
-            path of mindfulness, compassion, and wisdom together. Our temple is
-            not just a place of worship — it is a sanctuary for peace and
-            inner awakening.
+            සියලු සත්වයෝ දුකින් නිදහස් වෙත්වා, සැපවත් වෙත්වා. අපි එක්ව සිහිය, මෛත්‍රිය, ප්‍රඥාව යන මාර්ගයේ ගමන් කරමු. අපේ පන්සල සාමය සහ අභ්‍යන්තර පිබිදීම සඳහා වූ අභයභූමියකි.
           </blockquote>
 
           <div className="text-amber-700 font-medium text-base">
             <span className="block mb-1">✢ ✢ ✢</span>
-            Venerable Uluvitike Anuruddha Thera
+            විහාරාධිපති පූජ්‍ය උළුවිටියේ අනුරුද්ධ හිමි
           </div>
         </motion.div>
       </div>

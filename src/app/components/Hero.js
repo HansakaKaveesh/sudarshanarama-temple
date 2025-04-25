@@ -125,8 +125,8 @@ export default function Hero() {
             transition={{ delay: 0.6 }}
             className="text-lg md:text-xl text-amber-50/95 mb-8 max-w-2xl mx-auto leading-relaxed font-serif relative py-4"
           >
-            <span className="absolute top-0 left-1/2 -translate-x-1/2 w-32 h-px bg-amber-200/30" />
-            ධම්මය සමඟ ඒකාබද්ධව 1721 සිට
+            <span className="absolute top-0 left-1/2 -translate-x-1/2 w-32 h-px bg-amber-200/30 " />
+            ධම්මය සමඟ ඒකාබද්ධව 1855 සිට
             <span className="absolute bottom-0 left-1/2 -translate-x-1/2 w-32 h-px bg-amber-200/30" />
           </motion.p>
 
@@ -140,7 +140,7 @@ export default function Hero() {
               whileTap={{ scale: 0.95 }}
               className="group relative bg-amber-300/90 hover:bg-amber-200 text-stone-900 px-8 py-4 rounded-full font-semibold transition-all duration-300 shadow-lg hover:shadow-amber-300/20 flex items-center gap-2 mx-auto overflow-hidden"
             >
-              <span className="relative z-10">Explore Our Heritage</span>
+              <span className="relative z-10">අපේ උරුමය ගවේෂණය කරන්න</span>
               <FiArrowRight className="w-5 h-5 transition-transform group-hover:translate-x-1 relative z-10" />
               <div className="absolute inset-0 opacity-0 group-hover:opacity-30 transition-opacity duration-300">
                 <div className="absolute -inset-8 bg-gradient-to-r from-transparent via-amber-100/50 to-transparent animate-shine" />
@@ -156,7 +156,7 @@ export default function Hero() {
           >
             <FiCalendar className="w-5 h-5 text-amber-200/80" />
             <span className="text-amber-200/90 text-sm font-medium">
-              Join us for Vesak Celebrations May 23-25
+            මැයි 23-25 ​​වෙසක් සැමරුම් සඳහා අප හා එක්වන්න
             </span>
           </motion.div>
         </motion.div>

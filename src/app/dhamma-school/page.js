@@ -99,7 +99,7 @@ export default function DhammaSchool() {
 
   <div className="max-w-3xl mx-auto">
     <p className="text-lg text-gray-800 leading-relaxed mb-8">
-      Our temple is a sanctuary of peace and mindfulness, nurturing spiritual growth through the Buddha&rsquo;s timeless wisdom. We offer guidance, meditation, and Dhamma education for all ages in a compassionate environment.
+    බුදුරදුන්ගේ අකාලික ප්‍රඥාව තුළින් අධ්‍යාත්මික වර්ධනය පෝෂණය කරන අපගේ විහාරස්ථානය සාමයේ සහ සිහිය ඇති අභයභූමියකි. අපි කාරුණික පරිසරයක් තුළ සියලුම වයස් කාණ්ඩ සඳහා මාර්ගෝපදේශ, භාවනා සහ දහම් අධ්‍යාපනය පිරිනමන්නෙමු.
     </p>
     <div className="h-1 w-24 bg-amber-600 mx-auto rounded-full" />
   </div>
@@ -109,18 +109,18 @@ export default function DhammaSchool() {
 <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-20">
   {[
     { 
-      title: "Our Mission", 
-      content: "Guide individuals on the path of Dhamma through peace, compassion, and mindful living",
+      title: "අපගේ මෙහෙවර", 
+      content: "ශාන්තිය, මෛත්‍රිය, සිහියෙන් යුක්තව ජීවත්වීම තුළින් පුද්ගලයන්ට ධර්ම මාර්ගයට යොමු කරන්න",
       icon: "🌸"
     },
     { 
-      title: "Our Vision", 
-      content: "A spiritually awakened community living in harmony with Buddha's teachings",
+      title: "අපගේ දැක්ම", 
+      content: "ආධ්‍යාත්මික වශයෙන් පිබිදුණු සමාජයක් බුද්ධ දේශනාවට එකඟව ජීවත් වේ",
       icon: "☸️"
     },
     { 
-      title: "Our Values", 
-      content: "Compassion, mindfulness, generosity, discipline, and wisdom in all practices",
+      title: "අපගේ වටිනාකම්", 
+      content: "මෛත්‍රිය, සිහිය, ත්‍යාගශීලී බව, හික්මීම සහ ප්‍රඥාව සියලු ක්‍රියාවන්හිදී",
       icon: "🧘"
     }
   ].map((card, index) => (
@@ -163,28 +163,27 @@ export default function DhammaSchool() {
       />
     </div>
     <div>
-      <h3 className="text-3xl font-bold text-yellow-900 mb-6">Our Heritage</h3>
+      <h3 className="text-3xl font-bold text-yellow-900 mb-6">අපි ගැන</h3>
       <p className="text-gray-800 leading-relaxed">
-        Established in 1975, Sri Sumangala Dhamma School has blossomed into a beacon of Buddhist education. 
-        Through decades of dedicated service, we’ve nurtured generations in the Noble Eightfold Path, 
-        guided by venerable monks and devoted teachers committed to preserving our rich spiritual legacy.
+      1957 දී ආරම්භ කරන ලද ශ්‍රී සුමංගල දහම් පාසල බෞද්ධ අධ්‍යාපනයේ පහනක් බවට පත් වී ඇත. 
+දශක ගනනාවක කැපවූ සේවය තුලින්, අපි ආර්ය අෂ්ඨාංගික මාර්ගයේ පරම්පරා පෝෂණය කළෙමු, 
+අපගේ පොහොසත් ආධ්‍යාත්මික උරුමය සුරැකීමට කැපවී සිටින ගෞරවනීය භික්ෂූන් වහන්සේලා සහ කැපවූ ගුරුවරුන් විසින් මඟ පෙන්වනු ලැබේ.
       </p>
     </div>
   </div>
 
   <div className="bg-yellow-100 rounded-3xl p-8 md:p-12 relative overflow-hidden shadow-lg">
     <div className="absolute bottom-0 right-0 opacity-10 text-9xl">🙏</div>
-    <h3 className="text-3xl font-bold text-yellow-900 mb-6">Principal’s Guidance</h3>
+    <h3 className="text-3xl font-bold text-yellow-900 mb-6">විදුහල්පති මඟපෙන්වීම</h3>
     <blockquote className="text-gray-800 text-lg italic leading-relaxed mb-6 border-l-4 border-amber-600 pl-4">
-      &ldquo;True Dhamma education is not merely in books, but in cultivating kind hearts and wise minds.
-      Together with our dedicated teachers and supportive community, we strive to raise a generation
-      rooted in Buddhist values.&rdquo;
+      &ldquo;සැබෑ දහම් අධ්‍යාපනය ඇත්තේ පොත්පත්වල පමණක් නොව කරුණාවන්ත සිත් හා ප්‍රඥාවන්ත සිත් ඇතිකර ගැනීමයි.
+       අපගේ කැපවූ ගුරුවරුන් සහ උපකාරක ප්‍රජාව සමඟ එක්ව, අපි බෞද්ධ සාරධර්ම තුළ මුල් බැසගත් පරම්පරාවක් ඇති කිරීමට උත්සාහ කරමු.&rdquo;
     </blockquote>
     <div className="flex items-center gap-4">
       <div className="w-16 h-16 rounded-full bg-amber-600 flex items-center justify-center text-white text-2xl">A</div>
       <div>
-        <p className="font-bold text-yellow-900">Venerable Uluvitike Anuruddha Thera</p>
-        <p className="text-gray-600">Chief Incumbent & Principal</p>
+        <p className="font-bold text-yellow-900">පූජ්‍ය උළුවිටියේ අනුරුද්ධ හිමි</p>
+        <p className="text-gray-600">විහාරාධිපති හා විදුහල්පති</p>
       </div>
     </div>
   </div>
@@ -361,19 +360,19 @@ export default function DhammaSchool() {
           <section className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           <div className="p-6 text-center bg-white shadow-lg rounded-lg">
             <img src="/chief-monk.jpg" alt="Head Teacher" className="w-32 h-32 rounded-full mx-auto mb-4" />
-            <h3 className="text-xl font-bold">Venerable Uluvitike Anuruddha Thera</h3>
-            <p className="text-amber-600">Head of Dhamma School</p>
+            <h3 className="text-xl font-bold">පූජ්‍ය උළුවිටියේ අනුරුද්ධ හිමි</h3>
+            <p className="text-amber-600">විදුහල්පති</p>
           </div>
         
           <div className="p-6 text-center bg-white shadow-lg rounded-lg">
             <img src="/teacher1.jpg" alt="Senior Teacher" className="w-32 h-32 rounded-full mx-auto mb-4" />
-            <h3 className="text-xl font-bold">Mrs. Sandamali Herath</h3>
+            <h3 className="text-xl font-bold">Mrs. Name</h3>
             <p className="text-amber-600">Senior Teacher - Grade 10 & 11</p>
           </div>
         
           <div className="p-6 text-center bg-white shadow-lg rounded-lg">
             <img src="/teacher2.jpg" alt="Assistant Teacher" className="w-32 h-32 rounded-full mx-auto mb-4" />
-            <h3 className="text-xl font-bold">Mr. Nishantha Perera</h3>
+            <h3 className="text-xl font-bold">Mr. Name</h3>
             <p className="text-amber-600">Assistant Teacher - Grade 8 & 9</p>
           </div>
         </section>

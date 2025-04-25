@@ -173,10 +173,10 @@ export default function WelcomeSection() {
                 whileInView={{ opacity: 1 }}
                 transition={{ delay: 0.4 }}
               >
-                Namo Buddhaya
+                නමෝ බුද්ධාය
               </motion.span>
               <span className="bg-gradient-to-r from-amber-700 to-amber-900 bg-clip-text text-transparent">
-                Path to Mindful Living
+              සිහිකල්පනාවෙන් ජීවත් වීමට මාර්ගය
               </span>
             </motion.h3>
             
@@ -187,8 +187,8 @@ export default function WelcomeSection() {
               className="text-xl text-amber-800/90 leading-relaxed mb-10 font-serif max-w-2xl relative"
             >
               <span className="absolute -left-8 top-2 text-amber-200/40 text-4xl">•</span>
-              Discover serenity through ancient wisdom in our modern sanctuary. Join our compassionate 
-              community to explore meditation, Dhamma studies, and mindful living practices.
+              අපගේ නවීන අභයභූමියේ පුරාණ ප්‍රඥාව තුළින් සන්සුන් භාවය සොයා ගන්න. භාවනාව,
+              දහම් අධ්‍යයනය සහ සිහිකල්පනාවෙන් යුතු ජීවන පිළිවෙත් ගවේෂණය කිරීමට අපගේ දයානුකම්පිත ප්‍රජාව හා එක්වන්න.
               <span className="absolute -right-8 bottom-2 text-amber-200/40 text-4xl">•</span>
             </motion.p>
 

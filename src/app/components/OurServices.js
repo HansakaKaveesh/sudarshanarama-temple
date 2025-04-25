@@ -9,50 +9,50 @@ const services = [
 
     {
       icon: <FaPrayingHands className="text-3xl text-yellow-800" />,
-      title: "Meditation Sessions",
-      description: "Daily guided meditation practices to cultivate mindfulness and inner peace",
+      title: "භාවනා සැසි",
+      description: "සිහිය සහ අභ්‍යන්තර සාමය වර්ධනය කිරීම සඳහා දිනපතා මඟ පෙන්වන භාවනා පිළිවෙත්",
       link: "/meditation"
     },
     {
       icon: <FaBook className="text-3xl text-yellow-800" />,
-      title: "Dhamma School",
-      description: "Thousands of eager young minds are nourished and cultured under the expertise of vajirarama dhamma school.",
+      title: "දහම් පාසල",
+      description: "ශ්‍රි සුමංගල දහම් පාසලේ ප්‍රවීණත්වය යටතේ දහස් සංඛ්‍යාත තරුණ සිත් පෝෂණය හා සංස්කෘතීන් කෙරේ.",
       link: "/dhamma-school"
     },
     {
       icon: <FaLeaf className="text-3xl text-yellow-800" />,
-      title: "Dhamma Talks",
-      description: "Weekly discourses on Buddhist teachings and practical life applications",
+      title: "ධර්ම දේශන",
+      description: "සතිපතා බෞද්ධ ඉගැන්වීම් සහ ප්‍රායෝගික ජීවිතයේ යෙදීම් පිළිබඳ දේශන",
       link: "/dhamma-talks"
     },
     {
       icon: <FaChild className="text-3xl text-yellow-800" />,
-      title: "Youth Programs",
-      description: "Engaging activities and discussions for young adults to connect with Dhamma",
+      title: "තරුණ වැඩසටහන්",
+      description: "තරුණ වැඩිහිටියන්ට ධර්මය හා සම්බන්ධ වීමට ක්‍රියාකාරකම් සහ සාකච්ඡා කිරීම",
       link: "/youth-programs"
     },
     {
       icon: <FaSun className="text-3xl text-yellow-800" />,
-      title: "Poya Programs",
-      description: "Monthly Poya programs of our temple is a successful event planned carefully to ensure maximum gain of peacefulness to your mind",
+      title: "පෝය වැඩසටහන්",
+      description: "අපගේ විහාරස්ථානයේ මාසික පොහොය වැඩසටහන් ඔබේ මනසට උපරිම සාමකාමී බව සහතික කිරීම සඳහා ප්රවේශමෙන් සැලසුම් කර ඇති සාර්ථක උත්සවයකි",
       link: "/poya-programs"
     },
     {
       icon: <FaHandsHelping className="text-3xl text-yellow-800" />,
-      title: "Counseling Services",
-      description: "Spiritual guidance and counseling based on Buddhist psychology",
+      title: "උපදේශන සේවා",
+      description: "බෞද්ධ මනෝවිද්‍යාව මත පදනම් වූ අධ්‍යාත්මික මග පෙන්වීම සහ උපදේශනය",
       link: "/counseling"
     },
     {
       icon: <FaHeart className="text-3xl text-yellow-800" />,
-      title: "Dana & Charity",
-      description: "Opportunities for generous giving and compassionate service projects",
+      title: "දාන සහ පුණ්‍ය කටයුතු",
+      description: "ත්‍යාගශීලී පරිත්‍යාග සහ දයානුකම්පිත සේවා ව්‍යාපෘති සඳහා අවස්ථා",
       link: "/dana"
     },
     {
       icon: <FaBookOpen className="text-3xl text-yellow-800" />,
-      title: "Library Access",
-      description: "Extensive collection of Buddhist literature and digital resources",
+      title: "පුස්තකාල ප්රවේශය",
+      description: "බෞද්ධ සාහිත්‍ය සහ ඩිජිටල් සම්පත් පුළුල් එකතුව",
       link: "/library"
     },
     
@@ -88,12 +88,11 @@ const ServiceSection = () => {
           className="text-center mb-20"
         >
           <h2 className="text-5xl font-serif font-extrabold text-yellow-900 mb-4 tracking-wide">
-            OUR SERVICES
+          අපගේ සේවා
           </h2>
           <div className="w-24 h-1 bg-yellow-700 mx-auto mb-6 rounded-full" />
           <p className="text-lg text-yellow-800 max-w-2xl mx-auto leading-relaxed">
-            Discover transformative practices and community programs rooted in 
-            timeless Buddhist teachings and spiritual guidance.
+          සදාකාලික බෞද්ධ ඉගැන්වීම් සහ අධ්‍යාත්මික මගපෙන්වීම මත පදනම් වූ පරිවර්තනීය භාවිතයන් සහ ප්‍රජා වැඩසටහන් සොයා ගන්න.
           </p>
         </motion.div>
 
