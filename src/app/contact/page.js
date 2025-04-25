@@ -39,12 +39,12 @@ export default function ContactPage() {
             <div className="flex items-center gap-4">
               <FaMapMarkerAlt className="text-green-600 text-xl" />
               <span className="text-gray-700">
-                Dhamma Temple, 123 Serenity Road, Peace City, Sri Lanka
+              Ambagahahandiya, Kalapaluwawa, Rajagiriya, Sri Lanka
               </span>
             </div>
             <div className="flex items-center gap-4">
               <FaPhoneAlt className="text-green-600 text-xl" />
-              <span className="text-gray-700">+94 77 123 4567</span>
+              <span className="text-gray-700">+94 11 309 48 40</span>
             </div>
             <div className="flex items-center gap-4">
               <FaEnvelope className="text-green-600 text-xl" />
@@ -115,7 +115,7 @@ export default function ContactPage() {
       {/* Map Section */}
       <div className="max-w-4xl mx-auto mt-12 rounded-xl overflow-hidden shadow-lg">
         <iframe
-          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d63389.14248942957!2d79.8412038!3d6.9270782!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ae259226b94754d%3A0x3a09a4a2432bce68!2sColombo%2C%20Sri%20Lanka!5e0!3m2!1sen!2slk!4v1713266665485!5m2!1sen!2slk"
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3960.8217507923605!2d79.90590272499642!3d6.911904943087572!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ae259738b61a8d3%3A0x298d0c06462da05c!2sSri%20Sudharshanaramaya%20Kalapaluwawa%20Rajagiriya!5e0!3m2!1sen!2slk!4v1745605466977!5m2!1sen!2slk"
           width="100%"
           height="400"
           style={{ border: 0 }}

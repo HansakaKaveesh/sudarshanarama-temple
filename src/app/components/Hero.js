@@ -156,7 +156,7 @@ export default function Hero() {
           >
             <FiCalendar className="w-5 h-5 text-amber-200/80" />
             <span className="text-amber-200/90 text-sm font-medium">
-            මැයි 23-25 ​​වෙසක් සැමරුම් සඳහා අප හා එක්වන්න
+            මැයි 12-13 ​​වෙසක් සැමරුම් සඳහා අප හා එක්වන්න
             </span>
           </motion.div>
         </motion.div>

@@ -157,7 +157,7 @@ export default function DhammaSchool() {
   <div className="grid md:grid-cols-2 gap-12 items-center">
     <div className="relative overflow-hidden rounded-3xl shadow-xl transition-transform duration-500 hover:scale-105">
       <img 
-        src="https://scontent.fcmb1-2.fna.fbcdn.net/v/t39.30808-6/462767541_2700196043474419_2820044370736457035_n.jpg?_nc_cat=109&ccb=1-7&_nc_sid=cf85f3&_nc_eui2=AeHh2Lupwv2XRdERkitt-bCmAgdfpJ3RMMICB1-kndEwwhpwemXBoAg8x2bx6PuxH05MmMVOzdqKJ5OX4EyquiOm&_nc_ohc=8UJ9dE88CVkQ7kNvwGlvnDw&_nc_oc=AdmDsM3KxkiVd8xZ5kX2bEA0xQJ8id52sjTiopRMWF2XIBGOqrQKDms8Vn2QmABVoWM&_nc_zt=23&_nc_ht=scontent.fcmb1-2.fna&_nc_gid=Sb1bRvOyAiqjdajhf_jmrg&oh=00_AfHrQ1F0nCO22mG1_atIi9sjCGCbqBeZAesHlFKJ6SFVJQ&oe=67FEA9AF" 
+        src="/dphall.jpg" 
         alt="Dhamma School History" 
         className="w-full h-64 object-cover transition-transform duration-500 hover:scale-105"
       />
@@ -203,8 +203,8 @@ export default function DhammaSchool() {
     </div>
     <div className="grid grid-cols-2 gap-4">
       <img src="https://scontent.fcmb1-2.fna.fbcdn.net/v/t1.6435-9/39248884_980174078809966_1059204802812051456_n.jpg?_nc_cat=106&ccb=1-7&_nc_sid=cf85f3&_nc_eui2=AeETyQ4UM2Wvm98WN_jTrmyBHUvO_C6fQFgdS878Lp9AWKRwe7gbxi5Ixy4VxaiHtwt4uCeCr_XWcOZsPyodNVvT&_nc_ohc=QJwegRQKck0Q7kNvwHQvqqr&_nc_oc=Adl2a0uR0-ocNFs6GW8I3v5r4eGsIfYS-D02oGZWicKfuHgEisezMVhDIaW_7FFIDso&_nc_zt=23&_nc_ht=scontent.fcmb1-2.fna&_nc_gid=pUi10ZwkNNVcaVy3dFYBig&oh=00_AfGWSK1W2JcpwCUv8gosp7_5W98Ax1BJqhfnBBV9B_a6zQ&oe=68203BA7" alt="Community Service" className="rounded-2xl h-48 object-cover transition-transform duration-500 hover:scale-105" />
-      <img src="https://scontent.fcmb1-2.fna.fbcdn.net/v/t39.30808-6/463432514_2707441659416524_2027133231080509496_n.jpg?_nc_cat=108&ccb=1-7&_nc_sid=cf85f3&_nc_eui2=AeG0566s38aPUt7rESeARY_8vUjphaFQ7Wm9SOmFoVDtaYSLrfoLDXfPFqELEYurj8H_P6JT9vXnJvBuAl9sTPNK&_nc_ohc=0jRDjwSeIeMQ7kNvwGJkk7w&_nc_oc=AdnW9Tas1K7I8Xnlry1kIbnIi1dgVYB5pU20seV31_z_6h7diughxxUKlpaUb3IqI_0&_nc_zt=23&_nc_ht=scontent.fcmb1-2.fna&_nc_gid=SSGtCWzs03VMuWVIdr4Wag&oh=00_AfH917W7uvfBWOl04HXsWmWHH-YLwoAkviEjnKiPPSCjQw&oe=67FEB80A" alt="Dhamma Class" className="rounded-2xl h-48 object-cover transition-transform duration-500 hover:scale-105 mt-8" />
-      <img src="https://scontent.fcmb1-2.fna.fbcdn.net/v/t39.30808-6/486319669_2844823199011702_7910226328139359809_n.jpg?_nc_cat=111&ccb=1-7&_nc_sid=f727a1&_nc_eui2=AeGZwnPeWPaj6tV8jxky4X0aoppHbQZ0yUmimkdtBnTJSW6AmMqexW0RDiwOu8LG_d6pzkH21XxKMfSWpCpHN0z1&_nc_ohc=uio8ScBzU5EQ7kNvwGlAz5c&_nc_oc=AdlI3eHVRPaccoX1dna2aJEaup-j1ydgbph96k-JYTlGkD1BwGfq1j-NX5RMvw9iOcw&_nc_zt=23&_nc_ht=scontent.fcmb1-2.fna&_nc_gid=BehfWcK_0fLNpPxzyy_OfA&oh=00_AfEQYwezly8v4iJOZoZKVfmHpducCDw4Alzcv_z9X71JQA&oe=67FE9F42" alt="Vesak Celebration" className="rounded-2xl h-48 object-cover transition-transform duration-500 hover:scale- 105" />
+      <img src="/picdp1.jpg" alt="Dhamma Class" className="rounded-2xl h-48 object-cover transition-transform duration-500 hover:scale-105 mt-8" />
+      <img src="/picdp2.jpg" alt="Vesak Celebration" className="rounded-2xl h-48 object-cover transition-transform duration-500 hover:scale-105" />
     </div>
   </div>
 </div>
@@ -286,19 +286,19 @@ export default function DhammaSchool() {
             {
               title: "Meditation Hall",
               description: "Spacious area for mindfulness practice and group meditation.",
-              img: "/meditation-hall.jpg",
+              img: "/footer.jpg",
               alt: "Meditation Hall",
             },
             {
               title: "Dhamma Library",
               description: "Over 5,000 Buddhist texts and modern spiritual literature.",
-              img: "/library.jpg",
+              img: "/facility.jpeg",
               alt: "Library",
             },
             {
               title: "Open Auditorium",
               description: "500-seat facility for lectures and cultural events.",
-              img: "https://scontent.fcmb1-2.fna.fbcdn.net/v/t39.30808-6/462767541_2700196043474419_2820044370736457035_n.jpg?_nc_cat=109&ccb=1-7&_nc_sid=cf85f3&_nc_eui2=AeHh2Lupwv2XRdERkitt-bCmAgdfpJ3RMMICB1-kndEwwhpwemXBoAg8x2bx6PuxH05MmMVOzdqKJ5OX4EyquiOm&_nc_ohc=8UJ9dE88CVkQ7kNvwGlvnDw&_nc_oc=AdmDsM3KxkiVd8xZ5kX2bEA0xQJ8id52sjTiopRMWF2XIBGOqrQKDms8Vn2QmABVoWM&_nc_zt=23&_nc_ht=scontent.fcmb1-2.fna&_nc_gid=Sb1bRvOyAiqjdajhf_jmrg&oh=00_AfHrQ1F0nCO22mG1_atIi9sjCGCbqBeZAesHlFKJ6SFVJQ&oe=67FEA9AF",
+              img: "/dphall.jpg",
               alt: "Auditorium",
             },
           ].map(({ title, description, img, alt }, index) => (
@@ -382,25 +382,13 @@ export default function DhammaSchool() {
 {selectedCategory === 'gallery' && (
   
   <section className="max-w-6xl mx-auto px-4 py-12">
-  <div className="relative w-full mb-12" style={{ paddingTop: '56.25%' }}>
-  <iframe
-    className="absolute top-0 left-0 w-full h-full"
-    src="https://www.youtube.com/embed/z8NqTpwsSCg?autoplay=1&mute=1&controls=0&rel=0&loop=1&playlist=z8NqTpwsSCg"
-    title="Advertisement"
-    frameBorder="0"
-    allow="autoplay; encrypted-media"
-    allowFullScreen
-  ></iframe>
-</div>
-
-
-  {/* Facebook Albums Section */}
+{/* Facebook Albums Section */}
   <h2 className="text-3xl font-bold mb-10 text-blue-700 text-center">Facebook Albums</h2>
   <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
     {/* Album 1 */}
     <div className="bg-white rounded-lg shadow-md overflow-hidden group">
       <img
-        src="https://scontent.fcmb1-2.fna.fbcdn.net/v/t39.30808-6/486550736_2844822805678408_7850764153772363523_n.jpg?...&oe=67FE8F92"
+        src="https://z-p3-scontent.fcmb7-1.fna.fbcdn.net/v/t39.30808-6/486550736_2844822805678408_7850764153772363523_n.jpg?_nc_cat=110&ccb=1-7&_nc_sid=f727a1&_nc_eui2=AeHBvy_NnkjSjHx5lcI7KMD7l7PKfW1BjmSXs8p9bUGOZBB6Y53xr23ksdbZh9ldJN5VL6mYFtPGLgZaHOYtvqY6&_nc_ohc=WaNbVyfjpO8Q7kNvwG6zMUE&_nc_oc=Admmp8vFwzOpzQCENdWMu-pVdbc1nQeilOkOjRIHEhbYPDfSgzMuyUm5LgRZw2I3P44&_nc_zt=23&_nc_ht=z-p3-scontent.fcmb7-1.fna&_nc_gid=gvQg3KEb0cn5Zd5C5btfAA&oh=00_AfFDbDEUruTuJ1kyYRJFaHYKH499fvM2rcVEg4WKyQdbfQ&oe=6811AD52"
         alt="Album 1"
         className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"
       />
@@ -420,7 +408,7 @@ export default function DhammaSchool() {
     {/* Album 2 */}
     <div className="bg-white rounded-lg shadow-md overflow-hidden group">
       <img
-        src="https://www.facebook.com/share/14qPbuZpbn/"
+        src="https://z-p3-scontent.fcmb7-1.fna.fbcdn.net/v/t1.6435-9/79856150_1330893550404682_3370722382946762752_n.jpg?_nc_cat=103&ccb=1-7&_nc_sid=cf85f3&_nc_eui2=AeFAVxlEYnXUilmFQ78rHVsHUtTfUB1mxqhS1N9QHWbGqEeD4qGVH7JPnB1QMUc2z_57VUzpEV0VsVHSPY6yyj58&_nc_ohc=7UNb8ipeaSkQ7kNvwHFopea&_nc_oc=Adn_9KnVU-1KXt6Er7bpopnv0QSz6JS3DFD2KY4s0BJRrQTMRIxVWomDbxNv298RLvI&_nc_zt=23&_nc_ht=z-p3-scontent.fcmb7-1.fna&_nc_gid=ClOc4W3IhuK674Ba2_Z6Ng&oh=00_AfE5T9mFO2VA4ZMb4o8iPXgLVvSXtBpuNL-c9iVIsllBKQ&oe=68333D8B"
         alt="Album 2"
         className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"
       />
@@ -440,7 +428,7 @@ export default function DhammaSchool() {
     {/* Album 3 */}
     <div className="bg-white rounded-lg shadow-md overflow-hidden group">
       <img
-        src="https://scontent.fcmb1-2.fna.fbcdn.net/v/t1.6435-9/59645142_1144530759040963_7237648655497297920_n.jpg?...&oe=682017CF"
+        src="https://z-p3-scontent.fcmb7-1.fna.fbcdn.net/v/t1.6435-9/59635449_1144529972374375_9197316802437185536_n.jpg?_nc_cat=106&ccb=1-7&_nc_sid=cf85f3&_nc_eui2=AeHHn4zaNIQI2dmp1vWKHJ9mq-jsYhSNArqr6OxiFI0Cujf_Joh7T34w5SQe2qVm4xENCMoSVa1ZejgWnQam5Gtv&_nc_ohc=ieMcG7Ad2zgQ7kNvwHCL_Be&_nc_oc=AdnJoJjTsXXjoldjJpJ05hj2LVyTO-oMlOShvl0pG2qgKbji4-usluMSAeBnqNAjrx0&_nc_zt=23&_nc_ht=z-p3-scontent.fcmb7-1.fna&_nc_gid=hap4o0zZiFr3OLBUvaUrmw&oh=00_AfHRPIWKaRBWw06Ietl7NoHUjFncvSnyR90Rvw_txGFctw&oe=68334F92"
         alt="Album 3"
         className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"
       />
@@ -491,7 +479,7 @@ export default function DhammaSchool() {
       <div className="relative aspect-video overflow-hidden">
         <iframe
           className="w-full h-full object-cover transform transition-transform duration-300 group-hover:scale-105"
-          src="https://www.youtube.com/embed/z8NqTpwsSCg?si=y2BYSpkZyeQwfsFm"
+          src="https://www.youtube.com/embed/y15ANIpeTRs?si=Vvf8rO3oa3kILKOj"
           title="YouTube video player"
           frameBorder="0"
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
@@ -499,9 +487,33 @@ export default function DhammaSchool() {
         ></iframe>
       </div>
       <div className="p-4">
-        <h3 className="text-lg font-semibold text-gray-800 mb-2">Bhakti Gee Competition Highlights</h3>
+        <h3 className="text-lg font-semibold text-gray-800 mb-2">PREFECTS BADGE CEREMONY 2017</h3>
         <a
-          href="https://youtu.be/VIDEO_ID_2"
+          href="https://youtu.be/y15ANIpeTRs?si=EIMhlxmRfrRt2UJy"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="inline-block text-red-600 hover:text-red-800 font-medium"
+        >
+          Watch on YouTube →
+        </a>
+      </div>
+    </div>
+
+    <div className="bg-white rounded-lg shadow-md overflow-hidden group hover:shadow-lg transition-all duration-300">
+      <div className="relative aspect-video overflow-hidden">
+        <iframe
+          className="w-full h-full object-cover transform transition-transform duration-300 group-hover:scale-105"
+          src="https://www.youtube.com/embed/GFkL6-_oEqY?si=joJKN02_XqPL1iJN"
+          title="YouTube video player"
+          frameBorder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowFullScreen
+        ></iframe>
+      </div>
+      <div className="p-4">
+        <h3 className="text-lg font-semibold text-gray-800 mb-2">PREFECTS BADGE CEREMONY 2017</h3>
+        <a
+          href="https://youtu.be/GFkL6-_oEqY?si=joJKN02_XqPL1iJN"
           target="_blank"
           rel="noopener noreferrer"
           className="inline-block text-red-600 hover:text-red-800 font-medium"
@@ -536,7 +548,7 @@ export default function DhammaSchool() {
           </div>
           <div>
             <p className="font-medium text-gray-800">Our Location</p>
-            <p className="text-gray-600">No. 123, Main Street<br/>Colombo, Sri Lanka</p>
+            <p className="text-gray-600">Ambagahahandiya,Kalapaluwawa,<br/>Rajagiriya, Sri Lanka</p>
           </div>
         </div>
 
@@ -548,7 +560,7 @@ export default function DhammaSchool() {
           </div>
           <div>
             <p className="font-medium text-gray-800">Phone Numbers</p>
-            <p className="text-gray-600">+94 77 123 4567<br/>+94 11 234 5678</p>
+            <p className="text-gray-600">+94 11 309 48 40<br/>+94 11 234 5678</p>
           </div>
         </div>
 
@@ -560,26 +572,37 @@ export default function DhammaSchool() {
           </div>
           <div>
             <p className="font-medium text-gray-800">Email Address</p>
-            <p className="text-gray-600">contact@yourtemple.lk<br/>support@yourtemple.lk</p>
+            <p className="text-gray-600">srisumangala1957@gmail.com</p>
           </div>
         </div>
       </div>
 
       <div className="mt-8 pt-6 border-t border-amber-100">
-        <h4 className="text-lg font-semibold text-amber-700 mb-4">Follow Us</h4>
-        <div className="flex gap-4">
-          <a href="https://facebook.com/yourpage" target="_blank" rel="noopener noreferrer" className="text-amber-700 hover:text-amber-800 transition">
-            <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
-              <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
-            </svg>
-          </a>
-          <a href="https://instagram.com/yourprofile" target="_blank" rel="noopener noreferrer" className="text-amber-700 hover:text-amber-800 transition">
-            <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
-              <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/>
-            </svg>
-          </a>
-        </div>
-      </div>
+  <h4 className="text-lg font-semibold text-amber-700 mb-4">Follow Us</h4>
+  <div className="flex gap-4">
+    {/* Facebook */}
+    <a href="https://www.facebook.com/SriSumangalaDhahamPasala" target="_blank" rel="noopener noreferrer" className="text-amber-700 hover:text-amber-800 transition">
+      <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+        <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+      </svg>
+    </a>
+
+    {/* Instagram */}
+    <a href="https://www.instagram.com/srisumangala_dhahampasala" target="_blank" rel="noopener noreferrer" className="text-amber-700 hover:text-amber-800 transition">
+      <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+        <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/>
+      </svg>
+    </a>
+
+    {/* YouTube */}
+    <a href="https://www.youtube.com/@srisumangaladhahampasala-k6723" target="_blank" rel="noopener noreferrer" className="text-amber-700 hover:text-amber-800 transition">
+      <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+        <path d="M23.498 6.186a2.999 2.999 0 00-2.117-2.118C19.665 3.5 12 3.5 12 3.5s-7.665 0-9.381.568a2.999 2.999 0 00-2.117 2.118A31.648 31.648 0 000 12a31.648 31.648 0 00.502 5.814 2.999 2.999 0 002.117 2.118C4.335 20.5 12 20.5 12 20.5s7.665 0 9.381-.568a2.999 2.999 0 002.117-2.118A31.648 31.648 0 0024 12a31.648 31.648 0 00-.502-5.814zM9.75 15.5v-7l6 3.5-6 3.5z"/>
+      </svg>
+    </a>
+  </div>
+</div>
+
     </div>
 
     {/* Contact Form */}
@@ -639,7 +662,7 @@ export default function DhammaSchool() {
   {/* Map Section */}
   <div className="mt-12 rounded-2xl overflow-hidden shadow-xl">
     <iframe
-      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3960.798511757644!2d79.860774415393!3d6.921668295003654!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ae2596b8d5f07e9%3A0xec6b8b9bce1a05d!2sColombo!5e0!3m2!1sen!2slk!4v1623930407751!5m2!1sen!2slk"
+      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3960.798631657613!2d79.90625637475695!3d6.91466319308489!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ae25990c5d94c61%3A0x8ef2a9920e0f798f!2zU3JpIFN1bWFuZ2FsYSBEaGFtbWEgc2Nob29sLCBLYWxhcGF1d2F3YSAo4LeB4LeK4oCN4La74LeSIOC3g-C3lOC2uOC2guC2nOC2vSDgtq_gt4Tgtrjgt4og4La04LeP4LeD4LeQ4La9IC0g4Laa4La94La04La94LeU4LeA4LeP4LeAKQ!5e0!3m2!1sen!2slk!4v1745605753791!5m2!1sen!2slk"
       className="w-full h-96 border-0"
       allowFullScreen
       loading="lazy"

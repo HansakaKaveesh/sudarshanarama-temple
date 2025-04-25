@@ -6,43 +6,33 @@ import { motion } from "framer-motion"; // Make sure Framer Motion is installed
 const pastPapersData = {
   'Grade 1': [
     { title: 'Budda Darmaya 2023', file: '/pastpapers/grade6/math-2023.pdf' },
-    { title: 'Science Paper 2023', file: '/pastpapers/grade6/science-2023.pdf' },
   ],
   'Grade 2': [
-    { title: 'Math Paper 2023', file: '/pastpapers/grade6/math-2023.pdf' },
-    { title: 'Science Paper 2023', file: '/pastpapers/grade6/science-2023.pdf' },
+    { title: 'Budda Darmaya 2023', file: '/pastpapers/grade6/math-2023.pdf' },
   ],
   'Grade 3': [
-    { title: 'Math Paper 2023', file: '/pastpapers/grade6/math-2023.pdf' },
-    { title: 'Science Paper 2023', file: '/pastpapers/grade6/science-2023.pdf' },
+    { title: 'Budda Darmaya 2023', file: '/pastpapers/grade6/math-2023.pdf' },
   ],
   'Grade 4': [
-    { title: 'Math Paper 2023', file: '/pastpapers/grade6/math-2023.pdf' },
-    { title: 'Science Paper 2023', file: '/pastpapers/grade6/science-2023.pdf' },
+    { title: 'Budda Darmaya 2023', file: '/pastpapers/grade6/math-2023.pdf' },,
   ],
   'Grade 5': [
-    { title: 'Math Paper 2023', file: '/pastpapers/grade6/math-2023.pdf' },
-    { title: 'Science Paper 2023', file: '/pastpapers/grade6/science-2023.pdf' },
+    { title: 'Budda Darmaya 2023', file: '/pastpapers/grade6/math-2023.pdf' },
   ],
   'Grade 6': [
-    { title: 'Math Paper 2023', file: '/pastpapers/grade6/math-2023.pdf' },
-    { title: 'Science Paper 2023', file: '/pastpapers/grade6/science-2023.pdf' },
+    { title: 'Budda Darmaya 2023', file: '/pastpapers/grade6/math-2023.pdf' },
   ],
   'Grade 7': [
-    { title: 'History Paper 2023', file: '/pastpapers/grade7/history-2023.pdf' },
-    { title: 'English Paper 2023', file: '/pastpapers/grade7/english-2023.pdf' },
+    { title: 'Budda Darmaya 2023', file: '/pastpapers/grade6/math-2023.pdf' },
   ],
   'Grade 8': [
-    { title: 'Math Paper 2023', file: '/pastpapers/grade8/math-2023.pdf' },
-    { title: 'Science Paper 2023', file: '/pastpapers/grade8/science-2023.pdf' },
+    { title: 'Budda Darmaya 2023', file: '/pastpapers/grade6/math-2023.pdf' },
   ],
   'Grade 9': [
-    { title: 'Math Paper 2023', file: '/pastpapers/grade9/math-2023.pdf' },
-    { title: 'Science Paper 2023', file: '/pastpapers/grade9/science-2023.pdf' },
+    { title: 'Budda Darmaya 2023', file: '/pastpapers/grade6/math-2023.pdf' },
   ],
   'Grade 10': [
-    { title: 'Math Paper 2023', file: '/pastpapers/grade10/math-2023.pdf' },
-    { title: 'Science Paper 2023', file: '/pastpapers/grade10/science-2023.pdf' },
+    { title: 'Budda Darmaya 2023', file: '/pastpapers/grade6/math-2023.pdf' },
   ],
   'Awasana Exam': [
     { title: 'Buddha Charithaya 2023', file: '/pastpapers/grade11/math-2023.pdf' },

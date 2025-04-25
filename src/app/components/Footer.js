@@ -29,8 +29,8 @@ export default function Footer() {
   ];
 
   const contactInfo = [
-    [FaMapMarkerAlt, '123 Dharma Road, Colombo 05<br/>Sri Lanka'],
-    [FaPhoneAlt, '+94 112 345 678'],
+    [FaMapMarkerAlt, 'Ambagahahandiya, Kalapaluwawa, Rajagiriya'],
+    [FaPhoneAlt, '+94 11 309 48 40'],
     [FaEnvelope, 'contact@sudarshanarama.lk'],
   ];
 
