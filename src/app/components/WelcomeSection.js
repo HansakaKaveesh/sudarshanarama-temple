@@ -6,7 +6,7 @@ import { Flower2, CalendarDays, BookOpen, Sparkles } from 'lucide-react';
 
 export default function WelcomeSection() {
   return (
-    <section className="relative py-24 px-4 py-20 bg-gradient-to-b from-yellow-100 to-yellow-50 overflow-hidden isolate">
+    <section className="relative py-12 px-4 py-20 bg-gradient-to-b from-yellow-100 to-yellow-50 overflow-hidden isolate">
       {/* Animated Floating Flowers */}
       <motion.div 
         className="absolute inset-0 opacity-15 pointer-events-none"

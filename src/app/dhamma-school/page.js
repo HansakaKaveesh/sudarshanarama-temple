@@ -2,6 +2,7 @@
 import { useState } from 'react'
 import Papers from './components/pastpaper'
 import Admission from './components/admission'
+import { FaFacebookF, FaInstagram, FaYoutube } from 'react-icons/fa'; // Import social media icons
 
 
 export default function DhammaSchool() {
@@ -24,24 +25,34 @@ export default function DhammaSchool() {
     <div className="bg-white text-gray-800">
       {/* Header Section */}
       <div
-        className="relative h-64 sm:h-80 md:h-96 lg:h-[28rem] xl:h-[32rem] bg-cover bg-center group transition-all duration-500"
-        style={{ backgroundImage: "url('/dpheader.jpg')", backgroundPosition: 'center 40%' }}
-        aria-label="Dhamma School Header"
-      >
-        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-white/60 to-white/90 flex flex-col items-center justify-center text-center p-4 md:p-8">
-          <div className="space-y-4 transform group-hover:scale-95 transition-transform duration-500 ">
+      className="relative h-64 sm:h-80 md:h-96 lg:h-[28rem] xl:h-[32rem] bg-cover bg-center group transition-all duration-500"
+      style={{ backgroundImage: "url('/dpheader.jpg')", backgroundPosition: 'center 40%' }}
+      aria-label="Dhamma School Header"
+    >
+      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-white/60 to-white/90 flex flex-col items-center justify-center text-center p-4 md:p-8">
+        <div className="space-y-4 transform group-hover:scale-95 transition-transform duration-500 ">
           <h1 className="mt-24 md:mt-0 text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 tracking-tighter drop-shadow-md">
+            DHAMMA SCHOOL
+          </h1>
+          <p className="text-lg sm:text-xl md:text-2xl font-semibold text-gray-800 mt-2 md:mt-4">
+            ශ්‍රි සුමංගල දහම් පාසැල
+          </p>
+        </div>
 
-              DHAMMA SCHOOL
-            </h1>
-            <p className="text-lg sm:text-xl md:text-2xl font-semibold text-gray-800 mt-2 md:mt-4">
-  ශ්‍රි සුමංගල දහම් පාසැල
-</p>
-
-            
-          </div>
+        {/* Social Media Icons */}
+        <div className="mt-6 flex justify-center gap-4">
+          <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer" className="text-gray-800 hover:text-gray-600">
+            <FaFacebookF className="w-6 h-6" />
+          </a>
+          <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer" className="text-gray-800 hover:text-gray-600">
+            <FaInstagram className="w-6 h-6" />
+          </a>
+          <a href="https://www.youtube.com" target="_blank" rel="noopener noreferrer" className="text-gray-800 hover:text-gray-600">
+            <FaYoutube className="w-6 h-6" />
+          </a>
         </div>
       </div>
+    </div>
 
 {/* Navigation */}
 <nav className="sticky top-0 bg-white/90 backdrop-blur-md shadow-md z-40 w-full">

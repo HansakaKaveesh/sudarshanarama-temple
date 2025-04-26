@@ -79,7 +79,7 @@ const ServiceSection = () => {
   const isInView = useInView(ref, { once: true, margin: "-100px" });
 
   return (
-    <section className="py-24 bg-gradient-to-b from-yellow-50 to-yellow-100">
+    <section className="py-12 bg-gradient-to-b from-yellow-50 to-yellow-100">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 20 }}

@@ -4,6 +4,7 @@ import { useState, useEffect } from 'react';
 import { motion, AnimatePresence, useTransform, useScroll } from 'framer-motion';
 import { FiChevronDown, FiArrowRight, FiMapPin, FiCalendar } from 'react-icons/fi';
 import { GiLotus, GiStoneBlock } from 'react-icons/gi';
+import { FaFacebookF, FaInstagram, FaYoutube } from 'react-icons/fa'; // Import social media icons
 import Image from 'next/image';
 
 export default function Hero() {
@@ -97,7 +98,7 @@ export default function Hero() {
           className="max-w-4xl mx-auto"
         >
           <motion.div
-            initial={{ opacity: 0, y: 10 }}
+            initial={{ opacity: 0, y:  10 }}
             animate={{ opacity: 1, y: 0 }}
             className="mb-8 flex items-center justify-center gap-2 text-yellow-100/80"
           >
@@ -159,12 +160,25 @@ export default function Hero() {
             මැයි 12-13 ​​වෙසක් සැමරුම් සඳහා අප හා එක්වන්න
             </span>
           </motion.div>
+
+          {/* Social Media Icons */}
+          <div className="mt-8 flex justify-center gap-4">
+            <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer" className="text-amber-200 hover:text-amber-100">
+              <FaFacebookF className="w-6 h-6" />
+            </a>
+            <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer" className="text-amber-200 hover:text-amber-100">
+              <FaInstagram className="w-6 h-6" />
+            </a>
+            <a href="https://www.youtube.com" target="_blank" rel="noopener noreferrer" className="text-amber-200 hover:text-amber-100">
+              <FaYoutube className="w-6 h-6" />
+            </a>
+          </div>
         </motion.div>
       </div>
 
       {/* Scroll indicator */}
-      <motion.div
-        className="absolute bottom-8 left-1/2 -translate-x-1/2 z-20 flex flex-col items-center gap-2"
+ <motion.div
+        className="absolute bottom-8 left-1/2 -translate-x-1/2 z-20 flex flex-col items-center gap-5"
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 1.8, duration: 0.8 }}
