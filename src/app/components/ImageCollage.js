@@ -1,9 +1,9 @@
 "use client";
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
-import { motion, AnimatePresence } from 'framer-motion';
-import { FiArrowUpRight, FiX } from 'react-icons/fi';
+import { motion, AnimatePresence, useDragControls } from 'framer-motion';
+import { FiArrowUpRight, FiX, FiChevronLeft, FiChevronRight, FiShare2 } from 'react-icons/fi';
 
 const collageImages = [
   { src: '/images.jpg', alt: 'Meditation Session', category: 'activities' },
@@ -14,12 +14,37 @@ const collageImages = [
 ];
 
 export default function ImageCollage() {
-  const [selectedImage, setSelectedImage] = useState(null);
+  const [selectedIndex, setSelectedIndex] = useState(null);
   const [activeCategory, setActiveCategory] = useState('all');
+  const [direction, setDirection] = useState(0);
+  const dragControls = useDragControls();
 
   const filteredImages = activeCategory === 'all' 
     ? collageImages 
     : collageImages.filter(img => img.category === activeCategory);
+
+  const handleKeyDown = (e) => {
+    if (selectedIndex !== null) {
+      if (e.key === 'ArrowRight') handleNext();
+      if (e.key === 'ArrowLeft') handlePrevious();
+      if (e.key === 'Escape') setSelectedIndex(null);
+    }
+  };
+
+  const handleNext = () => {
+    setDirection(1);
+    setSelectedIndex((prev) => (prev + 1) % filteredImages.length);
+  };
+
+  const handlePrevious = () => {
+    setDirection(-1);
+    setSelectedIndex((prev) => (prev - 1 + filteredImages.length) % filteredImages.length);
+  };
+
+  useEffect(() => {
+    window.addEventListener('keydown', handleKeyDown);
+    return () => window.removeEventListener('keydown', handleKeyDown);
+  }, [selectedIndex]);
 
   return (
     <section className="relative py-20 px-4 bg-gradient-to-b from-yellow-100/95 to-yellow-50/90 overflow-hidden">
@@ -31,6 +56,7 @@ export default function ImageCollage() {
         transition={{ duration: 2, ease: 'easeOut' }}
       >
         <div className="absolute inset-0 bg-[url('/texture-paper.png')] bg-repeat opacity-30" />
+        <div className="absolute inset-0 bg-gradient-to-r from-amber-100/10 via-transparent to-amber-100/10" />
       </motion.div>
 
       <div className="container mx-auto max-w-6xl relative z-10">
@@ -48,7 +74,7 @@ export default function ImageCollage() {
               animate={{ scale: 1 }}
               transition={{ duration: 2, repeat: Infinity, repeatType: 'mirror' }}
             />
-            <h2 className="text-4xl font-bold text-amber-900 mb-4 relative">
+            <h2 className="text-4xl font-bold text-amber-900 mb-4 relative font-serif">
               Temple Moments
             </h2>
           </div>
@@ -69,6 +95,7 @@ export default function ImageCollage() {
                     ? 'bg-amber-900 text-amber-50'
                     : 'bg-amber-200/50 text-amber-800 hover:bg-amber-200/70'
                 } transition-all duration-300`}
+                aria-label={`Filter by ${category}`}
               >
                 {activeCategory === category && (
                   <motion.div 
@@ -110,7 +137,11 @@ export default function ImageCollage() {
                   index % 5 === 0 ? 'md:col-span-2' : 'md:col-span-1'
                 }`}
               >
-                <div className="relative h-96 rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-shadow duration-500">
+                <motion.div
+                  className="relative h-96 rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-shadow duration-500"
+                  whileHover={{ scale: 1.02 }}
+                  transition={{ type: 'spring', stiffness: 300 }}
+                >
                   <Image
                     src={image.src}
                     alt={image.alt}
@@ -119,6 +150,7 @@ export default function ImageCollage() {
                     className="object-cover transform group-hover:scale-105 transition-transform duration-500"
                     placeholder="blur"
                     blurDataURL="/placeholder.jpg"
+                    onClick={() => setSelectedIndex(index)}
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-amber-900/40 via-amber-900/10 to-transparent" />
                   <div className="absolute bottom-0 left-0 right-0 p-6 text-amber-50 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
@@ -128,7 +160,7 @@ export default function ImageCollage() {
                       <FiArrowUpRight className="w-4 h-4" />
                     </span>
                   </div>
-                </div>
+                </motion.div>
               </motion.div>
             ))}
           </AnimatePresence>
@@ -136,44 +168,99 @@ export default function ImageCollage() {
 
         {/* View More Button */}
         <motion.div 
-            className="text-center mt-12"
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            viewport={{ once: true }}
+          className="text-center mt-12"
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true }}
+        >
+          <Link href="/gallery" legacyBehavior>
+            <motion.a
+              whileHover={{ y: -2 }}
+              className="px-8 py-3 bg-amber-900 text-amber-50 rounded-full hover:bg-amber-800 transition-colors duration-300 shadow-lg hover:shadow-amber-900/30 flex items-center gap-2 mx-auto"
             >
-        <Link href="/gallery">
-        <motion.button 
-            whileHover={{ y: -2 }}
-            className="px-8 py-3 bg-amber-900 text-amber-50 rounded-full hover:bg-amber-800 transition-colors duration-300 shadow-lg hover:shadow-amber-900/30 flex items-center gap-2 mx-auto"
-    >
-      View Full Gallery
-      <FiArrowUpRight className="w-5 h-5" />
-    </motion.button>
-  </Link>
-</motion.div>
+              View Full Gallery
+              <FiArrowUpRight className="w-5 h-5" />
+            </motion.a>
+          </Link>
+        </motion.div>
       </div>
 
       {/* Lightbox Modal */}
-      <AnimatePresence>
-        {selectedImage && (
+      <AnimatePresence custom={direction}>
+        {selectedIndex !== null && (
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             className="fixed inset-0 bg-black/90 z-50 flex items-center justify-center p-4"
-            onClick={() => setSelectedImage(null)}
+            onClick={(e) => e.target === e.currentTarget && setSelectedIndex(null)}
           >
-            <button className="absolute top-8 right-8 text-amber-50 hover:text-amber-200 transition-colors">
+            <button 
+              className="absolute top-8 right-8 text-amber-50 hover:text-amber-200 transition-colors z-50"
+              onClick={() => setSelectedIndex(null)}
+              aria-label="Close lightbox"
+            >
               <FiX className="w-8 h-8" />
             </button>
-            <div className="relative w-full max-w-6xl h-[90vh]">
+
+            <motion.div
+              className="relative w-full max-w-6xl h-[90vh]"
+              custom={direction}
+              initial={{ opacity: 0, x: direction > 0 ? 100 : -100 }}
+              animate={{ opacity: 1, x: 0 }}
+              exit={{ opacity: 0, x: direction > 0 ? -100 : 100 }}
+              transition={{ duration: 0.3 }}
+              drag="x"
+              dragConstraints={{ left: 0, right: 0 }}
+              dragElastic={0.2}
+              onDragEnd={(_, { offset, velocity }) => {
+                if (Math.abs(offset.x) > 100 || Math.abs(velocity.x) > 500) {
+                  offset.x > 0 ? handlePrevious() : handleNext();
+                }
+              }}
+              dragControls={dragControls}
+            >
               <Image
-                src={selectedImage.src}
-                alt={selectedImage.alt}
+                src={filteredImages[selectedIndex].src}
+                alt={filteredImages[selectedIndex].alt}
                 fill
                 className="object-contain rounded-lg"
+                priority
               />
-            </div>
+
+              <div className="absolute bottom-8 left-1/2 -translate-x-1/2 bg-black/50 px-4 py-2 rounded-full text-amber-50 backdrop-blur-sm">
+                {filteredImages[selectedIndex].alt}
+              </div>
+
+              <button
+                className="absolute left-4 top-1/2 -translate-y-1/2 p-4 text-amber-50 hover:text-amber-200 bg-black/30 rounded-full backdrop-blur-sm"
+                onClick={handlePrevious}
+                aria-label="Previous image"
+              >
+                <FiChevronLeft className="w-8 h-8" />
+              </button>
+
+              <button
+                className="absolute right-4 top-1/2 -translate-y-1/2 p-4 text-amber-50 hover:text-amber-200 bg-black/30 rounded-full backdrop-blur-sm"
+                onClick={handleNext}
+                aria-label="Next image"
+              >
+                <FiChevronRight className="w-8 h-8" />
+              </button>
+
+              <div className="absolute top-8 left-8 flex gap-4">
+                <button
+                  className="p-3 bg-black/30 text-amber-50 rounded-full backdrop-blur-sm hover:bg-black/50 transition-colors"
+                  onClick={() => navigator.share({
+                    title: filteredImages[selectedIndex].alt,
+                    url: filteredImages[selectedIndex].src
+                  })}
+                  aria-label="Share image"
+                >
+                  <FiShare2 className="w-6 h-6" />
+                </button>
+              </div>
+            </motion.div>
           </motion.div>
         )}
       </AnimatePresence>

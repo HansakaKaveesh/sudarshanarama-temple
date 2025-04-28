@@ -1,3 +1,5 @@
+"use client";
+import { motion } from 'framer-motion';
 export default function DhammaTalksSection() {
     // Video data array for easier management and scalability
     const videos = [
@@ -26,13 +28,22 @@ export default function DhammaTalksSection() {
   
     return (
       <section className="py-16 bg-gradient-to-b from-yellow-50 to-yellow-50 px-4 md:px-8 lg:px-16">
-        <div className="text-center mb-12">
-          <h2 className="text-5xl font-serif font-extrabold text-yellow-900 mb-4 tracking-wide">ධර්ම දේශන</h2>
-          <p className="text-lg text-yellow-800 max-w-2xl mx-auto leading-relaxed font-sinhala">
-            YouTube හි ඉදිරිපත් කරන ලද ප්‍රබෝධදායක සහ සම්මානීය ධර්ම දේශන සොයා බලන්න.
-            මෙම වීඩියෝවල බෙදා හරින ලද ප්‍රජා සහ බුද්ධිමත් වචන පිළිබඳ මනනය කරන්න.
-          </p>
-        </div>
+        <motion.div 
+    initial={{ opacity: 0, y: 20 }}
+    animate={{ opacity: 1, y: 0 }}
+    transition={{ duration: 0.8 }}
+    className="text-center mb-16"
+  >
+    <h2 className="text-5xl font-serif font-extrabold text-yellow-900 mb-4 tracking-wide transform hover:scale-105 transition-transform duration-300">
+      ධර්ම දේශන
+    </h2>
+    <div className="w-24 h-1 bg-yellow-700 mx-auto mb-6 rounded-full" />
+    <p className="text-lg text-yellow-800 max-w-2xl mx-auto leading-relaxed font-sinhala hover:text-yellow-900 transition-colors duration-300">
+      YouTube හි ඉදිරිපත් කරන ලද ප්‍රබෝධදායක සහ සම්මානීය ධර්ම දේශන සොයා බලන්න.
+      <br className="hidden md:block" />
+      මෙම වීඩියෝවල බෙදා හරින ලද ප්‍රජා සහ බුද්ධිමත් වචන පිළිබඳ මනනය කරන්න.
+    </p>
+  </motion.div>
   
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {videos.map(video => (
@@ -64,16 +75,28 @@ export default function DhammaTalksSection() {
         </div>
   
         {/* Button to go to YouTube Channel */}
-        <div className="text-center mt-12">
-          <a
-            href="https://www.youtube.com/@dahamimaga-3258" // Replace with your actual YouTube channel link
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-block bg-red-600 text-white font -semibold py-2 px-4 rounded hover:bg-red-800 transition duration-300"
-          >
-            Go to YouTube Channel
-          </a>
-        </div>
+        <motion.div
+    initial={{ opacity: 0 }}
+    animate={{ opacity: 1 }}
+    transition={{ delay: 0.4 }}
+    className="text-center mt-16"
+  >
+    <a
+      href="https://www.youtube.com/@dahamimaga-3258"
+      target="_blank"
+      rel="noopener noreferrer"
+      className="inline-flex items-center bg-red-600 hover:bg-red-700 text-white font-sinhala text-lg px-8 py-3 rounded-full transition-all duration-300 shadow-lg hover:shadow-xl hover:-translate-y-1"
+    >
+      <svg 
+        className="w-6 h-6 mr-2" 
+        fill="currentColor" 
+        viewBox="0 0 24 24"
+      >
+        <path d="M19.615 3.184c-3.604-.246-11.631-.245-15.23 0-3.897.266-4.356 2.62-4.385 8.816.029 6.185.484 8.549 4.385 8.816 3.6.245 11.626.246 15.23 0 3.897-.266 4.356-2.62 4.385-8.816-.029-6.185-.484-8.549-4.385-8.816zm-10.615 12.816v-8l8 3.993-8 4.007z" />
+      </svg>
+      යූ ටියුබ් නාලිකාව
+    </a>
+  </motion.div>
       </section>
     );
   }
