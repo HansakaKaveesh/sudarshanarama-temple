@@ -14,10 +14,10 @@ export default function DhammaSchool() {
     { id: 'facilities', label: 'Facilities' },
     { id: 'staff', label: 'Teaching Staff' },
     { id: 'prefects', label: 'Prefects' },
-    { id: 'pastpapers', label: 'Pastpapers' },
+    { id: 'pastpapers', label: 'Papers & Notes' },
     { id: 'gallery', label: 'Gallery' },
     { id: 'contact', label: 'Contact Us' },
-    { id: 'admission', label: 'New admission' },
+    { id: 'admission', label: 'Admission' },
     
   ]
 
@@ -32,10 +32,10 @@ export default function DhammaSchool() {
       <div className="absolute inset-0 bg-gradient-to-b from-transparent via-white/60 to-white/90 flex flex-col items-center justify-center text-center p-4 md:p-8">
         <div className="space-y-4 transform group-hover:scale-95 transition-transform duration-500 ">
           <h1 className="mt-24 md:mt-0 text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 tracking-tighter drop-shadow-md">
-            DHAMMA SCHOOL
+          ශ්‍රි සුමංගල දහම් පාසැල
           </h1>
           <p className="text-lg sm:text-xl md:text-2xl font-semibold text-gray-800 mt-2 md:mt-4">
-            ශ්‍රි සුමංගල දහම් පාසැල
+          ආලෝකෝ උදපාදි
           </p>
         </div>
 
