@@ -2,7 +2,8 @@
 import React, { useRef } from 'react';
 import { motion, useInView } from 'framer-motion';
 
-import { FaPrayingHands, FaLeaf, FaSun, FaHeart, FaBook,FaChild,FaHandsHelping,FaBookOpen,FaMountain,FaHandHoldingHeart,FaMusic,FaCalendarDay,FaArrowRight } from "react-icons/fa";
+import { FaPrayingHands, FaLeaf, FaSun, FaHeart, FaBook,FaChild,FaHandsHelping,FaBookOpen,FaArrowRight } from "react-icons/fa";
+import { FaChildren } from "react-icons/fa6";
 
 // Sample service data
 const services = [
@@ -10,7 +11,7 @@ const services = [
     {
       icon: <FaPrayingHands className="text-3xl text-yellow-800" />,
       title: "භාවනා සැසි",
-      description: "සිහිය සහ අභ්‍යන්තර සාමය වර්ධනය කිරීම සඳහා දිනපතා මඟ පෙන්වන භාවනා පිළිවෙත්",
+      description: "ආතාපි සම්පජානෝ සතිමා",
       link: "/meditation"
     },
     {
@@ -32,6 +33,12 @@ const services = [
       link: "/youth-programs"
     },
     {
+      icon: <FaChildren className="text-3xl text-yellow-800" />,
+      title: "ළමා වැඩසටහන්",
+      description: "දරුවන්ගේ බුද්ධිමය, ආත්මීය හා සමාජීය කුසලතා වර්ධනය සඳහා අදාළ වැඩසටහන්",
+      link: "/children-programs"
+    },
+    {
       icon: <FaSun className="text-3xl text-yellow-800" />,
       title: "පෝය වැඩසටහන්",
       description: "අපගේ විහාරස්ථානයේ මාසික පොහොය වැඩසටහන් ඔබේ මනසට උපරිම සාමකාමී බව සහතික කිරීම සඳහා ප්රවේශමෙන් සැලසුම් කර ඇති සාර්ථක උත්සවයකි",
@@ -51,7 +58,7 @@ const services = [
     },
     {
       icon: <FaBookOpen className="text-3xl text-yellow-800" />,
-      title: "පුස්තකාල ප්රවේශය",
+      title: "පුස්තකාල ප්‍රවේශය",
       description: "බෞද්ධ සාහිත්‍ය සහ ඩිජිටල් සම්පත් පුළුල් එකතුව",
       link: "/library"
     },
@@ -91,8 +98,8 @@ const ServiceSection = () => {
           අපගේ සේවා
           </h2>
           <div className="w-24 h-1 bg-yellow-700 mx-auto mb-6 rounded-full" />
-          <p className="text-lg text-yellow-800 max-w-2xl mx-auto leading-relaxed">
-          සදාකාලික බෞද්ධ ඉගැන්වීම් සහ අධ්‍යාත්මික මගපෙන්වීම මත පදනම් වූ පරිවර්තනීය භාවිතයන් සහ ප්‍රජා වැඩසටහන් සොයා ගන්න.
+          <p className="text-lg text-yellow-800 max-w-2xl mx-auto leading-relaxed font-sinhala ">
+          සර්වකාලීන බෞද්ධ ඉගැන්වීම් සහ අධ්‍යාත්මික මගපෙන්වීම මත පදනම් වූ පරිවර්තනීය භාවිතයන් සහ ප්‍රජා වැඩසටහන් සොයා ගන්න.
           </p>
         </motion.div>
 

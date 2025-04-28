@@ -5,7 +5,7 @@ import OurServices from "./components/OurServices";
 import ImageCollage from "./components/ImageCollage";
 import WelcomeSection from "./components/WelcomeSection";
 import ChiefMonkMessage from "./components/ChiefMonkMessage";
-
+import DhammaTalksSection from "./components/DhammaTalksSection";
 
 export default function Home() {
   return (
@@ -13,6 +13,7 @@ export default function Home() {
       
       <Hero />
       <WelcomeSection />
+      <DhammaTalksSection/>
       <OurServices />
       <ImageCollage />
       <ChiefMonkMessage />
