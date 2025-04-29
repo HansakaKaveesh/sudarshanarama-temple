@@ -13,8 +13,9 @@ export default function Home() {
       
       <Hero />
       <WelcomeSection />
-      <DhammaTalksSection/>
+      
       <OurServices />
+      <DhammaTalksSection/>
       <ImageCollage />
       <ChiefMonkMessage />
     </div>

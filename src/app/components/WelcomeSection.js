@@ -6,7 +6,7 @@ import { Flower2, CalendarDays, BookOpen, Sparkles } from 'lucide-react';
 
 export default function WelcomeSection() {
   return (
-    <section className="relative py-12 px-4 py-20 bg-gradient-to-b from-yellow-100 to-yellow-50 overflow-hidden isolate">
+    <section className="relative py-12 px-4 py-20 bg-gradient-to-b from-yellow-100 to-yellow-50 overflow-hidden isolate perspective-1000">
       {/* Animated Floating Flowers */}
       <motion.div 
         className="absolute inset-0 opacity-15 pointer-events-none"
@@ -80,7 +80,7 @@ export default function WelcomeSection() {
             animate="rest"
             variants={{
               rest: { scale: 1 },
-              hover: { scale: 1.02 }
+              hover: { scale: 1.02, rotateY: 5 } // Add rotation for 3D effect
             }}
             transition={{ type: 'spring', stiffness: 300 }}
           >
@@ -215,7 +215,7 @@ export default function WelcomeSection() {
               ].map((button, index) => (
                 <Link key={index} href={button.href} passHref>
                   <motion.div
-                    whileHover={{ y: -3 }}
+                    whileHover={{ y: -3, rotateY: 10 }} // Add rotation for 3D effect
                     whileTap={{ scale: 0.95 }}
                     className={`${button.style} px-8 py-4 rounded-full font-medium transition-all duration-300 flex items-center gap-3 cursor-pointer`}
                   >

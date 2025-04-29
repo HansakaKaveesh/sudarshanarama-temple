@@ -154,7 +154,7 @@ const ServiceSection = () => {
       ))}
     </motion.div>
 
-    {/* View All Services Button */}
+    {/* View All Services Button 
     <motion.div
       className="text-center mt-12"
       initial={{ opacity: 0 }}
@@ -167,7 +167,7 @@ const ServiceSection = () => {
       >
         සියලුම සේවා බලන්න
       </a>
-    </motion.div>
+    </motion.div> */}
   </div>
 </section>
 

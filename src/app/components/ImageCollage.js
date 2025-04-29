@@ -47,7 +47,7 @@ export default function ImageCollage() {
   }, [selectedIndex]);
 
   return (
-    <section className="relative py-20 px-4 bg-gradient-to-b from-yellow-100/95 to-yellow-50/90 overflow-hidden">
+    <section className="relative py-20 px-4 bg-gradient-to-b from-yellow-50 to-yellow-50 overflow-hidden">
       {/* Animated background elements */}
       <motion.div 
         className="absolute inset-0 opacity-10 mix-blend-multiply"
@@ -55,7 +55,7 @@ export default function ImageCollage() {
         animate={{ scale: 1 }}
         transition={{ duration: 2, ease: 'easeOut' }}
       >
-        <div className="absolute inset-0 bg-[url('/texture-paper.png')] bg-repeat opacity-30" />
+        <div className="absolute inset-0 bg-[url('/2023-06-01.jpg')] bg-repeat opacity-60" />
         <div className="absolute inset-0 bg-gradient-to-r from-amber-100/10 via-transparent to-amber-100/10" />
       </motion.div>
 
