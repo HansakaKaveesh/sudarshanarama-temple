@@ -20,7 +20,7 @@ export default function DhammaAdmissionPage() {
           Welcome to our Dhamma School! Please fill out the following Google Form to complete your admission process.
         </p>
 
-        <div className="w-full aspect-[3/2] md:aspect-video rounded-xl overflow-hidden shadow-md">
+        <div className="w-full aspect-[1/2] md:aspect-video rounded-xl overflow-hidden shadow-md">
           {loading && (
             <div className="flex items-center justify-center h-full">
               <div className="loader"></div>

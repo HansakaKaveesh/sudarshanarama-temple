@@ -1,6 +1,7 @@
 'use client'
 import { useState } from 'react'
 import Papers from './components/pastpaper'
+import History from './components/history'
 import Admission from './components/admission'
 import { FaFacebookF, FaInstagram, FaYoutube } from 'react-icons/fa'; // Import social media icons
 
@@ -229,67 +230,14 @@ export default function DhammaSchool() {
 
 
         {selectedCategory === 'history' && (
-          <section className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-  <div className="text-center mb-12">
-    <h2 className="text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-amber-700 to-orange-800 bg-clip-text text-transparent">
-      Our Legacy of Wisdom
-    </h2>
-    <div className="h-1 w-24 bg-amber-600 mx-auto rounded-full" />
-  </div>
+           <div>
+              <History />
+            </div>
+          )}
 
-  <div className="flex flex-col lg:flex-row gap-8 items-center">
-    <div className="lg:w-1/2 space-y-6">
-      <p className="text-lg leading-relaxed text-gray-700 italic border-l-4 border-amber-600 pl-4">
-        Education is the light that illuminates the path to enlightenment
-      </p>
-      <p className="text-lg leading-relaxed text-gray-800">
-        Founded in 1975 by Ven. Dr. Walpola Piyananda Thero, Sri Sumangala Dhamma School has blossomed from a small meditation group to a premier institution nurturing over 50,000 students in Buddhist philosophy. Our journey reflects the timeless wisdom of the Dhamma adapting to modern education.
-      </p>
-      
-      <div className="p-6 bg-amber-50 rounded-xl shadow-sm">
-        <h3 className="text-xl font-semibold text-amber-900 mb-3">Milestones</h3>
-        <ul className="space-y-2 list-disc list-inside text-amber-800">
-          <li>1982: First purpose-built Dhamma hall completed</li>
-          <li>1995: Recognized as National Model Dhamma School</li>
-          <li>2010: Digital Learning Initiative launched</li>
-        </ul>
-      </div>
-    </div>
 
-    <div className="lg:w-1/2 relative group">
-      <div className="grid gap-6 transform transition-all duration-300">
-        <div className="relative overflow-hidden rounded-2xl shadow-xl hover:shadow-2xl transition-shadow">
-          <img 
-            src="/unnamed (1).jpg" 
-            alt="Historic campus" 
-            className="w-full h-64 object-cover transform hover:scale-105 transition-transform duration-300"
-          />
-          <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-amber-900 p-4">
-            <p className="text-white font-medium">Our Original Vihara</p>
-          </div>
-        </div>
-        
-        <div className="relative overflow-hidden rounded-2xl shadow-xl hover:shadow-2xl transition-shadow">
-          <img 
-            src="/history2.jpg" 
-            alt="Founder portrait" 
-            className="w-full h-64 object-cover transform hover:scale-105 transition-transform duration-300"
-          />
-          <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-amber-900 p-4">
-            <p className="text-white font-medium">Ven. Dr. Piyananda Thero</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
 
-  <div className="mt-12 text-center">
-    <a href="/legacy" className="inline-block bg-amber-600 hover:bg-amber-700 text-white px-8 py-3 rounded-lg font-semibold transition-colors duration-300 transform hover:-translate-y-1">
-      Explore Our Legacy →
-    </a>
-  </div>
-</section>
-        )}
+
 
         {selectedCategory === 'facilities' && (
           <section className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 px-4 md:px-8 lg:px-0 py-10">
