@@ -10,7 +10,8 @@ const resourcesData = {
       { title: 'Buddha Darmaya 2023', file: '/pastpapers/grade1/buddha-darmaya-2023.pdf' },
     ],
     textbooks: [
-      { title: 'Buddha Dharma Textbook', file: '/textbooks/grade1/buddha-dharma-textbook.pdf' },
+      { title: 'Grade 1 Dhamma School Text Book - Sinhala', file: '/pastpapers/Grade 1/Textbook/grade-1-dhamma-school-text-book-sinhala.pdf' },
+      { title: 'Grade 1 Dhamma School Text Book - English', file: '/pastpapers/Grade 1/Textbook/grade-1-dhamma-school-text-book-english.pdf' },
     ],
   },
   'Grade 2': {
@@ -18,7 +19,8 @@ const resourcesData = {
       { title: 'Buddha Darmaya 2023', file: '/pastpapers/grade2/buddha-darmaya-2023.pdf' },
     ],
     textbooks: [
-      { title: 'Buddha Dharma Textbook', file: '/textbooks/grade2/buddha-dharma-textbook.pdf' },
+      { title: 'Grade 2 Dhamma School Text Book - Sinhala', file: '/pastpapers/Grade 2/Textbook/grade-2-dhamma-school-text-book-sinhala.pdf' },
+      { title: 'Grade 2 Dhamma School Text Book - English', file: '/pastpapers/Grade 2/Textbook/grade-2-dhamma-school-text-book-english.pdf' },
     ],
   },
   'Grade 3': {

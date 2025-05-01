@@ -3,6 +3,7 @@ import { useState } from 'react'
 import Papers from './components/pastpaper'
 import History from './components/history'
 import Admission from './components/admission'
+import Students from './components/students'
 import { FaFacebookF, FaInstagram, FaYoutube } from 'react-icons/fa'; // Import social media icons
 
 
@@ -14,7 +15,7 @@ export default function DhammaSchool() {
     { id: 'history', label: 'Our History' },
     { id: 'facilities', label: 'Facilities' },
     { id: 'staff', label: 'Teaching Staff' },
-    { id: 'prefects', label: 'Prefects' },
+    { id: 'students', label: 'Students' },
     { id: 'pastpapers', label: 'Papers & Notes' },
     { id: 'gallery', label: 'Gallery' },
     { id: 'contact', label: 'Contact Us' },
@@ -56,7 +57,7 @@ export default function DhammaSchool() {
     </div>
 
 {/* Navigation */}
-<nav className="sticky top-0 bg-white/90 backdrop-blur-md shadow-md z-40 w-full">
+<nav className="sticky top-[80px] bg-white/40 backdrop-blur-md shadow-md z-40 w-full">
   <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3 overflow-x-auto scrollbar-hide scroll-smooth">
     <div className="flex items-center justify-start space-x-2 w-max min-w-full">
       {categories.map((category) => (
@@ -77,6 +78,7 @@ export default function DhammaSchool() {
     </div>
   </div>
 </nav>
+
 
 
 
@@ -280,38 +282,16 @@ export default function DhammaSchool() {
         
         )}
 
-        {selectedCategory === 'prefects' && (
-          <section className="grid md:grid-cols-2 gap-8">
-            <div className="p-6 bg-white shadow-lg rounded-lg">
-              <h3 className="text-2xl font-bold mb-4 text-amber-700">Senior Prefects</h3>
-              <ul className="space-y-3">
-                <li className="flex items-center p-3 bg-amber-50 rounded">
-                  <span className="font-medium">Kavindu Perera</span>
-                  <span className="ml-auto text-sm text-amber-600">Head Prefect</span>
-                </li>
-                {/* Add more prefects */}
-              </ul>
-            </div>
-            <div className="p-6 bg-white shadow-lg rounded-lg">
-              <h3 className="text-2xl font-bold mb-4 text-amber-700">Junior Prefects</h3>
-              <ul className="space-y-3">
-                <li className="flex items-center p-3 bg-amber-50 rounded">
-                  <span className="font-medium">Sachini Fernando</span>
-                  <span className="ml-auto text-sm text-amber-600">Assistant Prefect</span>
-                </li>
-                {/* Add more prefects */}
-              </ul>
-            </div>
-          </section>
+        {selectedCategory === 'students' && (
+          <div>
+            <Students />
+          </div>
         )}
 
         {selectedCategory === 'pastpapers' && (
-          
-         <div>
-         
-         <Papers />
-       
-        </div>
+          <div>
+            <Papers />
+          </div>
         
         )}
 
