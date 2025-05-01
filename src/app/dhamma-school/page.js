@@ -57,7 +57,7 @@ export default function DhammaSchool() {
     </div>
 
 {/* Navigation */}
-<nav className="sticky top-[80px] bg-white/40 backdrop-blur-md shadow-md z-40 w-full">
+<nav className="sticky top-[90px] sm:top-[90px] md:top-[80px] bg-white/40 backdrop-blur-md shadow-md z-40 w-full">
   <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3 overflow-x-auto scrollbar-hide scroll-smooth">
     <div className="flex items-center justify-start space-x-2 w-max min-w-full">
       {categories.map((category) => (
