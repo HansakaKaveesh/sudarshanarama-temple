@@ -10,7 +10,7 @@
   },
   "dependencies": {
     "@heroicons/react": "^2.2.0",
-    "framer-motion": "^12.6.3",
+    "framer-motion": "^12.9.4",
     "jspdf": "^3.0.1",
     "lucide-react": "^0.487.0",
     "next": "15.2.4",
