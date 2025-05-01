@@ -142,55 +142,56 @@ export default function PastPapersSection() {
       <div className="mb-8 flex justify-center">
         <button
           onClick={() => setViewType('pastPapers')}
-          className={`px-4 py-2 rounded-lg ${viewType === 'pastPapers' ? 'bg-amber-500 text-white' : 'bg-white text-amber-700 border border-amber-500'}`}
+          className={`px-4 py-2 rounded-lg ${viewType === 'pastPapers' ? 'bg-amber-800 text-white' : 'bg-white text-amber-700 border border-amber-500'}`}
         >
           Past Papers
         </button>
         <button
           onClick={() => setViewType('textbooks')}
-          className={`ml-4 px-4 py-2 rounded-lg ${viewType === 'textbooks' ? 'bg-amber-500 text-white' : 'bg-white text-amber-700 border border-amber-500'}`}
+          className={`ml-4 px-4 py-2 rounded-lg ${viewType === 'textbooks' ? 'bg-amber-800 text-white' : 'bg-white text-amber-700 border border-amber-500'}`}
         >
           Textbooks
         </button>
       </div>
 
-      <div className="space-y-6">
-        {papers.map((resource, idx) => (
-          <motion.div
-            key={idx}
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: idx * 0.1 }}
-            className="flex flex-col sm:flex-row justify-between items-start sm:items-center bg-white p-6 rounded-xl shadow-md hover:shadow-lg border border-gray-100 transition-all duration-300"
-          >
-            <div className="mb-4 sm:mb-0">
-              <h3 className="text-lg font-semibold text-gray-800">{resource.title}</h3>
-              <p className="text-sm text-gray-500">Download or view the resource in PDF format</p>
-            </div>
-            <div className="flex gap-4 mt-4 sm:mt-0">
-              <a
-                href={resource.file}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-600 hover:to-amber-700 text-white px-4 py-2 rounded-lg text-sm font-medium shadow transition-all duration-300 flex items-center"
-              >
-                <FaEye className="mr-2" /> {/* Eye icon for viewing */}
-                View PDF
-              </a>
-              <a
-                href={resource.file}
-                target="_blank"
-                rel="noopener noreferrer"
-                download
-                className="bg-white border border-amber-600 text-amber-700 px-4 py-2 rounded-lg text-sm font-medium hover:bg-amber-100 transition-all duration-300 flex items-center"
-              >
-                <FaDownload className="mr-2" /> {/* Download icon */}
-                Download
-              </a>
-            </div>
-          </motion.div>
-        ))}
+      <div className="flex flex-wrap gap-6 justify-start">
+  {papers.map((resource, idx) => (
+    <motion.div
+      key={idx}
+      initial={{ opacity: 0, y: 20 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ delay: idx * 0.1 }}
+      className="w-full sm:w-[48%] lg:w-[30%] flex flex-col justify-between bg-white p-6 rounded-xl shadow-md hover:shadow-lg border border-gray-100 transition-all duration-300"
+    >
+      <div className="mb-4">
+        <h3 className="text-lg font-semibold text-gray-800">{resource.title}</h3>
+        <p className="text-sm text-gray-500">Download or view the resource in PDF format</p>
       </div>
+      <div className="flex gap-4 mt-4">
+        <a
+          href={resource.file}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-600 hover:to-amber-700 text-white px-4 py-2 rounded-lg text-sm font-medium shadow transition-all duration-300 flex items-center"
+        >
+          <FaEye className="mr-2" />
+          View PDF
+        </a>
+        <a
+          href={resource.file}
+          target="_blank"
+          rel="noopener noreferrer"
+          download
+          className="bg-white border border-amber-600 text-amber-700 px-4 py-2 rounded-lg text-sm font-medium hover:bg-amber-100 transition-all duration-300 flex items-center"
+        >
+          <FaDownload className="mr-2" />
+          Download
+        </a>
+      </div>
+    </motion.div>
+  ))}
+</div>
+
     </div>
 
     {/* Optional decorative emoji */}
