@@ -5,20 +5,41 @@ import Image from "next/image";
 
 const categories = [
   "All",
+  "Temple",
   "Dhamma School",
   "Perahara",
-  "Paintings",
+  
   "Sculptures",
   "Wibhishana Devalaya",
 ];
 
 const images = [
-  { src: "/dpheader.jpg", category: "Dhamma School" },
-  { src: "/dpheader.jpg", category: "Dhamma School" },
-  { src: "/dpheader.jpg", category: "Dhamma School" },
-  { src: "/dpheader.jpg", category: "Dhamma School" },
-  { src: "/dpheader.jpg", category: "Dhamma School" },
-  { src: "/dpheader.jpg", category: "Dhamma School" },
+  { src: "/gallery/temple/01.jpg", category: "Temple" },
+  { src: "/gallery/temple/02.jpg", category: "Temple" },
+  { src: "/gallery/temple/03.jpg", category: "Temple" },
+  { src: "/gallery/temple/04.jpg", category: "Temple" },
+  { src: "/gallery/temple/05.jpg", category: "Temple" },
+  { src: "/gallery/temple/06.jpg", category: "Temple" },
+  
+  { src: "/gallery/school/01.jpg", category: "Dhamma School" },
+  { src: "/gallery/school/02.jpg", category: "Dhamma School" },
+  { src: "/gallery/school/03.jpg", category: "Dhamma School" },
+  { src: "/gallery/school/04.jpg", category: "Dhamma School" },
+  { src: "/gallery/school/05.jpg", category: "Dhamma School" },
+  { src: "/gallery/school/06.jpg", category: "Dhamma School" },
+  { src: "/gallery/school/07.jpg", category: "Dhamma School" },
+  { src: "/gallery/school/08.jpg", category: "Dhamma School" },
+  { src: "/gallery/school/09.jpg", category: "Dhamma School" },
+  { src: "/gallery/school/10.jpg", category: "Dhamma School" },
+  { src: "/gallery/school/11.jpg", category: "Dhamma School" },
+  { src: "/gallery/school/12.jpg", category: "Dhamma School" },
+  { src: "/gallery/school/13.jpg", category: "Dhamma School" },
+  { src: "/gallery/school/14.jpg", category: "Dhamma School" },
+  { src: "/gallery/school/15.jpg", category: "Dhamma School" },
+  { src: "/gallery/school/16.jpg", category: "Dhamma School" },
+  { src: "/gallery/school/17.jpg", category: "Dhamma School" },
+  { src: "/gallery/school/18.jpg", category: "Dhamma School" },
+ 
 ];
 
 export default function GallerySection() {
