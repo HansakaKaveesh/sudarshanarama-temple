@@ -4,6 +4,7 @@ import Papers from './components/pastpaper'
 import History from './components/history'
 import Admission from './components/admission'
 import Students from './components/students'
+import Staff from './components/staff'
 import { FaFacebookF, FaInstagram, FaYoutube } from 'react-icons/fa'; // Import social media icons
 
 
@@ -296,25 +297,10 @@ export default function DhammaSchool() {
         )}
 
         {selectedCategory === 'staff' && (
-          <section className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-          <div className="p-6 text-center bg-white shadow-lg rounded-lg">
-            <img src="/chief-monk.jpg" alt="Head Teacher" className="w-32 h-32 rounded-full mx-auto mb-4" />
-            <h3 className="text-xl font-bold">පූජ්‍ය උළුවිටියේ අනුරුද්ධ හිමි</h3>
-            <p className="text-amber-600">විදුහල්පති</p>
+          <div>
+            <Staff />
           </div>
-        
-          <div className="p-6 text-center bg-white shadow-lg rounded-lg">
-            <img src="/teacher1.jpg" alt="Senior Teacher" className="w-32 h-32 rounded-full mx-auto mb-4" />
-            <h3 className="text-xl font-bold">Mrs. Name</h3>
-            <p className="text-amber-600">Senior Teacher - Grade 10 & 11</p>
-          </div>
-        
-          <div className="p-6 text-center bg-white shadow-lg rounded-lg">
-            <img src="/teacher2.jpg" alt="Assistant Teacher" className="w-32 h-32 rounded-full mx-auto mb-4" />
-            <h3 className="text-xl font-bold">Mr. Name</h3>
-            <p className="text-amber-600">Assistant Teacher - Grade 8 & 9</p>
-          </div>
-        </section>
+
         
         )}
 
