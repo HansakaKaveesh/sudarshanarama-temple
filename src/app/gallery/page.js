@@ -63,7 +63,7 @@ export default function GallerySection() {
         <div className="absolute inset-0 bg-gradient-to-b from-transparent via-white/60 to-white/90 flex flex-col items-center justify-center text-center p-4 md:p-8">
           <div className="space-y-4 transform group-hover:scale-95 transition-transform duration-500">
             <h1 className="mt-24 md:mt-0 text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 tracking-tighter drop-shadow-md">
-              Gallery
+              Photo Gallery 
             </h1>
           </div>
         </div>
