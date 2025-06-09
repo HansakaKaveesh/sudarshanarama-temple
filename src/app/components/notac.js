@@ -18,8 +18,8 @@ export default function Not() {
         </h1>
 
         <p className="text-gray-600 mb-6 text-base leading-relaxed">
-          This page is currently unavailable. We're working hard to get it
-          online. Please check back later!
+          This page is currently unavailable. We are working hard to get it
+          online. Please check back later
         </p>
 
         <hr className="border-gray-200 mb-5" />
