@@ -11,13 +11,13 @@ import Not from "./components/notac";
 export default function Home() {
   return (
     <div>
-      <Not />
-     {/* <Hero />
+     {/* <Not /> */}
+      <Hero />
       <WelcomeSection />
       <OurServices />
       <DhammaTalksSection/>
       <ImageCollage />
-      <ChiefMonkMessage /> */}
+      <ChiefMonkMessage /> 
     </div> 
   );
 }
