@@ -29,9 +29,9 @@ export default function RootLayout({ children }) {
         />
       </head>
       <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
-       {/* <Navbar /> */}
+       <Navbar /> 
         {children}
-      {/*  <Footer /> */}
+      <Footer /> 
         <ScrollToTop /> {/* ← add this line */}
       </body>
     </html>
