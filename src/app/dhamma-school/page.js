@@ -99,68 +99,80 @@ export default function DhammaSchool() {
                   </svg>
                 </div>
             
-                <header className="relative z-10 text-center mb-16">
+  <header className="relative z-10 text-center mb-20 px-4 sm:px-6 lg:px-8">
   {/* Logo */}
-  <img
-    src="/logodp.png" // Replace with your actual logo path
-    alt="Dhamma School Logo"
-    className="w-20 h-20 sm:w-24 sm:h-24 mx-auto mb-4 object-contain"
-  />
+  <div className="flex justify-center mb-6">
+    <img
+      src="/logodp.png"
+      alt="Dhamma School Logo"
+      className="w-24 h-24 sm:w-28 sm:h-28 object-contain drop-shadow-lg transition-transform duration-300 hover:scale-105"
+    />
+  </div>
 
-  <h2 className="text-4xl sm:text-5xl font-bold text-yellow-900 mb-6 font-sinhala">
-    <span className="block english-font">Sri Sumangala Dhamma School</span>
-    ශ්‍රි සුමංගල දහම් පාසැල
+  {/* Title */}
+  <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-yellow-900 mb-6 font-sinhala leading-tight">
+    <span className="block english-font tracking-wide mb-1">Sri Sumangala Dhamma School</span>
+    <span className="block text-amber-700 text-opacity-90 drop-shadow-sm">
+      ශ්‍රි සුමංගල දහම් පාසැල
+    </span>
   </h2>
 
-  <div className="max-w-3xl mx-auto">
-    <p className="text-lg text-gray-800 leading-relaxed mb-8">
-    බුදුරදුන්ගේ අකාලික ප්‍රඥාව තුළින් අධ්‍යාත්මික වර්ධනය පෝෂණය කරන අපගේ විහාරස්ථානය සාමයේ සහ සිහිය ඇති අභයභූමියකි. අපි කාරුණික පරිසරයක් තුළ සියලුම වයස් කාණ්ඩ සඳහා මාර්ගෝපදේශ, භාවනා සහ දහම් අධ්‍යාපනය පිරිනමන්නෙමු.
+  {/* Description */}
+  <div className="max-w-2xl mx-auto">
+    <p className="text-lg sm:text-xl text-gray-800 leading-relaxed mb-8 font-medium">
+      බුදුරදුන්ගේ අකාලික ප්‍රඥාව තුළින් අධ්‍යාත්මික වර්ධනය පෝෂණය කරන අපගේ විහාරස්ථානය සාමයේ
+      සහ සිහිය ඇති අභයභූමියකි. අපි කාරුණික පරිසරයක් තුළ සියලුම වයස් කාණ්ඩ සඳහා
+      මාර්ගෝපදේශ, භාවනා සහ දහම් අධ්‍යාපනය පිරිනමන්නෙමු.
     </p>
-    <div className="h-1 w-24 bg-amber-600 mx-auto rounded-full" />
+
+    {/* Decorative separator */}
+    <div className="h-1 w-24 bg-amber-600 mx-auto rounded-full animate-pulse" />
   </div>
 </header>
 
             
-<div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-20">
+<div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-24 px-4 sm:px-6 lg:px-8">
   {[
-    { 
-      title: "අපගේ මෙහෙවර", 
-      content: "ශාන්තිය, මෛත්‍රිය, සිහියෙන් යුක්තව ජීවත්වීම තුළින් පුද්ගලයන්ට ධර්ම මාර්ගයට යොමු කරන්න",
-      icon: "🌸"
+    {
+      title: "අපගේ මෙහෙවර",
+      content: "සිහියෙන්, නුවණින් හා වීර්යයෙන් යුක්තව නීබ්බාණගාමී මාර්ගය තුළ නිවැරදි ව ගමන් කිරීමට උදව් කිරීමට",
+      icon: "🌸",
     },
-    { 
-      title: "අපගේ දැක්ම", 
-      content: "ආධ්‍යාත්මික වශයෙන් පිබිදුණු සමාජයක් බුද්ධ දේශනාවට එකඟව ජීවත් වේ",
-      icon: "☸️"
+    {
+      title: "අපගේ දැක්ම",
+      content: "බුදුදහමේ පරම නිෂ්ඨාව වූ නිර්වාණය කරා ගමන් කිරීමේ උත්සාහයේ නිරත වීම එනම් අරි අටඟ මඟෙහි නොකඩවා යොමු වීම ",
+      icon: "☸️",
     },
-    { 
-      title: "අපගේ වටිනාකම්", 
-      content: "මෛත්‍රිය, සිහිය, ත්‍යාගශීලී බව, හික්මීම සහ ප්‍රඥාව සියලු ක්‍රියාවන්හිදී",
-      icon: "🧘"
+    {
+      title: "අපගේ වටිනාකම්",
+      content: "යහපත් වූ අරමුණු සඳහා ඔබට හැකි සියලුම දෙනාට ඔබට හැකි සියළුම ආකාර වලින් ඔබට හැකි තාක් කල් සහයෝගය දෙන්න",
+      icon: "🧘",
     }
   ].map((card, index) => (
-    <div 
-      key={index} 
-      className="group relative bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-500 ease-out overflow-hidden 
-                 transform-gpu hover:-translate-y-2 hover:scale-[1.02]
-                 before:content-[''] before:absolute before:top-0 before:left-0 before:w-1 before:h-0 
-                 before:bg-gradient-to-b before:from-amber-400 before:to-amber-600 
-                 before:transition-all before:duration-700 before:group-hover:h-full"
+    <div
+      key={index}
+      className="relative group bg-white p-8 rounded-3xl shadow-xl transition-all duration-500 ease-in-out overflow-hidden transform-gpu hover:-translate-y-1.5 hover:scale-[1.015]"
     >
-      <div className="absolute inset-0 bg-gradient-to-br from-white/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-      
-      <div className="absolute top-4 right-4 text-3xl opacity-30 group-hover:opacity-100 
-                     transition-all duration-500 group-hover:rotate-12 group-hover:scale-125">
+      {/* Decorative vertical gradient line */}
+      <div className="absolute top-0 left-0 h-0 w-1 bg-gradient-to-b from-yellow-400 to-amber-600 rounded-r-full group-hover:h-full transition-all duration-700 ease-in-out" />
+
+      {/* Glow hover effect */}
+      <div className="absolute inset-0 bg-gradient-to-br from-yellow-50 via-white/60 to-transparent opacity-0 group-hover:opacity-100 rounded-3xl transition-opacity duration-500 mix-blend-multiply pointer-events-none z-0" />
+
+      {/* Icon */}
+      <div
+        className="absolute top-5 right-5 text-3xl sm:text-4xl opacity-40 group-hover:opacity-100 transition-transform duration-500 group-hover:scale-125 group-hover:rotate-12"
+        aria-hidden
+      >
         {card.icon}
       </div>
-      
-      <div className="relative space-y-4">
-        <h3 className="text-2xl font-bold text-amber-900 mb-4 transition-colors 
-                      duration-300 group-hover:text-amber-700">
+
+      {/* Content */}
+      <div className="relative z-10 space-y-4">
+        <h3 className="text-2xl font-extrabold text-amber-900 tracking-wide mb-2 group-hover:text-amber-700 transition-colors duration-300">
           {card.title}
         </h3>
-        <p className="text-gray-700 leading-relaxed transition-colors duration-300 
-                     group-hover:text-gray-800 group-hover:pl-2">
+        <p className="text-gray-700 leading-relaxed group-hover:text-gray-800 transition-all duration-300 group-hover:pl-1.5">
           {card.content}
         </p>
       </div>
@@ -187,41 +199,106 @@ export default function DhammaSchool() {
     </div>
   </div>
 
-  <div className="bg-yellow-100 rounded-3xl p-8 md:p-12 relative overflow-hidden shadow-lg">
-    <div className="absolute bottom-0 right-0 opacity-10 text-9xl">🙏</div>
-    <h3 className="text-3xl font-bold text-yellow-900 mb-6">විදුහල්පති මඟපෙන්වීම</h3>
-    <blockquote className="text-gray-800 text-lg italic leading-relaxed mb-6 border-l-4 border-amber-600 pl-4">
-      &ldquo;සැබෑ දහම් අධ්‍යාපනය ඇත්තේ පොත්පත්වල පමණක් නොව කරුණාවන්ත සිත් හා ප්‍රඥාවන්ත සිත් ඇතිකර ගැනීමයි.
-       අපගේ කැපවූ ගුරුවරුන් සහ උපකාරක ප්‍රජාව සමඟ එක්ව, අපි බෞද්ධ සාරධර්ම තුළ මුල් බැසගත් පරම්පරාවක් ඇති කිරීමට උත්සාහ කරමු.&rdquo;
+<div className="relative overflow-hidden rounded-3xl shadow-2xl bg-yellow-50 p-6 sm:p-10 md:p-12">
+  {/* Soft Background Pattern/Image */}
+  <div
+    className="absolute inset-0 bg-cover bg-center brightness-95"
+    style={{ backgroundImage: "url('/bg-dhamma-soft.jpg')" }} // replace with your image
+  />
+  {/* Overlay for readability */}
+  <div className="absolute inset-0 bg-yellow-100 bg-opacity-80 backdrop-blur-sm" />
+
+  {/* Content */}
+  <div className="relative z-10">
+    
+    {/* Decorative Emoji */}
+    <div className="absolute bottom-4 right-6 text-[8rem] opacity-10 pointer-events-none select-none">
+      🙏
+    </div>
+
+    {/* Title */}
+    <h3 className="text-3xl sm:text-4xl font-extrabold text-yellow-900 mb-6 tracking-tight">
+      විදුහල්පති මඟපෙන්වීම
+    </h3>
+
+    {/* Quote */}
+    <blockquote className="text-gray-800 text-lg sm:text-xl italic leading-relaxed mb-8 border-l-4 border-amber-500 pl-5">
+      &ldquo;සැබෑ දහම් අධ්‍යාපනය ඇත්තේ පොත්පත්වල පමණක් නොව කරුණාවන්ත සිත් හා
+      ප්‍රඥාවන්ත සිත් ඇතිකර ගැනීමයි. අපගේ කැපවූ ගුරුවරුන් සහ උපකාරක ප්‍රජාව සමඟ
+      එක්ව, අපි බෞද්ධ සාරධර්ම තුළ මුල් බැසගත් පරම්පරාවක් ඇති කිරීමට උත්සාහ කරමු.&rdquo;
     </blockquote>
+
+    {/* Author */}
     <div className="flex items-center gap-4">
-      <div className="w-16 h-16 rounded-full bg-amber-600 flex items-center justify-center text-white text-2xl">A</div>
+      {/* Profile or Avatar Letter */}
+      <div className="w-16 h-16 rounded-full bg-amber-600 text-white text-2xl font-semibold flex items-center justify-center shadow-md transition-transform duration-300 hover:scale-105">
+        A
+        {/* Or replace with image: */}
+        {/* <img src="/anuruddha-himi.jpg" alt="Anuruddha Himi" className="w-16 h-16 rounded-full object-cover shadow-md" /> */}
+      </div>
+
+      {/* Author Info */}
       <div>
-        <p className="font-bold text-yellow-900">පූජ්‍ය උළුවිටියේ අනුරුද්ධ හිමි</p>
-        <p className="text-gray-600">විහාරාධිපති හා විදුහල්පති</p>
+        <p className="font-bold text-yellow-900 text-lg">පූජ්‍ය උළුවිටියේ අනුරුද්ධ හිමි</p>
+        <p className="text-gray-600 text-sm">විහාරාධිපති හා විදුහල්පති</p>
       </div>
     </div>
   </div>
+</div>
 
-  <div className="grid md:grid-cols-2 gap-12 items-center">
-    <div>
-      <h3 className="text-3xl font-bold text-yellow-900 mb-6">Community Roots</h3>
-      <ul className="space-y-4 text-gray-800">
-        {['Temple maintenance projects', 'Dana collections', 'Vesak lantern workshops', 
-          'Sil programs', 'Dhamma discussion circles'].map((item, index) => (
-          <li key ={index} className="flex items-center gap-3 transition-transform duration-300 hover:scale-105">
-            <div className="w-8 h-8 bg-amber-100 rounded-full flex items-center justify-center">✓</div>
-            {item}
-          </li>
-        ))}
-      </ul>
-    </div>
-    <div className="grid grid-cols-2 gap-4">
-      <img src="https://scontent.fcmb1-2.fna.fbcdn.net/v/t1.6435-9/39248884_980174078809966_1059204802812051456_n.jpg?_nc_cat=106&ccb=1-7&_nc_sid=cf85f3&_nc_eui2=AeETyQ4UM2Wvm98WN_jTrmyBHUvO_C6fQFgdS878Lp9AWKRwe7gbxi5Ixy4VxaiHtwt4uCeCr_XWcOZsPyodNVvT&_nc_ohc=QJwegRQKck0Q7kNvwHQvqqr&_nc_oc=Adl2a0uR0-ocNFs6GW8I3v5r4eGsIfYS-D02oGZWicKfuHgEisezMVhDIaW_7FFIDso&_nc_zt=23&_nc_ht=scontent.fcmb1-2.fna&_nc_gid=pUi10ZwkNNVcaVy3dFYBig&oh=00_AfGWSK1W2JcpwCUv8gosp7_5W98Ax1BJqhfnBBV9B_a6zQ&oe=68203BA7" alt="Community Service" className="rounded-2xl h-48 object-cover transition-transform duration-500 hover:scale-105" />
-      <img src="/picdp1.jpg" alt="Dhamma Class" className="rounded-2xl h-48 object-cover transition-transform duration-500 hover:scale-105 mt-8" />
-      <img src="/picdp2.jpg" alt="Vesak Celebration" className="rounded-2xl h-48 object-cover transition-transform duration-500 hover:scale-105" />
-    </div>
+<div className="grid md:grid-cols-2 gap-14 items-start px-4 sm:px-6 lg:px-8 py-10">
+  
+  {/* === Text Column === */}
+  <div>
+    <h3 className="text-4xl font-extrabold text-yellow-900 mb-8">Community Roots</h3>
+    <p className="text-gray-700 text-lg leading-relaxed mb-6">
+      Our Dhamma School is deeply rooted in community service and cultural heritage. Together, we participate in spiritual and service-focused events that bring our Sangha closer.
+    </p>
+
+    <ul className="space-y-4 text-gray-800 text-base sm:text-lg">
+      {[
+        'Temple maintenance projects',
+        'Dana collections',
+        'Vesak lantern workshops',
+        'Sil programs',
+        'Dhamma discussion circles'
+      ].map((item, index) => (
+        <li
+          key={index}
+          className="flex items-center gap-4 text-gray-800 hover:text-yellow-900 transition-colors duration-300 group"
+        >
+          {/* Icon */}
+          <div className="min-w-[36px] h-9 w-9 bg-amber-100 rounded-full flex items-center justify-center text-amber-600 font-bold shadow inner-border group-hover:shadow-md group-hover:scale-110 transition-transform duration-300 ease-in-out">
+            ✓
+          </div>
+          {/* Text */}
+          <span className="transition-all duration-200 group-hover:pl-1">{item}</span>
+        </li>
+      ))}
+    </ul>
   </div>
+
+  {/* === Image Grid === */}
+  <div className="grid grid-cols-2 gap-4">
+    <div className="col-span-2">
+      <img
+        src="https://scontent.fcmb1-2.fna.fbcdn.net/v/t1.6435-9/39248884_980174078809966_1059204802812051456_n.jpg?_nc_cat=106&ccb=1-7&_nc_sid=cf85f3&_nc_eui2=AeETyQ4UM2Wvm98WN_jTrmyBHUvO_C6fQFgdS878Lp9AWKRwe7gbxi5Ixy4VxaiHtwt4uCeCr_XWcOZsPyodNVvT&_nc_ohc=QJwegRQKck0Q7kNvwHQvqqr&_nc_oc=Adl2a0uR0-ocNFs6GW8I3v5r4eGsIfYS-D02oGZWicKfuHgEisezMVhDIaW_7FFIDso&_nc_zt=23&_nc_ht=scontent.fcmb1-2.fna&_nc_gid=pUi10ZwkNNVcaVy3dFYBig&oh=00_AfGWSK1W2JcpwCUv8gosp7_5W98Ax1BJqhfnBBV9B_a6zQ&oe=68203BA7"
+        alt="Community Service"
+        className="rounded-3xl h-56 w-full object-cover shadow-lg transition-transform duration-500 hover:scale-105"
+      />
+    </div>
+    <img
+      src="/picdp1.jpg"
+      alt="Dhamma Class"
+      className="rounded-3xl h-48 object-cover w-full shadow-md transition-transform duration-500 hover:scale-105"
+    />
+    <img
+      src="/picdp2.jpg"
+      alt="Vesak Celebration"
+      className="rounded-3xl h-48 object-cover w-full shadow-md transition-transform duration-500 hover:scale-105 mt-4"
+    />
+  </div>
+</div>
 </div>
               </div>
             </section>

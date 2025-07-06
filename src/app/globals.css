@@ -42,3 +42,19 @@ body {
     }
   }
 }
+
+/* global.css */
+
+@keyframes blink {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.3;
+  }
+}
+
+/* Utility class equivalent to Tailwind's animate-blink */
+.animate-blink {
+  animation: blink 1.2s infinite;
+}

@@ -2,27 +2,31 @@
 import { FaBullhorn } from 'react-icons/fa';
 import { MdDateRange } from 'react-icons/md';
 
+// 🎯 Sample data
 const announcements = [
   {
     id: 1,
     title: 'EYMBA Exam Registrations – 2025',
-    description: 'Submission deadline 28th Feb 2025 FAO: YMBA students & Parents,  Dear Parents,  We have now received the YMBA exam registration forms from Colombo YMBA.  We have a very tight deadline to complete and send the registration forms to Sri Lanka. Therefore, please complete the registration from (via the link) by 28th February 2025',
+    description:
+      'Submission deadline 28th Feb 2025... Please complete the YMBA exam registration form by 28th February 2025.',
     date: '2025-05-01',
     link: 'https://yourdomain.com/announcements/library-hours',
-    image: '/exam.jpg', // ✅ Add your image path here
+    image: '/exam.jpg',
   },
   {
     id: 2,
     title: 'YMBA Exam Results 2024',
-    description: 'The final exam results for the academic year 2024 have been officially released. Students can access their individual results through the student portal by logging in with their credentials. Please review your results carefully and contact the examinations department for any inquiries or clarifications.',
+    description:
+      'The final exam results are out. Visit the student portal to view your results and contact admin for queries.',
     date: '2025-05-03',
     link: 'https://yourdomain.com/announcements/library-hours',
     image: '/results.png',
   },
   {
     id: 3,
-    title: 'Admission of new students -2025',
-    description: 'We are pleased to announce that the admission process for the academic year 2025 is now open. Prospective students are invited to submit their applications online through the official university admission portal. Detailed guidelines, eligibility criteria, and important dates are available on the website.',
+    title: 'Admission of new students - 2025',
+    description:
+      'Admissions for the 2025 academic year are open. Apply online through the official application portal.',
     date: '2025-05-05',
     link: 'https://docs.google.com/forms/d/e/1FAIpQLSfVRG35ZA5Ulvji9EmlCoql--LO0JuOwmESGxro_F9xNgT8ug/viewform?embedded=true',
     image: '/pngtree-admission-open.png',
@@ -30,46 +34,63 @@ const announcements = [
 ];
 
 const AnnouncementSection = () => {
+  // ✅ Find the latest announcement
+  const latestAnnouncementId = announcements.reduce((latestId, current) => {
+    const latestDate = new Date(
+      announcements.find((a) => a.id === latestId)?.date || ''
+    );
+    const currentDate = new Date(current.date);
+    return currentDate > latestDate ? current.id : latestId;
+  }, announcements[0].id);
+
   return (
-    <section className="bg-white shadow-md rounded-lg p-6 max-w-5xl mx-auto my-10">
-      <div className="flex items-center mb-6">
-        <FaBullhorn className="text-blue-600 text-2xl mr-2" />
-        <h2 className="text-2xl font-semibold text-gray-800">Student Announcements</h2>
+    <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+      {/* Title */}
+      <div className="flex items-center justify-center mb-10">
+        <FaBullhorn className="text-amber-600 text-3xl mr-3" />
+        <h2 className="text-3xl sm:text-4xl font-extrabold text-gray-800">Student Announcements</h2>
       </div>
-      <ul className="space-y-4">
+
+      {/* Announcement Cards */}
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
         {announcements.map((item) => (
-          <li
+          <a
             key={item.id}
-            className={`bg-gray-50 p-4 rounded-md hover:bg-gray-100 transition flex flex-col md:flex-row gap-4 items-start md:items-center ${
-              item.date === '2025-05-01' ? 'border-l-4 border-blue-600' : ''
-            }`}
+            href={item.link}
+            target="_blank"
+            rel="noopener noreferrer"
+            className={`
+              group bg-white rounded-2xl shadow border border-gray-100 transition-transform duration-300 
+              hover:shadow-xl hover:-translate-y-1 
+              ${item.id === latestAnnouncementId ? 'animate-blink ring-2 ring-amber-500' : ''}
+            `}
           >
-            <img
-              src={item.image}
-              alt={item.title}
-              className="w-24 h-24 object-cover rounded-md flex-shrink-0"
-            />
-            <div className="flex-1">
-              <a
-                href={item.link}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-lg font-semibold text-blue-600 hover:underline"
-              >
+            {/* Card Image */}
+            <div className="h-48 w-full overflow-hidden rounded-t-2xl">
+              <img
+                src={item.image}
+                alt={item.title}
+                className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-500"
+              />
+            </div>
+
+            {/* Content */}
+            <div className="p-5 space-y-2">
+              <h3 className="text-lg font-semibold text-amber-700 group-hover:text-amber-800 transition">
                 {item.title}
-              </a>
-              <p className="text-sm text-gray-600 mt-1">{item.description}</p>
-              <div className="flex items-center text-sm text-gray-500 mt-2">
-                <MdDateRange className="mr-1" />
+              </h3>
+              <p className="text-sm text-gray-600 leading-relaxed line-clamp-3">{item.description}</p>
+              <div className="flex items-center text-sm text-gray-500 pt-3">
+                <MdDateRange className="mr-2" />
                 <span>{item.date}</span>
               </div>
               {item.link.includes('yourdomain.com') && (
-                <p className="text-red-500 text-sm mt-1">Link may not be accessible.</p>
+                <p className="text-xs text-red-500 mt-1">Note: Sample link only</p>
               )}
             </div>
-          </li>
+          </a>
         ))}
-      </ul>
+      </div>
     </section>
   );
 };
