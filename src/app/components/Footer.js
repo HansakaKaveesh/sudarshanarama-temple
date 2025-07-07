@@ -36,108 +36,102 @@ export default function Footer() {
 
   return (
     <footer
-      className="relative border-t-4 border-amber-300 shadow-xl overflow-hidden text-amber-50"
+      className="relative overflow-hidden text-amber-50"
       style={{
         backgroundImage: "url('/footer.jpg')",
         backgroundSize: 'cover',
-        backgroundPosition: 'center top 30%',
+        backgroundPosition: 'center center',
         backgroundRepeat: 'no-repeat',
       }}
     >
-      {/* Enhanced Gradient Overlay */}
-      <div className="absolute inset-0 bg-gradient-to-t from-amber-900/95 to-amber-800/40" aria-hidden="true" />
+      <div className="absolute inset-0 bg-gradient-to-t from-amber-950/95 to-amber-900/40" aria-hidden="true" />
 
-      <div className="relative container mx-auto px-4 py-16">
-        <div className="grid grid-cols-1 lg:grid-cols-5 gap-12 mb-16">
+      <div className="relative max-w-screen-xl mx-auto px-6 py-20">
+        <div className="grid grid-cols-1 lg:grid-cols-5 gap-12">
+
           {/* Temple Info */}
           <div className="lg:col-span-2">
-  <div className="flex items-center mb-8 animate-fade-in">
-    <FaPrayingHands className="w-14 h-14 text-amber-300 mr-5 drop-shadow-md" />
-    <h3 className="text-3xl xl:text-4xl font-serif font-bold text-amber-100 drop-shadow-lg leading-tight">
-      ශ්‍රී සුදර්ශනාරාම පුරාණ මහා විහාරය - කලපලුවාව
-    </h3>
-  </div>
+            <div className="flex items-center mb-6">
+              <FaPrayingHands className="w-12 h-12 text-amber-300 mr-4 drop-shadow-md" />
+              <h3 className="text-2xl xl:text-3xl font-serif font-bold text-amber-100 leading-snug">
+                ශ්‍රී සුදර්ශනාරාම පුරාණ මහා විහාරය
+              </h3>
+            </div>
 
-  <p className="text-base mb-8 leading-relaxed text-amber-50/95 max-w-3xl animate-fade-in delay-100">
-    1855 දී පිහිටුවන ලද අපගේ විහාරස්ථානය කොළඹ ආධ්‍යාත්මික අභයභූමියක් ලෙස ථෙරවාදී බෞද්ධ සම්ප්‍රදායන් ආරක්ෂා කරමින් නවීන, 
-    ඇතුළත් ප්‍රජාවක් පෝෂණය කරයි. අපි සෑම වයස් කාණ්ඩයක් සඳහාම දිනපතා භාවනා සැසි, ධර්ම සාකච්ඡා සහ සංස්කෘතික වැඩසටහන් පිරිනමන්නෙමු.
-  </p>
+            <p className="text-sm text-amber-100/90 mb-6">
+              1855 දී පිහිටුවන ලද විහාරය, නවීන ආධුනික සමාජය තුළ බෞද්ධ සත්‍යය සුරකිමින්, භාවනා, ධර්ම සාකච්ඡා හා සංස්කෘතික වැඩසටහන් සමඟින් ප්‍රජාවක් පෝෂණය කරයි.
+            </p>
 
-  <div className="flex flex-wrap gap-4 animate-fade-in delay-200">
-    {[
-      '☸️ නොමිලේ භාවනා පන්ති',
-      '📅 සතිපතා ධර්ම සාකච්ඡා',
-      '👨👩👧👦 පවුල් වැඩසටහන්'
-    ].map((text) => (
-      <span
-        key={text}
-        className="bg-amber-100/10 px-5 py-2 rounded-full text-sm font-semibold text-amber-100 border border-amber-100/30 backdrop-blur-md hover:bg-amber-100/20 hover:scale-105 transition-all duration-300 cursor-default"
-      >
-        {text}
-      </span>
-    ))}
-  </div>
-</div>
+            <div className="flex flex-wrap gap-3">
+              {[
+                '☸️ නොමිලේ භාවනා පන්ති',
+                '📅 සතිපතා ධර්ම සාකච්ඡා',
+                '👨‍👩‍👧‍👦 පවුල් වැඩසටහන්',
+              ].map((label) => (
+                <span
+                  key={label}
+                  className="bg-amber-100/10 px-4 py-1 rounded-full text-xs text-amber-100 border border-amber-100/30 hover:bg-amber-100/20 transition"
+                >
+                  {label}
+                </span>
+              ))}
+            </div>
+          </div>
 
-
-          {/* Quick Links Grid */}
-          <div className="lg:col-span-1">
-  <h4 className="text-2xl font-bold mb-8 text-amber-100 drop-shadow-md animate-fade-in">
-    Explore
-  </h4>
-
-  <div className="grid grid-cols-2 gap-2 animate-fade-in delay-100">
-    {quickLinks.map(([href, text]) => (
-      <a
-        key={href}
-        href={href}
-        className="group flex items-center p-3 rounded-xl hover:bg-amber-100/10 hover:shadow-md transition-all duration-300"
-      >
-        <span className="w-2.5 h-2.5 mr-4 bg-amber-300 rounded-full transition-transform duration-300 group-hover:scale-150 group-hover:bg-amber-400" />
-        <span className="text-sm font-semibold text-amber-50 group-hover:text-amber-100 transition-colors duration-300">
-          {text}
-        </span>
-      </a>
-    ))}
-  </div>
-</div>
-
+          {/* Quick Links */}
+          <div>
+            <h4 className="text-lg font-bold mb-5 text-amber-100">Explore</h4>
+            <ul className="space-y-3">
+              {quickLinks.map(([href, label]) => (
+                <li key={href}>
+                  <a
+                    href={href}
+                    className="text-sm text-amber-100/90 hover:text-amber-300 transition"
+                  >
+                    • {label}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
 
           {/* Contact & Social */}
           <div className="lg:col-span-2">
-            <h4 className="text-xl font-semibold mb-6 text-amber-100 drop-shadow-md">Connect</h4>
-            <div className="grid gap-6 md:grid-cols-2">
-              <address className="not-italic space-y-5">
-                {contactInfo.map(([Icon, text], index) => (
-                  <div
-                    key={index}
-                    className="flex items-start group transition-colors hover:text-amber-200"
-                  >
-                    <Icon className="w-6 h-6 mt-1 mr-4 text-amber-300 group-hover:animate-pulse" />
+            <h4 className="text-lg font-bold mb-5 text-amber-100">Connect with Us</h4>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div className="space-y-4">
+                {contactInfo.map(([Icon, value], index) => (
+                  <div key={index} className="flex items-start gap-4 text-sm text-amber-100/90">
+                    <Icon className="w-5 h-5 mt-1 text-amber-300" />
                     {index === 1 ? (
-                      <a href={`tel:${text}`} className="hover:underline underline-offset-4">{text}</a>
+                      <a href={`tel:${value}`} className="hover:underline">
+                        {value}
+                      </a>
                     ) : index === 2 ? (
-                      <a href={`mailto:${text}`} className="hover:underline underline-offset-4">{text}</a>
+                      <a href={`mailto:${value}`} className="hover:underline">
+                        {value}
+                      </a>
                     ) : (
-                      <span dangerouslySetInnerHTML={{ __html: text }} />
+                      <span>{value}</span>
                     )}
                   </div>
                 ))}
-              </address>
+              </div>
 
               <div>
-                <h5 className="text-sm font-semibold mb-4 text-amber-200">Follow Our Journey</h5>
-                <div className="flex flex-wrap gap-3">
+                <h5 className="text-sm font-semibold mb-3 text-amber-200">Follow Us</h5>
+                <div className="flex gap-3 flex-wrap">
                   {socialLinks.map(([Icon, href, name], index) => (
                     <a
                       key={index}
                       href={href}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="p-3 bg-amber-100/15 rounded-xl hover:bg-amber-100/25 transition-all duration-300 hover:scale-105 shadow-sm hover:shadow-amber-100/30 group"
-                      aria-label={`Follow us on ${name}`}
+                      aria-label={name}
+                      className="p-2 rounded-full bg-amber-100/10 hover:bg-amber-100/20 transition"
                     >
-                      <Icon className="w-6 h-6 text-amber-100 group-hover:text-amber-300 transition-colors" />
+                      <Icon className="w-5 h-5 text-amber-100 hover:text-amber-300" />
                     </a>
                   ))}
                 </div>
@@ -146,45 +140,38 @@ export default function Footer() {
           </div>
         </div>
 
-        {/* Copyright Section */}
-        <div className="border-t border-amber-100/25 pt-10 mt-12 animate-fade-in">
-  <div className="flex flex-col md:flex-row items-center justify-between gap-6 text-amber-100/90">
-    
-    {/* Left Side */}
-    <div className="text-center md:text-left text-sm space-y-2">
-      <p>
-        &copy; {new Date().getFullYear()} Sri Sudarshanarama Purana Maha Viharaya. All rights reserved.
-      </p>
-      <div className="flex flex-wrap justify-center md:justify-start gap-4">
-        {['Privacy Policy', 'Terms of Service', 'Accessibility'].map((text) => (
-          <a
-            key={text}
-            href={`/${text.toLowerCase().replace(/ /g, '-')}`}
-            className="text-amber-100/80 hover:text-amber-300 transition-all underline-offset-4 hover:underline text-xs font-medium tracking-wide"
-          >
-            {text}
-          </a>
-        ))}
-      </div>
-    </div>
+        {/* Bottom Section */}
+        <div className="mt-14 border-t border-amber-100/25 pt-6 flex flex-col md:flex-row items-center justify-between gap-4 text-xs text-amber-100/80">
+          <div className="text-center md:text-left space-y-1">
+            <p>
+              &copy; {new Date().getFullYear()} Sri Sudarshanarama Purana Maha Viharaya. All rights reserved.
+            </p>
+            <div className="flex flex-wrap justify-center md:justify-start gap-3">
+              {['Privacy Policy', 'Terms of Service', 'Accessibility'].map((text) => (
+                <a
+                  key={text}
+                  href={`/${text.toLowerCase().replace(/ /g, '-')}`}
+                  className="hover:text-amber-300 underline-offset-2 hover:underline"
+                >
+                  {text}
+                </a>
+              ))}
+            </div>
+          </div>
 
-    {/* Right Side */}
-    <div className="text-xs flex items-center gap-1">
-      <span>Developed by</span>
-      <a
-        href="https://www.linkedin.com/in/hansaka-wijesinghe-285748142/"
-        target="_blank"
-        rel="noopener noreferrer"
-        className="flex items-center gap-1 text-amber-100 font-semibold hover:text-amber-300 transition-all group"
-      >
-        Hansaka Wijesinghe
-        <FaLinkedin className="w-4 h-4 text-amber-100 group-hover:text-amber-300 transition-all" />
-      </a>
-    </div>
-
-  </div>
-</div>
-
+          <div className="flex items-center gap-2">
+            <span>Developed by</span>
+            <a
+              href="https://www.linkedin.com/in/hansaka-wijesinghe-285748142/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-1 font-semibold text-amber-100 hover:text-amber-300"
+            >
+              Hansaka Wijesinghe
+              <FaLinkedin className="w-4 h-4" />
+            </a>
+          </div>
+        </div>
       </div>
     </footer>
   );

@@ -246,12 +246,13 @@ export default function DhammaSchool() {
   </div>
 </div>
 
-<div className="grid md:grid-cols-2 gap-14 items-start px-4 sm:px-6 lg:px-8 py-10">
-  
+<div className="grid md:grid-cols-2 gap-14 items-start px-4 sm:px-6 lg:px-8 py-16 bg-white">
   {/* === Text Column === */}
-  <div>
-    <h3 className="text-4xl font-extrabold text-yellow-900 mb-8">Community Roots</h3>
-    <p className="text-gray-700 text-lg leading-relaxed mb-6">
+  <div className="space-y-8">
+    <h3 className="text-4xl font-extrabold text-yellow-900 tracking-tight">
+      Community Roots
+    </h3>
+    <p className="text-gray-700 text-lg leading-relaxed">
       Our Dhamma School is deeply rooted in community service and cultural heritage. Together, we participate in spiritual and service-focused events that bring our Sangha closer.
     </p>
 
@@ -261,44 +262,61 @@ export default function DhammaSchool() {
         'Dana collections',
         'Vesak lantern workshops',
         'Sil programs',
-        'Dhamma discussion circles'
+        'Dhamma discussion circles',
       ].map((item, index) => (
         <li
           key={index}
-          className="flex items-center gap-4 text-gray-800 hover:text-yellow-900 transition-colors duration-300 group"
+          className="flex items-center gap-4 group hover:text-yellow-800 transition-colors duration-300"
         >
-          {/* Icon */}
-          <div className="min-w-[36px] h-9 w-9 bg-amber-100 rounded-full flex items-center justify-center text-amber-600 font-bold shadow inner-border group-hover:shadow-md group-hover:scale-110 transition-transform duration-300 ease-in-out">
+          <div className="min-w-[36px] h-9 w-9 bg-yellow-100 text-yellow-600 font-semibold rounded-full flex items-center justify-center shadow group-hover:bg-yellow-200 group-hover:scale-110 transition-transform duration-300">
             ✓
           </div>
-          {/* Text */}
-          <span className="transition-all duration-200 group-hover:pl-1">{item}</span>
+          <span className="transition-all duration-300 ease-in-out group-hover:pl-1">
+            {item}
+          </span>
         </li>
       ))}
     </ul>
   </div>
 
   {/* === Image Grid === */}
-  <div className="grid grid-cols-2 gap-4">
-    <div className="col-span-2">
-      <img
-        src="https://scontent.fcmb1-2.fna.fbcdn.net/v/t1.6435-9/39248884_980174078809966_1059204802812051456_n.jpg?_nc_cat=106&ccb=1-7&_nc_sid=cf85f3&_nc_eui2=AeETyQ4UM2Wvm98WN_jTrmyBHUvO_C6fQFgdS878Lp9AWKRwe7gbxi5Ixy4VxaiHtwt4uCeCr_XWcOZsPyodNVvT&_nc_ohc=QJwegRQKck0Q7kNvwHQvqqr&_nc_oc=Adl2a0uR0-ocNFs6GW8I3v5r4eGsIfYS-D02oGZWicKfuHgEisezMVhDIaW_7FFIDso&_nc_zt=23&_nc_ht=scontent.fcmb1-2.fna&_nc_gid=pUi10ZwkNNVcaVy3dFYBig&oh=00_AfGWSK1W2JcpwCUv8gosp7_5W98Ax1BJqhfnBBV9B_a6zQ&oe=68203BA7"
-        alt="Community Service"
-        className="rounded-3xl h-56 w-full object-cover shadow-lg transition-transform duration-500 hover:scale-105"
-      />
+  <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+    {/* Large top image */}
+    <div className="col-span-1 sm:col-span-2">
+      <div className="relative group overflow-hidden rounded-3xl shadow-lg">
+        <img
+          src="/dpheader.jpg"
+          alt="Community Service"
+          className="w-full h-64 sm:h-72 object-cover transition-transform duration-500 transform group-hover:scale-105 group-hover:brightness-90"
+        />
+        <div className="absolute bottom-4 left-4 bg-black/60 text-white text-lg font-semibold px-4 py-1 rounded-md shadow">
+          Community Service
+        </div>
+      </div>
     </div>
-    <img
-      src="/picdp1.jpg"
-      alt="Dhamma Class"
-      className="rounded-3xl h-48 object-cover w-full shadow-md transition-transform duration-500 hover:scale-105"
-    />
-    <img
-      src="/picdp2.jpg"
-      alt="Vesak Celebration"
-      className="rounded-3xl h-48 object-cover w-full shadow-md transition-transform duration-500 hover:scale-105 mt-4"
-    />
+
+    {/* Small bottom images */}
+    {[
+      { src: '/picdp1.jpg', alt: 'Dhamma Class', label: 'Vesak Celebration' },
+      { src: '/picdp2.jpg', alt: 'Vesak Celebration', label: 'Awrudu Celebration' },
+    ].map((img, idx) => (
+      <div
+        key={idx}
+        className="relative group overflow-hidden rounded-3xl shadow-md"
+      >
+        <img
+          src={img.src}
+          alt={img.alt}
+          className="w-full h-60 object-cover transition-transform duration-500 transform group-hover:scale-105 group-hover:brightness-90"
+        />
+        <div className="absolute bottom-4 left-4 bg-black/60 text-white text-md font-medium px-4 py-1 rounded-md shadow">
+          {img.label}
+        </div>
+      </div>
+    ))}
   </div>
 </div>
+
 </div>
               </div>
             </section>

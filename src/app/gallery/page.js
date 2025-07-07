@@ -8,7 +8,6 @@ const categories = [
   "Temple",
   "Dhamma School",
   "Perahara",
-  
   "Sculptures",
   "Wibhishana Devalaya",
 ];
@@ -20,7 +19,6 @@ const images = [
   { src: "/gallery/temple/04.jpg", category: "Temple" },
   { src: "/gallery/temple/05.jpg", category: "Temple" },
   { src: "/gallery/temple/06.jpg", category: "Temple" },
-  
   { src: "/gallery/school/01.jpg", category: "Dhamma School" },
   { src: "/gallery/school/02.jpg", category: "Dhamma School" },
   { src: "/gallery/school/03.jpg", category: "Dhamma School" },
@@ -39,13 +37,11 @@ const images = [
   { src: "/gallery/school/16.jpg", category: "Dhamma School" },
   { src: "/gallery/school/17.jpg", category: "Dhamma School" },
   { src: "/gallery/school/18.jpg", category: "Dhamma School" },
- 
 ];
 
 export default function GallerySection() {
   const [activeCategory, setActiveCategory] = useState("All");
-  const [selectedImage, setSelectedImage] = useState(null); // ✅ JavaScript syntax
-
+  const [selectedImage, setSelectedImage] = useState(null);
 
   const filteredImages =
     activeCategory === "All"
@@ -57,13 +53,16 @@ export default function GallerySection() {
       {/* Header */}
       <div
         className="relative h-64 sm:h-80 md:h-96 lg:h-[28rem] xl:h-[32rem] bg-cover bg-center group transition-all duration-500"
-        style={{ backgroundImage: "url('/unnamed (1).jpg')", backgroundPosition: "center 40%" }}
+        style={{
+          backgroundImage: "url('/unnamed (1).jpg')",
+          backgroundPosition: "center 40%",
+        }}
         aria-label="Dhamma School Header"
       >
         <div className="absolute inset-0 bg-gradient-to-b from-transparent via-white/60 to-white/90 flex flex-col items-center justify-center text-center p-4 md:p-8">
           <div className="space-y-4 transform group-hover:scale-95 transition-transform duration-500">
             <h1 className="mt-24 md:mt-0 text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 tracking-tighter drop-shadow-md">
-              Photo Gallery 
+              Photo Gallery
             </h1>
           </div>
         </div>
@@ -91,28 +90,35 @@ export default function GallerySection() {
         ))}
       </div>
 
-      {/* Image Grid */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-0 px-10 py-10">
+      {/* Masonry Image Grid */}
+      <div className="columns-1 sm:columns-2 md:columns-3 gap-4 px-10 py-10 space-y-4">
         {filteredImages.map((img, idx) => (
-          <div key={idx} className="overflow-hidden rounded cursor-pointer" onClick={() => setSelectedImage(img.src)}>
+          <div
+            key={idx}
+            className="overflow-hidden break-inside-avoid rounded cursor-pointer"
+            onClick={() => setSelectedImage(img.src)}
+          >
             <Image
               src={img.src}
               alt={`Gallery ${idx}`}
               width={600}
               height={400}
-              className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+              className="w-full h-auto object-cover hover:scale-105 transition-transform duration-300 rounded"
             />
           </div>
         ))}
       </div>
 
-      {/* Popup (Lightbox) */}
+      {/* Lightbox Popup */}
       {selectedImage && (
         <div
-          className="fixed inset-0 z-50 bg-black/90 bg-opacity-70 flex items-center justify-center"
+          className="fixed inset-0 z-50 bg-black/90 flex items-center justify-center"
           onClick={() => setSelectedImage(null)}
         >
-          <div className="relative max-w-3xl w-full p-4" onClick={(e) => e.stopPropagation()}>
+          <div
+            className="relative max-w-3xl w-full p-4"
+            onClick={(e) => e.stopPropagation()}
+          >
             <button
               className="absolute top-2 right-2 text-white bg-red-500 hover:bg-red-600 px-3 py-1 rounded-full z-10"
               onClick={() => setSelectedImage(null)}
