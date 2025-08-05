@@ -3,12 +3,13 @@ import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { motion, AnimatePresence } from 'framer-motion';
-import { FiMenu, FiX, FiHome, FiInfo, FiCalendar, FiImage, FiMail, FiBook } from 'react-icons/fi';
+import { FiMenu, FiX, FiHome, FiInfo, FiCalendar, FiImage, FiMail, FiBook, FiChevronDown } from 'react-icons/fi';
 import { GiLotus } from 'react-icons/gi';
 
 export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
+  const [dhammaDropdown, setDhammaDropdown] = useState(false); // For mobile
   const pathname = usePathname();
 
   const navigation = [
@@ -16,8 +17,14 @@ export default function Navbar() {
     { name: 'About', path: '/about', icon: FiInfo },
     { name: 'Events', path: '/events', icon: FiCalendar },
     { name: 'Gallery', path: '/gallery', icon: FiImage },
-    { name: 'Dhamma School', path: '/dhamma-school', icon: FiBook },
+    // Dhamma School is handled separately for dropdown
     { name: 'Contact', path: '/contact', icon: FiMail },
+  ];
+
+  // Dhamma School sublinks
+  const dhammaLinks = [
+    { name: 'Page', path: '/dhamma-school', icon: FiBook },
+    { name: 'VLE', path: '/dhamma-school/vle', icon: FiBook },
   ];
 
   useEffect(() => {
@@ -29,6 +36,7 @@ export default function Navbar() {
   }, []);
 
   useEffect(() => setIsMenuOpen(false), [pathname]);
+  useEffect(() => setDhammaDropdown(false), [pathname, isMenuOpen === false]);
 
   useEffect(() => {
     const handleEscape = (e) => e.key === 'Escape' && setIsMenuOpen(false);
@@ -38,7 +46,7 @@ export default function Navbar() {
 
   return (
     <nav 
-      className={`fixed top-4 left-4 right-4 mx-auto rounded-xl z-50 overflow-hidden transition-all duration-300 ${
+      className={`fixed top-4 left-4 right-4 mx-auto rounded-xl z-50 transition-all duration-300 ${
         isScrolled 
           ? 'bg-yellow-200/90 shadow-xl scale-100 opacity-100' 
           : 'bg-yellow-100/80 shadow-md scale-100 opacity-100'
@@ -58,15 +66,14 @@ export default function Navbar() {
               <GiLotus className={`w-8 h-8 text-gray-900 ${isScrolled ? 'scale-90' : 'scale-100'} transition-transform duration-300`} />
             </motion.div>
             <h1
-  className={`font-semibold font-sinhala text-gray-900 transition-all duration-300
-    ${isScrolled 
-      ? 'text-lg sm:text-lg md:text-2xl' 
-      : 'text-lg sm:text-lg md:text-2xl'}
-  `}
->
-ශ්‍රී සුදර්ශනාරාම පුරාණ මහා විහාරය - කලපලුවාව
-</h1>
-
+              className={`font-semibold font-sinhala text-gray-900 transition-all duration-300
+                ${isScrolled 
+                  ? 'text-lg sm:text-lg md:text-2xl' 
+                  : 'text-lg sm:text-lg md:text-2xl'}
+              `}
+            >
+              ශ්‍රී සුදර්ශනාරාම පුරාණ මහා විහාරය - කලපලුවාව
+            </h1>
           </Link>
 
           {/* Desktop Navigation */}
@@ -103,6 +110,44 @@ export default function Navbar() {
                 </motion.li>
               );
             })}
+
+            {/* Dhamma School Dropdown (Desktop) */}
+            <motion.li
+              className="relative group"
+              whileHover={{ y: -1 }}
+              whileTap={{ scale: 0.98 }}
+            >
+              <button
+                className={`px-3 py-1.5 flex items-center gap-1.5 text-sm transition-colors ${
+                  pathname.startsWith('/dhamma-school')
+                    ? 'text-gray-900 font-medium'
+                    : 'text-gray-600 hover:text-gray-800'
+                }`}
+                aria-haspopup="true"
+                aria-expanded="false"
+                tabIndex={0}
+                type="button"
+              >
+                <FiBook className="w-4 h-4" />
+                Dhamma School
+                <FiChevronDown className="w-4 h-4" />
+              </button>
+              {/* Dropdown menu */}
+              <div className="absolute left-0 mt-0 w-44 bg-white rounded-lg shadow-lg py-2 opacity-0 group-hover:opacity-100 pointer-events-none group-hover:pointer-events-auto transition-all z-50">
+                {dhammaLinks.map((sub) => (
+                  <Link
+                    key={sub.path}
+                    href={sub.path}
+                    className={`flex items-center gap-2 px-4 py-2 text-sm rounded hover:bg-yellow-100 transition-colors ${
+                      pathname === sub.path ? 'font-semibold text-blue-700' : 'text-gray-700'
+                    }`}
+                  >
+                    <sub.icon className="w-4 h-4" />
+                    {sub.name}
+                  </Link>
+                ))}
+              </div>
+            </motion.li>
           </ul>
 
           {/* Mobile Menu Button */}
@@ -150,6 +195,7 @@ export default function Navbar() {
                             : 'text-gray-600 hover:bg-gray-50'
                         } rounded-md transition-colors`}
                         aria-current={isActive ? 'page' : undefined}
+                        onClick={() => setIsMenuOpen(false)}
                       >
                         <Icon className="w-5 h-5" />
                         {item.name}
@@ -160,6 +206,52 @@ export default function Navbar() {
                     </motion.li>
                   );
                 })}
+
+                {/* Dhamma School Dropdown (Mobile) */}
+                <li>
+                  <button
+                    className={`w-full flex items-center gap-2 px-3 py-2 text-base rounded-md transition-colors ${
+                      pathname.startsWith('/dhamma-school')
+                        ? 'text-gray-900 font-medium bg-gray-50'
+                        : 'text-gray-600 hover:bg-gray-50'
+                    }`}
+                    onClick={() => setDhammaDropdown((v) => !v)}
+                  >
+                    <FiBook className="w-5 h-5" />
+                    Dhamma School
+                    <FiChevronDown className={`w-4 h-4 ml-auto transition-transform ${dhammaDropdown ? 'rotate-180' : ''}`} />
+                  </button>
+                  <AnimatePresence>
+                    {dhammaDropdown && (
+                      <motion.ul
+                        initial={{ height: 0, opacity: 0 }}
+                        animate={{ height: 'auto', opacity: 1 }}
+                        exit={{ height: 0, opacity: 0 }}
+                        className="pl-6 flex flex-col"
+                      >
+                        {dhammaLinks.map((sub) => (
+                          <li key={sub.path}>
+                            <Link
+                              href={sub.path}
+                              className={`flex items-center gap-2 px-3 py-2 text-base rounded-md transition-colors ${
+                                pathname === sub.path
+                                  ? 'font-semibold text-blue-700'
+                                  : 'text-gray-700 hover:bg-yellow-50'
+                              }`}
+                              onClick={() => {
+                                setIsMenuOpen(false);
+                                setDhammaDropdown(false);
+                              }}
+                            >
+                              <sub.icon className="w-4 h-4" />
+                              {sub.name}
+                            </Link>
+                          </li>
+                        ))}
+                      </motion.ul>
+                    )}
+                  </AnimatePresence>
+                </li>
               </ul>
             </motion.div>
           )}
