@@ -17,7 +17,7 @@ export default function UnderConstruction() {
           🚧 Page Under Construction
         </h1>
         <p className="text-base sm:text-lg text-yellow-800 mb-6">
-          We're working hard to bring this page to life. Please check back soon!
+         We&apos;re working hard to bring this page to life. Please check back soon!
         </p>
 
         <div className="bg-white rounded-lg shadow-md p-4 sm:p-6 text-left">
