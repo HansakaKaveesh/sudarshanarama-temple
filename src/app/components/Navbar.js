@@ -22,10 +22,14 @@ export default function Navbar() {
   ];
 
   // Dhamma School sublinks
-  const dhammaLinks = [
-    { name: 'Page', path: '/dhamma-school', icon: FiBook },
-    { name: 'VLE', path: '/dhamma-school/vle', icon: FiBook },
-  ];
+ const dhammaLinks = [
+  { name: 'Page', path: '/dhamma-school', icon: FiBook },
+  { 
+    name: 'VLE', 
+    path: 'https://sumangala-vle.infinityfreeapp.com', 
+    icon: FiBook 
+  },
+];
 
   useEffect(() => {
     const handleScroll = () => {
