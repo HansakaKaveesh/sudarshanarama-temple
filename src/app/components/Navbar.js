@@ -26,7 +26,7 @@ export default function Navbar() {
   { name: 'Page', path: '/dhamma-school', icon: FiBook },
   { 
     name: 'VLE', 
-    path: 'https://sumangala-vle.infinityfreeapp.com', 
+    path: 'https://sumangala-lms.infinityfreeapp.com/', 
     icon: FiBook 
   },
 ];
