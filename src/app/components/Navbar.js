@@ -25,7 +25,7 @@ export default function Navbar() {
  const dhammaLinks = [
   { name: 'Page', path: '/dhamma-school', icon: FiBook },
   { 
-    name: 'VLE', 
+    name: 'LMS', 
     path: 'https://sumangala-lms.infinityfreeapp.com/', 
     icon: FiBook 
   },
