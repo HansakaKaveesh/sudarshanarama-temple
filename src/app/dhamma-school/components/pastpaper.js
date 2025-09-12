@@ -95,7 +95,10 @@ const resourcesData = {
       { title: 'Shasana Ithihasaya 2023', file: '/pastpapers/grade11/shasana-ithihasaya-2023.pdf' },
     ],
     textbooks: [
-      { title: 'Awasana Exam Textbook', file: '/textbooks/grade11/awasana-exam-textbook.pdf' },
+      { title: 'Buddha Charithaya', file: '/pastpapers/Awasana/Textbook/buddha-charithaya.pdf' },
+      { title: 'Pali Abhidharma', file: '/pastpapers/Awasana/Textbook/Pali-Abhidharma.pdf' },
+      { title: 'Buddha Sanskruthiya', file: '/pastpapers/Awasana/Textbook/Buddha-Sanskruthiya.pdf' },
+      { title: 'Shasana Ithihasaya', file: '/pastpapers/Awasana/Textbook/Shasana-Ithihasaya.pdf' },
     ],
   },
   'Darmacharya Exam': {
