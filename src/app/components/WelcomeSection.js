@@ -1,245 +1,221 @@
-"use client";
-import { motion } from 'framer-motion';
+'use client';
+import { motion, useMotionValue, useTransform, useSpring } from 'framer-motion';
 import Image from 'next/image';
 import Link from 'next/link';
 import { Flower2, CalendarDays, BookOpen, Sparkles } from 'lucide-react';
 
 export default function WelcomeSection() {
+  // 3D tilt for the image card
+  const x = useMotionValue(0);
+  const y = useMotionValue(0);
+  const rotateX = useSpring(useTransform(y, [-50, 50], [10, -10]), { stiffness: 200, damping: 20 });
+  const rotateY = useSpring(useTransform(x, [-50, 50], [-10, 10]), { stiffness: 200, damping: 20 });
+
+  const handleMouseMove = (e) => {
+    const rect = e.currentTarget.getBoundingClientRect();
+    const px = (e.clientX - rect.left) / rect.width;
+    const py = (e.clientY - rect.top) / rect.height;
+    x.set((px - 0.5) * 100);
+    y.set((py - 0.5) * 100);
+  };
+  const resetTilt = () => {
+    x.set(0);
+    y.set(0);
+  };
+
+  const sparkleConfigs = [
+    { style: { top: '8%', left: '6%' }, duration: 5.2, delay: 0.4 },
+    { style: { top: '18%', right: '8%' }, duration: 6.1, delay: 1.1 },
+    { style: { bottom: '12%', left: '10%' }, duration: 7.2, delay: 0.8 },
+    { style: { bottom: '8%', right: '14%' }, duration: 5.8, delay: 1.6 },
+    { style: { top: '42%', left: '42%' }, duration: 6.6, delay: 1.9 },
+    { style: { bottom: '38%', right: '32%' }, duration: 7.4, delay: 0.2 },
+  ];
+
   return (
-    <section className="relative py-12 px-4 py-20 bg-gradient-to-b from-yellow-100 to-yellow-50 overflow-hidden isolate perspective-1000">
-      {/* Animated Floating Flowers */}
-      <motion.div 
-        className="absolute inset-0 opacity-15 pointer-events-none"
-        initial="hidden"
-        whileInView="visible"
-        variants={{
-          visible: { transition: { staggerChildren: 0.2 } },
-          hidden: {}
-        }}
-      >
-        <motion.div 
-          className="absolute top-0 left-0 -translate-x-20 -translate-y-20"
-          variants={{
-            visible: { 
-              y: [0, -20, 0],
-              transition: { 
-                duration: 8,
-                repeat: Infinity,
-                ease: "easeInOut"
-              }
-            },
-            hidden: { y: 0 }
-          }}
-        >
-          <Flower2 className="w-48 h-48 text-amber-300/30" />
-        </motion.div>
-        <motion.div 
-          className="absolute bottom-0 right-0 translate-x-20 translate-y-20"
-          variants={{
-            visible: { 
-              y: [0, 20, 0],
-              transition: { 
-                duration: 8,
-                repeat: Infinity,
-                ease: "easeInOut",
-                delay: 2
-              }
-            },
-            hidden: { y: 0 }
-          }}
-        >
-          <Flower2 className="w-48 h-48 text-amber-300/30 rotate-45" />
-        </motion.div>
-      </motion.div>
+    <section className="relative overflow-hidden bg-gradient-to-b from-amber-50 via-yellow-50 to-white py-16 sm:py-24">
+      {/* Aurora / soft gradient background */}
+      <div aria-hidden className="pointer-events-none absolute inset-0">
+        <motion.div
+          className="absolute -top-40 -left-40 h-80 w-80 rounded-full bg-amber-300/30 blur-3xl"
+          animate={{ y: [0, -25, 0], x: [0, 10, 0] }}
+          transition={{ duration: 14, repeat: Infinity, ease: 'easeInOut' }}
+        />
+        <motion.div
+          className="absolute -bottom-40 -right-40 h-96 w-96 rounded-full bg-yellow-200/40 blur-3xl"
+          animate={{ y: [0, 25, 0], x: [0, -10, 0] }}
+          transition={{ duration: 16, repeat: Infinity, ease: 'easeInOut' }}
+        />
+        {/* Subtle wood texture overlay */}
+        <motion.div
+          className="absolute inset-0 bg-[url('/wood-texture.svg')] bg-repeat mix-blend-multiply opacity-5"
+          animate={{ backgroundPosition: ['0% 0%', '100% 100%'] }}
+          transition={{ duration: 60, repeat: Infinity, ease: 'linear' }}
+        />
+      </div>
 
-      {/* Animated Wood Texture */}
-      <motion.div 
-        className="absolute inset-0 bg-[url('/wood-texture.svg')] bg-repeat opacity-5 mix-blend-multiply"
-        animate={{
-          backgroundPosition: ['0% 0%', '100% 100%'],
-        }}
-        transition={{
-          duration: 60,
-          repeat: Infinity,
-          ease: "linear"
-        }}
-      />
-
-      <div className="container mx-auto max-w-6xl relative z-10">
-        <motion.div 
-          initial={{ opacity: 0, y: 20 }}
+      <div className="container relative z-10 mx-auto max-w-6xl px-4">
+        <motion.div
+          initial={{ opacity: 0, y: 24 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-100px" }}
-          className="grid lg:grid-cols-2 gap-16 items-center"
+          viewport={{ once: true, margin: '-100px' }}
+          className="grid items-center gap-14 lg:grid-cols-2"
         >
-          {/* Enhanced Buddha Image Section */}
-          <motion.div 
-            className="relative rounded-3xl overflow-hidden shadow-2xl group"
-            whileHover="hover"
-            initial="rest"
-            animate="rest"
-            variants={{
-              rest: { scale: 1 },
-              hover: { scale: 1.02, rotateY: 5 } // Add rotation for 3D effect
-            }}
-            transition={{ type: 'spring', stiffness: 300 }}
+          {/* Image Card with 3D tilt + glow + shimmer */}
+          <motion.div
+            onMouseMove={handleMouseMove}
+            onMouseLeave={resetTilt}
+            style={{ rotateX, rotateY, transformStyle: 'preserve-3d', transformPerspective: 1000 }}
+            className="relative rounded-[28px] p-[2px]"
           >
-            {/* Animated Border */}
-            <motion.div 
-              className="absolute inset-0 rounded-3xl pointer-events-none border-[3px] border-amber-900/5"
-              variants={{
-                rest: { scale: 1 },
-                hover: { scale: 1.03 }
-              }}
-            />
-            
-            {/* Image with Parallax Effect */}
-            <motion.div 
-              className="w-full h-full"
-              variants={{
-                rest: { scale: 1 },
-                hover: { scale: 1.05 }
-              }}
-              transition={{ type: 'spring', stiffness: 400 }}
-            >
+            {/* Gradient frame */}
+            <div className="absolute inset-0 -z-10 rounded-[28px] bg-gradient-to-br from-amber-500/40 via-amber-300/20 to-amber-800/40" />
+            <div className="relative overflow-hidden rounded-[26px] bg-amber-50/30 shadow-2xl ring-1 ring-amber-900/10">
               <Image
                 src="/hero.jpg"
                 alt="Serene Buddha statue surrounded by flowers and offerings"
                 width={800}
                 height={600}
-                className="w-full h-full object-cover origin-center"
+                className="h-full w-full origin-center object-cover"
                 priority
                 quality={90}
                 placeholder="blur"
                 blurDataURL="/hero-blur.jpg"
               />
-            </motion.div>
 
-            {/* Animated Overlay */}
-            <motion.div 
-              className="absolute inset-0 bg-gradient-to-t from-amber-900/50 via-amber-900/15 to-transparent"
-              variants={{
-                rest: { opacity: 1 },
-                hover: { opacity: 0.8 }
-              }}
-            />
+              {/* Warm gradient overlay */}
+              <motion.div
+                className="pointer-events-none absolute inset-0 bg-gradient-to-t from-amber-900/40 via-amber-900/10 to-transparent"
+                initial={{ opacity: 0.9 }}
+                whileHover={{ opacity: 0.8 }}
+              />
 
-            {/* Floating Sparkles */}
-            <div className="absolute inset-0 pointer-events-none">
-              {[...Array(6)].map((_, i) => (
-                <motion.div
-                  key={i}
-                  className="absolute text-amber-200/40"
-                  initial={{ opacity: 0, scale: 0 }}
-                  animate={{
-                    opacity: [0, 1, 0],
-                    scale: [0.5, 1.2, 0.8],
-                    x: Math.random() * 100 - 50 + '%',
-                    y: Math.random() * 100 - 50 + '%'
-                  }}
-                  transition={{
-                    duration: 4 + Math.random() * 4,
-                    repeat: Infinity,
-                    delay: Math.random() * 2
-                  }}
-                >
-                  <Sparkles className="w-6 h-6" />
-                </motion.div>
-              ))}
+              {/* Shimmer sweep on hover */}
+              <motion.div
+                className="pointer-events-none absolute inset-y-0 -left-1/3 w-1/3 bg-gradient-to-r from-transparent via-white/20 to-transparent"
+                initial={{ x: '-100%' }}
+                whileHover={{ x: '250%' }}
+                transition={{ duration: 1.6, ease: 'easeInOut' }}
+              />
+
+              {/* Subtle inner glow */}
+              <div className="pointer-events-none absolute inset-0 rounded-[26px] ring-1 ring-inset ring-amber-100/50" />
+
+              {/* Floating sparkles */}
+              <div className="pointer-events-none absolute inset-0">
+                {sparkleConfigs.map((cfg, i) => (
+                  <motion.span
+                    key={i}
+                    className="absolute text-amber-200/60"
+                    style={cfg.style}
+                    initial={{ opacity: 0, scale: 0.7 }}
+                    animate={{ opacity: [0, 1, 0], scale: [0.7, 1.15, 0.9] }}
+                    transition={{ duration: cfg.duration, repeat: Infinity, delay: cfg.delay, ease: 'easeInOut' }}
+                  >
+                    <Sparkles className="h-6 w-6" />
+                  </motion.span>
+                ))}
+              </div>
+
+              {/* Floating flowers at corners */}
+              <motion.div
+                className="pointer-events-none absolute -top-10 -left-10 text-amber-300/40"
+                animate={{ y: [0, -18, 0] }}
+                transition={{ duration: 8, repeat: Infinity, ease: 'easeInOut' }}
+              >
+                <Flower2 className="h-28 w-28" />
+              </motion.div>
+              <motion.div
+                className="pointer-events-none absolute -bottom-10 -right-10 rotate-45 text-amber-300/40"
+                animate={{ y: [0, 18, 0] }}
+                transition={{ duration: 8, repeat: Infinity, ease: 'easeInOut', delay: 2 }}
+              >
+                <Flower2 className="h-28 w-28" />
+              </motion.div>
             </div>
           </motion.div>
 
-          {/* Enhanced Welcome Text */}
-          <div className="space-y-10 relative">
-            {/* Animated Quote Marks */}
+          {/* Text + Actions */}
+          <div className="relative space-y-8">
+            {/* Decorative quote mark */}
             <motion.div
-              initial={{ opacity: 0, scale: 0.8 }}
+              initial={{ opacity: 0, scale: 0.9 }}
               whileInView={{ opacity: 1, scale: 1 }}
-              transition={{ delay: 0.3 }}
-              className="absolute -top-8 -left-8 text-amber-300/40 text-7xl font-cursive select-none"
+              transition={{ delay: 0.2 }}
+              className="pointer-events-none absolute -top-8 -left-6 select-none text-6xl text-amber-300/40"
+              aria-hidden="true"
             >
               “
             </motion.div>
-            
-            <motion.h3
-              initial={{ opacity: 0, y: 20 }}
+
+            <motion.h2
+              initial={{ opacity: 0, y: 18 }}
               whileInView={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.2 }}
-              className="text-5xl lg:text-6xl font-bold text-amber-900 mb-6 leading-tight"
+              transition={{ delay: 0.1 }}
+              className="mb-2 text-4xl font-bold leading-tight text-amber-900 sm:text-5xl lg:text-6xl"
             >
-              <motion.span 
-                className="block text-3xl mb-3 text-amber-700 font-cursive"
-                initial={{ opacity: 0 }}
-                whileInView={{ opacity: 1 }}
-                transition={{ delay: 0.4 }}
-              >
+              <span className="mb-2 block text-2xl text-amber-700 sm:text-3xl">
                 නමෝ බුද්ධාය
-              </motion.span>
-              <span className="bg-gradient-to-r from-amber-700 to-amber-900 bg-clip-text text-transparent">
-              සිහිකල්පනාවෙන් ජීවත් වීමට මාර්ගය
               </span>
-            </motion.h3>
-            
+              <span className="bg-gradient-to-r from-amber-700 to-amber-900 bg-clip-text text-transparent">
+                සිහිකල්පනාවෙන් ජීවත් වීමට මාර්ගය
+              </span>
+            </motion.h2>
+
             <motion.p
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}
-              transition={{ delay: 0.4 }}
-              className="text-xl text-amber-800/90 leading-relaxed mb-10 font-serif max-w-2xl relative"
+              transition={{ delay: 0.25 }}
+              className="relative max-w-2xl text-lg leading-relaxed text-amber-800/90 sm:text-xl"
             >
-              <span className="absolute -left-8 top-2 text-amber-200/40 text-4xl">•</span>
+              <span className="absolute -left-6 top-2 text-3xl text-amber-200/60">•</span>
               අපගේ නවීන අභයභූමියේ පුරාණ ප්‍රඥාව තුළින් සන්සුන් භාවය සොයා ගන්න. භාවනාව,
               දහම් අධ්‍යයනය සහ සිහිකල්පනාවෙන් යුතු ජීවන පිළිවෙත් ගවේෂණය කිරීමට අපගේ දයානුකම්පිත ප්‍රජාව හා එක්වන්න.
-              <span className="absolute -right-8 bottom-2 text-amber-200/40 text-4xl">•</span>
+              <span className="absolute -right-6 bottom-2 text-3xl text-amber-200/60">•</span>
             </motion.p>
 
-            {/* Enhanced Action Buttons */}
+            {/* Actions */}
             <motion.div
-              initial={{ opacity: 0 }}
-              whileInView={{ opacity: 1 }}
-              transition={{ delay: 0.6 }}
-              className="flex flex-wrap gap-5 justify-center lg:justify-start"
+              initial={{ opacity: 0, y: 10 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.35 }}
+              className="flex flex-wrap items-center gap-4"
             >
-              {[
-                { 
-                  href: "/events",
-                  text: "Upcoming Events",
-                  icon: CalendarDays,
-                  style: "bg-amber-900 text-amber-50 hover:bg-amber-800 shadow-lg hover:shadow-amber-900/30"
-                },
-                {
-                  href: "/dhamma",
-                  text: "Dharma Studies",
-                  icon: BookOpen,
-                  style: "border-2 border-amber-900 text-amber-900 hover:bg-amber-900/5"
-                }
-              ].map((button, index) => (
-                <Link key={index} href={button.href} passHref>
-                  <motion.div
-                    whileHover={{ y: -3, rotateY: 10 }} // Add rotation for 3D effect
-                    whileTap={{ scale: 0.95 }}
-                    className={`${button.style} px-8 py-4 rounded-full font-medium transition-all duration-300 flex items-center gap-3 cursor-pointer`}
-                  >
-                    <button.icon className="w-6 h-6 transition-transform group-hover:scale-110" />
-                    <span className="text-lg">{button.text}</span>
-                  </motion.div>
-                </Link>
-              ))}
+              <Link
+                href="/events"
+                className="group relative inline-flex items-center gap-3 rounded-full bg-gradient-to-r from-amber-900 to-amber-700 px-7 py-4 text-amber-50 shadow-lg shadow-amber-900/20 transition-transform hover:-translate-y-0.5"
+              >
+                <span className="inline-flex h-6 w-6 items-center justify-center">
+                  <CalendarDays className="h-6 w-6 transition-transform group-hover:scale-110" />
+                </span>
+                <span className="text-lg font-medium">Upcoming Events</span>
+                {/* Shine */}
+                <span className="pointer-events-none absolute inset-px rounded-full opacity-0 transition-opacity duration-300 group-hover:opacity-100"
+                  style={{
+                    background:
+                      'linear-gradient(90deg, rgba(255,255,255,0) 0%, rgba(253,230,138,0.35) 50%, rgba(255,255,255,0) 100%)'
+                  }}
+                />
+              </Link>
+
+              <Link
+                href="/dhamma"
+                className="group relative inline-flex items-center gap-3 rounded-full border-2 border-amber-900 px-7 py-4 text-amber-900 transition-all hover:bg-amber-900/5 hover:-translate-y-0.5"
+              >
+                <BookOpen className="h-6 w-6 transition-transform group-hover:scale-110" />
+                <span className="text-lg font-medium">Dharma Studies</span>
+              </Link>
             </motion.div>
           </div>
         </motion.div>
       </div>
 
-      {/* Animated Divider */}
-      <motion.div 
+      {/* Animated divider */}
+      <motion.div
         className="absolute bottom-0 left-0 right-0 h-24 bg-[url('/divider-pattern.svg')] bg-repeat-x opacity-20"
-        animate={{
-          backgroundPosition: ['0% 0%', '100% 0%']
-        }}
-        transition={{
-          duration: 30,
-          repeat: Infinity,
-          ease: "linear"
-        }}
+        animate={{ backgroundPosition: ['0% 0%', '100% 0%'] }}
+        transition={{ duration: 30, repeat: Infinity, ease: 'linear' }}
+        aria-hidden="true"
       />
     </section>
   );
