@@ -145,7 +145,7 @@ export default function EventsPage() {
       <div className="relative overflow-hidden">
         <div className="relative mx-auto max-w-6xl px-6 py-14 md:py-16">
           <div className="absolute inset-0 -z-10 pointer-events-none opacity-20"
-               style={{ background: 'radial-gradient(800px 300px at 10% -20%, rgba(251,191,36,0.4), transparent), radial-gradient(600px 300px at 90% 120%, rgba(251,146,60,0.35), transparent)' }} />
+               style={{ background: 'radial-gradient(800px 300px at 10% -20%, rgba(255, 232, 173, 1), transparent), radial-gradient(600px 300px at 90% 120%, rgba(255, 223, 196, 1), transparent)' }} />
           <h1 className="text-3xl md:text-4xl font-extrabold text-center text-yellow-900 mt-20">
             Temple Events
           </h1>
