@@ -26,7 +26,7 @@ const images = [
   { src: "/gallery/school/05.jpg", category: "Dhamma School" },
   { src: "/gallery/school/06.jpg", category: "Dhamma School" },
   { src: "/gallery/school/07.jpg", category: "Dhamma School" },
-  { src: "/gallery/school/08.jpg", category: "Dhamma School" },
+
   { src: "/gallery/school/09.jpg", category: "Dhamma School" },
   { src: "/gallery/school/10.jpg", category: "Dhamma School" },
   { src: "/gallery/school/11.jpg", category: "Dhamma School" },
